@@ -1,12 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  trailingSlash: true,
+  // Only use static export for GitHub Pages
+  ...(process.env.GITHUB_PAGES === 'true' && {
+    output: 'export',
+    trailingSlash: true,
+    basePath: '/personal_webpage',
+  }),
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/personal_webpage' : '',
 };
 
 export default nextConfig;
