@@ -2,38 +2,36 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Navigation */}
-      <nav className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
+      <nav className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800 shadow-md transition-colors">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <div className="text-xl font-bold">Mauricio Javier Letort</div>
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="hover:text-blue-600 dark:hover:text-blue-400">About</a>
-              <a href="#experience" className="hover:text-blue-600 dark:hover:text-blue-400">Experience</a>
-              <a href="#education" className="hover:text-blue-600 dark:hover:text-blue-400">Education</a>
-              <a href="#skills" className="hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
-              <a href="#projects" className="hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
-              <a href="#photos" className="hover:text-blue-600 dark:hover:text-blue-400">Photos</a>
-              <a href="#contact" className="hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+              <a href="#about" className="hover:text-pink-500 dark:hover:text-pink-400">About</a>
+              <a href="#experience" className="hover:text-pink-500 dark:hover:text-pink-400">Experience</a>
+              <a href="#education" className="hover:text-pink-500 dark:hover:text-pink-400">Education</a>
+              <a href="#skills" className="hover:text-pink-500 dark:hover:text-pink-400">Skills</a>
+              <a href="#projects" className="hover:text-pink-500 dark:hover:text-pink-400">Projects</a>
+              <a href="#photos" className="hover:text-pink-500 dark:hover:text-pink-400">Photos</a>
+              <a href="#contact" className="hover:text-pink-500 dark:hover:text-pink-400">Contact</a>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-fuchsia-500 via-rose-500 to-amber-500 text-white animate-gradient">
         <div className="max-w-5xl mx-auto">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-              Hi, I&apos;m <span className="text-blue-600 dark:text-blue-400">Mauricio Javier Letort</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-pink-200 to-purple-400">
+              Hi, I&apos;m Mauricio Javier Letort
             </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-              Junior Programmer
-            </p>
+            <p className="text-xl sm:text-2xl text-white/90 mb-8">Junior Programmer</p>
             <div className="flex justify-center space-x-4">
-              <a href="#contact" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+              <a href="#contact" className="bg-white/30 text-white px-6 py-3 rounded-lg shadow-lg transition-transform transform hover:scale-110 hover:shadow-xl">
                 Contact Me
               </a>
-              <a href="#projects" className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition">
+              <a href="#projects" className="border border-white/70 text-white px-6 py-3 rounded-lg shadow-lg transition-transform transform hover:bg-white/20 hover:scale-110 hover:shadow-xl">
                 View Projects
               </a>
             </div>
