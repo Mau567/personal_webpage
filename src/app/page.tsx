@@ -12,6 +12,7 @@ export default function Home() {
               <a href="#education" className="hover:text-blue-600 dark:hover:text-blue-400">Education</a>
               <a href="#skills" className="hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
               <a href="#projects" className="hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+              <a href="#photos" className="hover:text-blue-600 dark:hover:text-blue-400">Photos</a>
               <a href="#contact" className="hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
             </div>
           </div>
@@ -191,6 +192,21 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Photos Section */}
+      <section id="photos" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8">Photos</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="w-full h-40 bg-gray-200 dark:bg-gray-600 rounded-lg"></div>
+            <div className="w-full h-40 bg-gray-200 dark:bg-gray-600 rounded-lg"></div>
+            <div className="w-full h-40 bg-gray-200 dark:bg-gray-600 rounded-lg"></div>
+            <div className="w-full h-40 bg-gray-200 dark:bg-gray-600 rounded-lg"></div>
+            <div className="w-full h-40 bg-gray-200 dark:bg-gray-600 rounded-lg"></div>
+            <div className="w-full h-40 bg-gray-200 dark:bg-gray-600 rounded-lg"></div>
           </div>
         </div>
       </section>
