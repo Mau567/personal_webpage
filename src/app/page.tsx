@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -7,32 +9,40 @@ export default function Home() {
           <div className="flex justify-between h-16 items-center">
             <div className="text-xl font-bold">Mauricio Javier Letort</div>
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="hover:text-pink-500 dark:hover:text-pink-400">About</a>
-              <a href="#experience" className="hover:text-pink-500 dark:hover:text-pink-400">Experience</a>
-              <a href="#education" className="hover:text-pink-500 dark:hover:text-pink-400">Education</a>
-              <a href="#skills" className="hover:text-pink-500 dark:hover:text-pink-400">Skills</a>
-              <a href="#projects" className="hover:text-pink-500 dark:hover:text-pink-400">Projects</a>
-              <a href="#photos" className="hover:text-pink-500 dark:hover:text-pink-400">Photos</a>
-              <a href="#contact" className="hover:text-pink-500 dark:hover:text-pink-400">Contact</a>
+              <a href="#about" className="hover:text-blue-600 dark:hover:text-blue-400 hover:underline underline-offset-4">About</a>
+              <a href="#experience" className="hover:text-blue-600 dark:hover:text-blue-400 hover:underline underline-offset-4">Experience</a>
+              <a href="#education" className="hover:text-blue-600 dark:hover:text-blue-400 hover:underline underline-offset-4">Education</a>
+              <a href="#skills" className="hover:text-blue-600 dark:hover:text-blue-400 hover:underline underline-offset-4">Skills</a>
+              <a href="#projects" className="hover:text-blue-600 dark:hover:text-blue-400 hover:underline underline-offset-4">Projects</a>
+              <a href="#photos" className="hover:text-blue-600 dark:hover:text-blue-400 hover:underline underline-offset-4">Photos</a>
+              <a href="#contact" className="hover:text-blue-600 dark:hover:text-blue-400 hover:underline underline-offset-4">Contact</a>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-fuchsia-500 via-rose-500 to-amber-500 text-white animate-gradient">
+      <section
+        className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-teal-500 text-white animate-gradient"
+      >
         <div className="max-w-5xl mx-auto">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-pink-200 to-purple-400">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white/80 to-white">
               Hi, I&apos;m Mauricio Javier Letort
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 mb-8">Junior Programmer</p>
             <div className="flex justify-center space-x-4">
-              <a href="#contact" className="bg-white/30 text-white px-6 py-3 rounded-lg shadow-lg transition-transform transform hover:scale-110 hover:shadow-xl">
-                Contact Me
+              <a
+                href="/resume.pdf"
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition"
+              >
+                Download Resume
               </a>
-              <a href="#projects" className="border border-white/70 text-white px-6 py-3 rounded-lg shadow-lg transition-transform transform hover:bg-white/20 hover:scale-110 hover:shadow-xl">
-                View Projects
+              <a
+                href="#contact"
+                className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg shadow hover:bg-blue-600 hover:text-white transition"
+              >
+                Contact Me
               </a>
             </div>
           </div>
@@ -40,7 +50,11 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800">
+      <section
+        id="about"
+        data-aos="fade-up"
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800"
+      >
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">About Me</h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -64,7 +78,11 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-16 px-4 sm:px-6 lg:px-8">
+      <section
+        id="experience"
+        data-aos="fade-up"
+        className="py-16 px-4 sm:px-6 lg:px-8"
+      >
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">Experience</h2>
           <div className="space-y-8">
@@ -109,7 +127,11 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800">
+      <section
+        id="education"
+        data-aos="fade-up"
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800"
+      >
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">Education</h2>
           <div className="space-y-8">
@@ -128,7 +150,11 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800">
+      <section
+        id="skills"
+        data-aos="fade-up"
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800"
+      >
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">Skills</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -159,36 +185,49 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 px-4 sm:px-6 lg:px-8">
+      <section
+        id="projects"
+        data-aos="fade-up"
+        className="py-16 px-4 sm:px-6 lg:px-8"
+      >
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">Projects</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Project Card */}
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden">
-              <div className="h-48 bg-gray-200 dark:bg-gray-600"></div>
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden" data-aos="fade-up">
+              <div className="h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+                <Image src="/globe.svg" alt="Virtual Coin" width={80} height={80} />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Virtual Coin Transaction Program</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Developed a program in Python that allows users to transfer coins to each other using an API to request user information.
                 </p>
+                <a href="#" className="text-blue-600 hover:underline">View on GitHub</a>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden">
-              <div className="h-48 bg-gray-200 dark:bg-gray-600"></div>
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+              <div className="h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+                <Image src="/file.svg" alt="Instagram Database" width={80} height={80} />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Instagram Database Program</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   CLI application written in C to manage an Instagram database using dynamic arrays, custom structs and UNIX Epoch timestamps.
                 </p>
+                <a href="#" className="text-blue-600 hover:underline">View on GitHub</a>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden">
-              <div className="h-48 bg-gray-200 dark:bg-gray-600"></div>
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+              <div className="h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+                <Image src="/window.svg" alt="Mini-MIPS" width={80} height={80} />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Mini-MIPS CPU</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Designed a single-cycle MIPS CPU in Logisim implementing instructions such as load, save, add, subtract and halt.
                 </p>
+                <a href="#" className="text-blue-600 hover:underline">View on GitHub</a>
               </div>
             </div>
           </div>
@@ -196,7 +235,11 @@ export default function Home() {
       </section>
 
       {/* Photos Section */}
-      <section id="photos" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800">
+      <section
+        id="photos"
+        data-aos="fade-up"
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800"
+      >
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">Photos</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -211,7 +254,11 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800">
+      <section
+        id="contact"
+        data-aos="fade-up"
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800"
+      >
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">Contact Me</h2>
           <div className="grid md:grid-cols-2 gap-8">
