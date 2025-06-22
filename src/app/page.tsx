@@ -7,31 +7,31 @@ export default function Home() {
           <div className="flex justify-between h-16 items-center">
             <div className="text-xl font-bold">Mauricio Javier Letort</div>
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="hover:text-pink-500 dark:hover:text-pink-400">About</a>
-              <a href="#experience" className="hover:text-pink-500 dark:hover:text-pink-400">Experience</a>
-              <a href="#education" className="hover:text-pink-500 dark:hover:text-pink-400">Education</a>
-              <a href="#skills" className="hover:text-pink-500 dark:hover:text-pink-400">Skills</a>
-              <a href="#projects" className="hover:text-pink-500 dark:hover:text-pink-400">Projects</a>
-              <a href="#photos" className="hover:text-pink-500 dark:hover:text-pink-400">Photos</a>
-              <a href="#contact" className="hover:text-pink-500 dark:hover:text-pink-400">Contact</a>
+              <a href="#about" className="hover:underline hover:text-blue-600 dark:hover:text-teal-400">About</a>
+              <a href="#experience" className="hover:underline hover:text-blue-600 dark:hover:text-teal-400">Experience</a>
+              <a href="#education" className="hover:underline hover:text-blue-600 dark:hover:text-teal-400">Education</a>
+              <a href="#skills" className="hover:underline hover:text-blue-600 dark:hover:text-teal-400">Skills</a>
+              <a href="#projects" className="hover:underline hover:text-blue-600 dark:hover:text-teal-400">Projects</a>
+              <a href="#photos" className="hover:underline hover:text-blue-600 dark:hover:text-teal-400">Photos</a>
+              <a href="#contact" className="hover:underline hover:text-blue-600 dark:hover:text-teal-400">Contact</a>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-fuchsia-500 via-rose-500 to-amber-500 text-white animate-gradient">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-700 to-teal-600 text-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-pink-200 to-purple-400">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
               Hi, I&apos;m Mauricio Javier Letort
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 mb-8">Junior Programmer</p>
             <div className="flex justify-center space-x-4">
-              <a href="#contact" className="bg-white/30 text-white px-6 py-3 rounded-lg shadow-lg transition-transform transform hover:scale-110 hover:shadow-xl">
+              <a href="#contact" className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-blue-700">
                 Contact Me
               </a>
-              <a href="#projects" className="border border-white/70 text-white px-6 py-3 rounded-lg shadow-lg transition-transform transform hover:bg-white/20 hover:scale-110 hover:shadow-xl">
+              <a href="#projects" className="border border-white/70 text-white px-6 py-3 rounded-lg shadow-lg transition-transform transform hover:bg-white/20 hover:scale-105">
                 View Projects
               </a>
             </div>
@@ -165,7 +165,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Project Card */}
             <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden">
-              <div className="h-48 bg-gray-200 dark:bg-gray-600"></div>
+              <img src="/globe.svg" alt="API transactions" className="h-48 w-full object-contain bg-gray-100 dark:bg-gray-800" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Virtual Coin Transaction Program</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -174,7 +174,7 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden">
-              <div className="h-48 bg-gray-200 dark:bg-gray-600"></div>
+              <img src="/file.svg" alt="Database management" className="h-48 w-full object-contain bg-gray-100 dark:bg-gray-800" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Instagram Database Program</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -183,7 +183,7 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden">
-              <div className="h-48 bg-gray-200 dark:bg-gray-600"></div>
+              <img src="/window.svg" alt="CPU simulation" className="h-48 w-full object-contain bg-gray-100 dark:bg-gray-800" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Mini-MIPS CPU</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
