@@ -46,10 +46,10 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                I'm a Computer Science student at McGill University, focusing on Artificial Intelligence and software development. I enjoy working on projects that combine code, design, and real-world impact — from building legal automation tools at Robalino Law to improving hotel operations with databases and AI chatbots.
+                I&apos;m a Computer Science student at McGill University, focusing on Artificial Intelligence and software development. I enjoy working on projects that combine code, design, and real-world impact — from building legal automation tools at Robalino Law to improving hotel operations with databases and AI chatbots.
               </p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                I've worked with technologies like Python, web development frameworks, and design tools, and I've contributed to projects in both corporate and volunteer settings. I'm also exploring how to use AI and automation to improve user experiences in areas like hospitality, productivity, and fitness.
+                I&apos;ve worked with technologies like Python, web development frameworks, and design tools, and I&apos;ve contributed to projects in both corporate and volunteer settings. I&apos;m also exploring how to use AI and automation to improve user experiences in areas like hospitality, productivity, and fitness.
               </p>
               <p className="text-gray-600 dark:text-gray-300">
                 With a multicultural background and fluency in English, Spanish, and French, I bring an international mindset and adaptability to everything I do.
@@ -74,8 +74,8 @@ export default function Home() {
               <p className="text-blue-600 dark:text-blue-400">Robalino Law – Quito, Ecuador</p>
               <p className="text-gray-600 dark:text-gray-400">07/2024 – 08/2024</p>
               <ul className="list-disc list-inside mt-2 text-gray-600 dark:text-gray-300">
-                <li>Worked on the BIPAT (Business Intelligence Process Automated Technology) team creating solutions for the firm's clients.</li>
-                <li>Worked in some team projects simultaneously and created scripts in Python for the clients' solutions.</li>
+                <li>Worked on the BIPAT (Business Intelligence Process Automated Technology) team creating solutions for the firm&apos;s clients.</li>
+                <li>Worked in some team projects simultaneously and created scripts in Python for the clients&apos; solutions.</li>
               </ul>
             </div>
             <div className="border-l-4 border-blue-600 pl-4">
