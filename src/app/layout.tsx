@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Mauricio Javier Letort | Personal Website",
@@ -17,8 +15,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-white`}>
+      <head>
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+      </head>
+      <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-sans">
         {children}
+        <Script src="https://unpkg.com/aos@2.3.1/dist/aos.js" strategy="afterInteractive" />
+        <Script id="aos-init" strategy="afterInteractive">{`AOS.init();`}</Script>
       </body>
     </html>
   );
