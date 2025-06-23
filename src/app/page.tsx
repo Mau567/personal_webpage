@@ -1,8 +1,17 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import emailjs from '@emailjs/browser';
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -44,8 +53,77 @@ export default function Home() {
 
     return () => observer.disconnect();
   }, []);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Initialize EmailJS with your public key
+      emailjs.init("YOUR_PUBLIC_KEY"); // You'll need to replace this with your actual EmailJS public key
+      
+      const result = await emailjs.send(
+        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
+        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: "mjletort@gmail.com"
+        }
+      );
+
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Email send error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const openWhatsApp = () => {
+    const phoneNumber = "14389794330"; // Canadian format
+    const message = "Hi Mauricio! I'd like to get in touch with you.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <main className="min-h-screen">
+      {/* Floating Contact Button */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <div className="relative group">
+          {/* Main Floating Button */}
+          <button
+            onClick={openWhatsApp}
+            className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+            title="Contact via WhatsApp"
+          >
+            <span className="text-2xl">💬</span>
+          </button>
+          
+          {/* Tooltip */}
+          <div className="absolute bottom-full right-0 mb-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+            Chat on WhatsApp
+            <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+          </div>
+        </div>
+      </div>
+
       {/* Navigation */}
       <nav className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800 shadow-md transition-colors">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -463,53 +541,179 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8">Contact Me</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
                 I&apos;m always open to new opportunities and collaborations. Feel free to reach out!
               </p>
               <div className="space-y-4">
-                <p className="flex items-center">
-                  <span className="mr-2">📧</span>
-                  mjletort@gmail.com
-                </p>
-                <p className="flex items-center">
-                  <span className="mr-2">📱</span>
-                  (438) 979 4330
-                </p>
-                <p className="flex items-center">
-                  <span className="mr-2">📍</span>
-                  1430 City Councillors St, Montreal, Canada
-                </p>
-                <p className="flex items-center">
-                  <span className="mr-2">🔗</span>
-                  <a href="https://linkedin.com/in/mauricio-letort-129b30258" className="hover:underline">
-                    linkedin.com/in/mauricio-letort-129b30258
-                  </a>
-                </p>
-                <p className="flex items-center">
-                  <span className="mr-2">🌐</span>
-                  French Nationality
-                </p>
+                <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                  <span className="mr-3 text-xl">📧</span>
+                  <div>
+                    <p className="font-medium">Email</p>
+                    <a href="mailto:mjletort@gmail.com" className="text-blue-600 hover:underline">
+                      mjletort@gmail.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                  <span className="mr-3 text-xl">📱</span>
+                  <div>
+                    <p className="font-medium">Phone</p>
+                    <a href="tel:+14389794330" className="text-blue-600 hover:underline">
+                      (438) 979 4330
+                    </a>
+                  </div>
+                </div>
+                <button
+                  onClick={openWhatsApp}
+                  className="w-full flex items-center justify-center p-3 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow-sm transition-colors"
+                >
+                  <span className="mr-2 text-xl">💬</span>
+                  <span>Chat on WhatsApp</span>
+                </button>
+                <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                  <span className="mr-3 text-xl">📍</span>
+                  <div>
+                    <p className="font-medium">Location</p>
+                    <p className="text-gray-600 dark:text-gray-300">1430 City Councillors St, Montreal, Canada</p>
+                  </div>
+                </div>
+                <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                  <span className="mr-3 text-xl">🔗</span>
+                  <div>
+                    <p className="font-medium">LinkedIn</p>
+                    <a href="https://linkedin.com/in/mauricio-letort-129b30258" className="text-blue-600 hover:underline">
+                      linkedin.com/in/mauricio-letort-129b30258
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                  <span className="mr-3 text-xl">🌐</span>
+                  <div>
+                    <p className="font-medium">Nationality</p>
+                    <p className="text-gray-600 dark:text-gray-300">French</p>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium mb-1">Name</label>
-                  <input type="text" className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-600" />
+                  <input 
+                    type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Email</label>
-                  <input type="email" className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-600" />
+                  <input 
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Message</label>
-                  <textarea className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-600" rows={4}></textarea>
+                  <textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows={4}
+                    className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  ></textarea>
                 </div>
-                <button type="submit" className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-                  Send Message
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
+                {submitStatus === 'success' && (
+                  <div className="p-3 bg-green-100 text-green-700 rounded-lg">
+                    Message sent successfully! I'll get back to you soon.
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className="p-3 bg-red-100 text-red-700 rounded-lg">
+                    Failed to send message. Please try again or contact me directly.
+                  </div>
+                )}
               </form>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Persistent Contact Section - Always Available */}
+      <section className="py-8 px-4 sm:px-6 lg:px-8 bg-blue-600 text-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-6">
+            <h3 className="text-2xl font-bold mb-2">Need to Get in Touch?</h3>
+            <p className="text-blue-100">I'm always available for opportunities and collaborations</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Quick Contact Card */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+              <div className="text-3xl mb-3">📧</div>
+              <h4 className="font-semibold mb-2">Email</h4>
+              <a 
+                href="mailto:mjletort@gmail.com" 
+                className="text-blue-100 hover:text-white transition-colors"
+              >
+                mjletort@gmail.com
+              </a>
+            </div>
+            
+            {/* WhatsApp Card */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+              <div className="text-3xl mb-3">💬</div>
+              <h4 className="font-semibold mb-2">WhatsApp</h4>
+              <button 
+                onClick={openWhatsApp}
+                className="text-blue-100 hover:text-white transition-colors"
+              >
+                (438) 979 4330
+              </button>
+            </div>
+            
+            {/* Phone Card */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+              <div className="text-3xl mb-3">📱</div>
+              <h4 className="font-semibold mb-2">Phone</h4>
+              <a 
+                href="tel:+14389794330" 
+                className="text-blue-100 hover:text-white transition-colors"
+              >
+                (438) 979 4330
+              </a>
+            </div>
+          </div>
+          
+          {/* Quick Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+            <button
+              onClick={openWhatsApp}
+              className="flex items-center justify-center px-6 py-3 bg-green-500 hover:bg-green-600 rounded-lg transition-colors"
+            >
+              <span className="mr-2">💬</span>
+              Start WhatsApp Chat
+            </button>
+            <a
+              href="#contact"
+              className="flex items-center justify-center px-6 py-3 bg-white text-blue-600 hover:bg-gray-100 rounded-lg transition-colors"
+            >
+              <span className="mr-2">✉️</span>
+              Send Detailed Message
+            </a>
           </div>
         </div>
       </section>
