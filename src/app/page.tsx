@@ -1,6 +1,37 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
+
+function Counter({ end }: { end: number }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          let current = 0;
+          const step = end / 40;
+          const id = setInterval(() => {
+            current += step;
+            if (current >= end) {
+              current = end;
+              clearInterval(id);
+            }
+            setCount(Math.floor(current));
+          }, 50);
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [end]);
+
+  return <span ref={ref}>{count}</span>;
+}
 
 export default function Home() {
   useEffect(() => {
@@ -52,7 +83,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-700 via-teal-600 to-blue-500 text-white animate-gradient">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-700 via-teal-600 to-blue-500 text-white animate-gradient bg-fixed">
         <div className="max-w-5xl mx-auto">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-100 via-teal-100 to-blue-200">
@@ -73,6 +104,24 @@ export default function Home() {
                 View Projects
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="bg-white dark:bg-gray-900 py-16 px-4 sm:px-6 lg:px-8 fade-in">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+          <div>
+            <p className="text-4xl font-bold"><Counter end={20} /></p>
+            <p className="mt-2 text-gray-600 dark:text-gray-300">Projects Completed</p>
+          </div>
+          <div>
+            <p className="text-4xl font-bold"><Counter end={5} /></p>
+            <p className="mt-2 text-gray-600 dark:text-gray-300">Years Experience</p>
+          </div>
+          <div>
+            <p className="text-4xl font-bold"><Counter end={1000} /></p>
+            <p className="mt-2 text-gray-600 dark:text-gray-300">Cups of Coffee</p>
           </div>
         </div>
       </section>
@@ -224,25 +273,50 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {/* Skill Item */}
             <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
-              <h3 className="font-bold mb-2">Programming</h3>
-              <ul className="text-gray-600 dark:text-gray-300">
-                <li>Python</li>
-                <li>C</li>
-                <li>Java</li>
-                <li>Bash</li>
-                <li>Command-Line Interface</li>
-                <li>Assembler</li>
-                <li>Logisim</li>
-                <li>OCaml</li>
-              </ul>
+              <h3 className="font-bold mb-4">Programming</h3>
+              <div className="space-y-2 text-gray-600 dark:text-gray-300">
+                <div>
+                  <span className="font-medium">Python</span>
+                  <div className="w-full h-2 bg-gray-200 rounded">
+                    <div className="h-full bg-blue-600 rounded" style={{ width: "90%" }}></div>
+                  </div>
+                </div>
+                <div>
+                  <span className="font-medium">C</span>
+                  <div className="w-full h-2 bg-gray-200 rounded">
+                    <div className="h-full bg-blue-600 rounded" style={{ width: "80%" }}></div>
+                  </div>
+                </div>
+                <div>
+                  <span className="font-medium">Java</span>
+                  <div className="w-full h-2 bg-gray-200 rounded">
+                    <div className="h-full bg-blue-600 rounded" style={{ width: "70%" }}></div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
-              <h3 className="font-bold mb-2">Languages</h3>
-              <ul className="text-gray-600 dark:text-gray-300">
-                <li>Spanish: Native</li>
-                <li>English: Fluent</li>
-                <li>French: Basic</li>
-              </ul>
+              <h3 className="font-bold mb-4">Languages</h3>
+              <div className="space-y-2 text-gray-600 dark:text-gray-300">
+                <div>
+                  <span className="font-medium">Spanish</span>
+                  <div className="w-full h-2 bg-gray-200 rounded">
+                    <div className="h-full bg-blue-600 rounded" style={{ width: "100%" }}></div>
+                  </div>
+                </div>
+                <div>
+                  <span className="font-medium">English</span>
+                  <div className="w-full h-2 bg-gray-200 rounded">
+                    <div className="h-full bg-blue-600 rounded" style={{ width: "90%" }}></div>
+                  </div>
+                </div>
+                <div>
+                  <span className="font-medium">French</span>
+                  <div className="w-full h-2 bg-gray-200 rounded">
+                    <div className="h-full bg-blue-600 rounded" style={{ width: "60%" }}></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -254,7 +328,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8">Projects</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Project Card */}
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+            <div className="relative bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden group fade-in">
               <Image src="/globe.svg" alt="Virtual Coin Transaction Program" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Virtual Coin Transaction Program</h3>
@@ -265,8 +339,11 @@ export default function Home() {
                   View on GitHub
                 </a>
               </div>
+              <div className="absolute inset-0 bg-black/70 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                Python, Flask, REST API
+              </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+            <div className="relative bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden group fade-in">
               <Image src="/file.svg" alt="Instagram Database Program" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Instagram Database Program</h3>
@@ -277,8 +354,11 @@ export default function Home() {
                   View on GitHub
                 </a>
               </div>
+              <div className="absolute inset-0 bg-black/70 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                C, Makefile
+              </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+            <div className="relative bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden group fade-in">
               <Image src="/window.svg" alt="Mini-MIPS CPU" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Mini-MIPS CPU</h3>
@@ -288,6 +368,9 @@ export default function Home() {
                 <a href="https://github.com" className="text-blue-600 hover:underline">
                   View on GitHub
                 </a>
+              </div>
+              <div className="absolute inset-0 bg-black/70 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                Logisim
               </div>
             </div>
           </div>
