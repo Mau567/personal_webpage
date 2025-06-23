@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Home() {
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const fadeObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -16,10 +16,59 @@ export default function Home() {
     );
 
     document.querySelectorAll<HTMLElement>(".fade-in").forEach((el) => {
-      observer.observe(el);
+      fadeObserver.observe(el);
     });
 
-    return () => observer.disconnect();
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const level = el.dataset.level;
+          if (level) {
+            el.style.width = `${level}%`;
+          }
+          skillObserver.unobserve(el);
+        }
+      });
+    });
+
+    document.querySelectorAll<HTMLElement>(".skill-level").forEach((el) => {
+      skillObserver.observe(el);
+    });
+
+    const counterObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            const target = parseInt(el.dataset.target ?? "0", 10);
+            let count = 0;
+            const step = Math.max(1, Math.ceil(target / 60));
+            const interval = setInterval(() => {
+              count += step;
+              if (count >= target) {
+                el.textContent = String(target);
+                clearInterval(interval);
+              } else {
+                el.textContent = String(count);
+              }
+            }, 30);
+            counterObserver.unobserve(el);
+          }
+        });
+      },
+      { threshold: 1 }
+    );
+
+    document.querySelectorAll<HTMLElement>(".counter").forEach((el) => {
+      counterObserver.observe(el);
+    });
+
+    return () => {
+      fadeObserver.disconnect();
+      counterObserver.disconnect();
+      skillObserver.disconnect();
+    };
   }, []);
   return (
     <main className="min-h-screen">
@@ -52,7 +101,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-700 via-teal-600 to-blue-500 text-white animate-gradient">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-700 via-teal-600 to-blue-500 text-white animate-gradient parallax">
         <div className="max-w-5xl mx-auto">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-100 via-teal-100 to-blue-200">
@@ -76,6 +125,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
 
       {/* About Section */}
       <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 fade-in">
@@ -245,6 +296,44 @@ export default function Home() {
               </ul>
             </div>
           </div>
+          <div className="mt-8 space-y-4">
+            {[
+              ["Python", 90],
+              ["C", 80],
+              ["Java", 70],
+              ["Bash", 60],
+            ].map(([skill, level]) => (
+              <div key={skill as string}>
+                <div className="flex justify-between mb-1">
+                  <span>{skill}</span>
+                  <span>{level}%</span>
+                </div>
+                <div className="skill-bar">
+                  <div className="skill-level" data-level={level} style={{ width: 0 }}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Section */}
+      <section id="stats" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 parallax fade-in">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-8">Statistics</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              ["Projects", 12],
+              ["Years Experience", 2],
+              ["Languages", 3],
+              ["Cups of Coffee", 100],
+            ].map(([label, value]) => (
+              <div key={label}>
+                <p className="text-4xl font-bold counter" data-target={value as number}>0</p>
+                <p className="mt-2 text-gray-600 dark:text-gray-300">{label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -254,8 +343,11 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8">Projects</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Project Card */}
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+            <div className="project-card bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
               <Image src="/globe.svg" alt="Virtual Coin Transaction Program" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+              <div className="tech-overlay">
+                Python, REST API
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Virtual Coin Transaction Program</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -266,8 +358,11 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+            <div className="project-card bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
               <Image src="/file.svg" alt="Instagram Database Program" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+              <div className="tech-overlay">
+                C, CLI
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Instagram Database Program</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -278,8 +373,11 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+            <div className="project-card bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
               <Image src="/window.svg" alt="Mini-MIPS CPU" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+              <div className="tech-overlay">
+                Logisim, Assembly
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Mini-MIPS CPU</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -295,7 +393,7 @@ export default function Home() {
       </section>
 
       {/* Photos Section */}
-      <section id="photos" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 fade-in">
+      <section id="photos" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 fade-in parallax">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">Photos</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

@@ -52,3 +52,33 @@ body {
   background-size: 200% 200%;
   animation: gradient-shift 8s ease infinite;
 }
+
+/* Parallax background effect */
+.parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Hover overlay for project cards */
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card .tech-overlay {
+  @apply absolute inset-0 bg-black/80 text-white flex items-center justify-center opacity-0 transition-opacity;
+}
+
+.project-card:hover .tech-overlay {
+  opacity: 1;
+}
+
+/* Skill progress bars */
+.skill-bar {
+  @apply w-full h-2 bg-gray-200 rounded;
+}
+
+.skill-level {
+  @apply h-full bg-blue-600 rounded;
+}
