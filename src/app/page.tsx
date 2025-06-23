@@ -44,8 +44,23 @@ export default function Home() {
 
     return () => observer.disconnect();
   }, []);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
+    const mailto = `mailto:mjletort@gmail.com?subject=Contact from ${encodeURIComponent(
+      (name as string) || "Anonymous"
+    )}&body=${encodeURIComponent(
+      `${message}\n\nFrom: ${(name as string) || "Anonymous"} <${
+        (email as string) || ""
+      }>`
+    )}`;
+    window.location.href = mailto;
+  };
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen pb-20">
       {/* Navigation */}
       <nav className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800 shadow-md transition-colors">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -476,6 +491,17 @@ export default function Home() {
                   (438) 979 4330
                 </p>
                 <p className="flex items-center">
+                  <span className="mr-2">💬</span>
+                  <a
+                    href="https://wa.me/14389794330"
+                    className="hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Message on WhatsApp
+                  </a>
+                </p>
+                <p className="flex items-center">
                   <span className="mr-2">📍</span>
                   1430 City Councillors St, Montreal, Canada
                 </p>
@@ -492,18 +518,30 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
                   <label className="block text-sm font-medium mb-1">Name</label>
-                  <input type="text" className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-600" />
+                  <input
+                    type="text"
+                    name="name"
+                    className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-600"
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Email</label>
-                  <input type="email" className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-600" />
+                  <input
+                    type="email"
+                    name="email"
+                    className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-600"
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Message</label>
-                  <textarea className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-600" rows={4}></textarea>
+                  <textarea
+                    name="message"
+                    className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-600"
+                    rows={4}
+                  ></textarea>
                 </div>
                 <button type="submit" className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
                   Send Message
@@ -522,6 +560,23 @@ export default function Home() {
           </p>
         </div>
       </footer>
+      {/* Sticky Contact Bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-blue-600 text-white p-2 flex justify-center space-x-4 z-50">
+        <a href="mailto:mjletort@gmail.com" className="hover:underline">
+          Email
+        </a>
+        <a
+          href="https://wa.me/14389794330"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          WhatsApp
+        </a>
+        <a href="#contact" className="hover:underline">
+          Contact Form
+        </a>
+      </div>
     </main>
   );
 }
