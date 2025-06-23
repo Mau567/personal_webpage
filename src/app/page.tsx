@@ -19,7 +19,35 @@ export default function Home() {
       observer.observe(el);
     });
 
-    return () => observer.disconnect();
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const target = parseInt(el.dataset.target || "0", 10);
+          let count = 0;
+          const inc = Math.max(1, Math.floor(target / 40));
+          const timer = setInterval(() => {
+            count += inc;
+            if (count >= target) {
+              el.textContent = target.toString();
+              clearInterval(timer);
+            } else {
+              el.textContent = count.toString();
+            }
+          }, 30);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.6 });
+
+    document.querySelectorAll<HTMLElement>(".counter").forEach((el) => {
+      counterObserver.observe(el);
+    });
+
+    return () => {
+      observer.disconnect();
+      counterObserver.disconnect();
+    };
   }, []);
   return (
     <main className="min-h-screen">
@@ -52,7 +80,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-700 via-teal-600 to-blue-500 text-white animate-gradient">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-700 via-teal-600 to-blue-500 text-white animate-gradient bg-fixed">
         <div className="max-w-5xl mx-auto">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-100 via-teal-100 to-blue-200">
@@ -74,6 +102,22 @@ export default function Home() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800 fade-in">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 text-center gap-8">
+          {[
+            ["Projects", 12],
+            ["Years Coding", 4],
+            ["Languages", 3],
+          ].map(([label, count]) => (
+            <div key={label} className="space-y-2">
+              <div className="text-5xl font-bold counter" data-target={count}></div>
+              <p className="text-gray-600 dark:text-gray-300">{label}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -221,28 +265,47 @@ export default function Home() {
       <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 fade-in">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">Skills</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {/* Skill Item */}
-            <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
-              <h3 className="font-bold mb-2">Programming</h3>
-              <ul className="text-gray-600 dark:text-gray-300">
-                <li>Python</li>
-                <li>C</li>
-                <li>Java</li>
-                <li>Bash</li>
-                <li>Command-Line Interface</li>
-                <li>Assembler</li>
-                <li>Logisim</li>
-                <li>OCaml</li>
-              </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              {[
+                ["Python", 90],
+                ["C", 80],
+                ["Java", 70],
+                ["Bash", 60],
+              ].map(([skill, level]) => (
+                <div key={skill}>
+                  <div className="flex justify-between mb-1 text-sm font-medium">
+                    <span>{skill}</span>
+                    <span>{level}%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div
+                      className="bg-blue-600 h-2.5 rounded-full"
+                      style={{ width: `${level}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
-              <h3 className="font-bold mb-2">Languages</h3>
-              <ul className="text-gray-600 dark:text-gray-300">
-                <li>Spanish: Native</li>
-                <li>English: Fluent</li>
-                <li>French: Basic</li>
-              </ul>
+            <div className="space-y-4">
+              {[
+                ["Spanish", 100],
+                ["English", 90],
+                ["French", 40],
+              ].map(([lang, level]) => (
+                <div key={lang}>
+                  <div className="flex justify-between mb-1 text-sm font-medium">
+                    <span>{lang}</span>
+                    <span>{level}%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div
+                      className="bg-blue-600 h-2.5 rounded-full"
+                      style={{ width: `${level}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -254,8 +317,11 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8">Projects</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Project Card */}
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative group">
               <Image src="/globe.svg" alt="Virtual Coin Transaction Program" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+              <div className="absolute inset-0 bg-black/70 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                <p className="text-sm">Python • REST API</p>
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Virtual Coin Transaction Program</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -266,8 +332,11 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative group">
               <Image src="/file.svg" alt="Instagram Database Program" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+              <div className="absolute inset-0 bg-black/70 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                <p className="text-sm">C • Dynamic Arrays</p>
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Instagram Database Program</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -278,8 +347,11 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative group">
               <Image src="/window.svg" alt="Mini-MIPS CPU" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+              <div className="absolute inset-0 bg-black/70 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                <p className="text-sm">Logisim • MIPS</p>
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Mini-MIPS CPU</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -295,7 +367,7 @@ export default function Home() {
       </section>
 
       {/* Photos Section */}
-      <section id="photos" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 fade-in">
+      <section id="photos" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 bg-[url('/vercel.svg')] bg-cover bg-center bg-fixed fade-in">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">Photos</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
