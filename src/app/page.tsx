@@ -206,7 +206,7 @@ export default function Home() {
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow fade-in">
               <h3 className="text-xl font-bold">McGill University</h3>
               <p className="text-blue-600 dark:text-blue-400">B.Sc. Computer Science – Artificial Intelligence, Minor in Entrepreneurship</p>
-              <p className="text-gray-600 dark:text-gray-400">09/2022 – 05/2026 | Montreal, Canada</p>
+              <p className="text-gray-600 dark:text-gray-400">09/2022 – 05/2027 | Montreal, Canada</p>
             </div>
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow fade-in">
               <h3 className="text-xl font-bold">Colegio Menor San Francisco de Quito</h3>
