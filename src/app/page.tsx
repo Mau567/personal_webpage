@@ -9,6 +9,29 @@ export default function Home() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
+            
+            // Animate counters
+            if (entry.target.querySelector('.counter')) {
+              const counters = entry.target.querySelectorAll('.counter');
+              counters.forEach((counter) => {
+                const target = parseInt(counter.getAttribute('data-target') || '0');
+                const duration = 2000; // 2 seconds
+                const increment = target / (duration / 16); // 60fps
+                let current = 0;
+                
+                const updateCounter = () => {
+                  current += increment;
+                  if (current < target) {
+                    counter.textContent = Math.floor(current).toString();
+                    requestAnimationFrame(updateCounter);
+                  } else {
+                    counter.textContent = target.toString();
+                  }
+                };
+                
+                updateCounter();
+              });
+            }
           }
         });
       },
@@ -52,8 +75,16 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-700 via-teal-600 to-blue-500 text-white animate-gradient">
-        <div className="max-w-5xl mx-auto">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-700 via-teal-600 to-blue-500 text-white animate-gradient relative overflow-hidden">
+        {/* Parallax Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full blur-sm animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 bg-white/5 rounded-full blur-sm animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white/15 rounded-full blur-sm animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-1/2 right-1/3 w-8 h-8 bg-white/20 rounded-full blur-sm animate-pulse" style={{animationDelay: '0.5s'}}></div>
+        </div>
+        
+        <div className="max-w-5xl mx-auto relative z-10">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-100 via-teal-100 to-blue-200">
               Hi, I&apos;m Mauricio Javier Letort
@@ -72,6 +103,30 @@ export default function Home() {
               >
                 View Projects
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="fade-in">
+              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 counter" data-target="6">0</div>
+              <p className="text-gray-600 dark:text-gray-400">Projects Completed</p>
+            </div>
+            <div className="fade-in">
+              <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2 counter" data-target="3">0</div>
+              <p className="text-gray-600 dark:text-gray-400">Years Experience</p>
+            </div>
+            <div className="fade-in">
+              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2 counter" data-target="5">0</div>
+              <p className="text-gray-600 dark:text-gray-400">Technologies</p>
+            </div>
+            <div className="fade-in">
+              <div className="text-3xl md:text-4xl font-bold text-orange-600 mb-2 counter" data-target="3">0</div>
+              <p className="text-gray-600 dark:text-gray-400">Languages</p>
             </div>
           </div>
         </div>
@@ -221,28 +276,91 @@ export default function Home() {
       <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 fade-in">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">Skills</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {/* Skill Item */}
-            <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
-              <h3 className="font-bold mb-2">Programming</h3>
-              <ul className="text-gray-600 dark:text-gray-300">
-                <li>Python</li>
-                <li>C</li>
-                <li>Java</li>
-                <li>Bash</li>
-                <li>Command-Line Interface</li>
-                <li>Assembler</li>
-                <li>Logisim</li>
-                <li>OCaml</li>
-              </ul>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Programming Skills */}
+            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
+              <h3 className="font-bold mb-6 text-lg">Programming Languages</h3>
+              <div className="space-y-4">
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">Python</span>
+                    <span className="text-sm text-gray-500">90%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-blue-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '90%'}}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">C</span>
+                    <span className="text-sm text-gray-500">85%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-green-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '85%'}}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">Java</span>
+                    <span className="text-sm text-gray-500">75%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-orange-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '75%'}}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">JavaScript</span>
+                    <span className="text-sm text-gray-500">80%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-yellow-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '80%'}}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">HTML/CSS</span>
+                    <span className="text-sm text-gray-500">85%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-purple-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '85%'}}></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
-              <h3 className="font-bold mb-2">Languages</h3>
-              <ul className="text-gray-600 dark:text-gray-300">
-                <li>Spanish: Native</li>
-                <li>English: Fluent</li>
-                <li>French: Basic</li>
-              </ul>
+            
+            {/* Languages */}
+            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
+              <h3 className="font-bold mb-6 text-lg">Languages</h3>
+              <div className="space-y-4">
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">Spanish (Native)</span>
+                    <span className="text-sm text-gray-500">100%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-red-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '100%'}}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">English (Fluent)</span>
+                    <span className="text-sm text-gray-500">95%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-blue-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '95%'}}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">French (Basic)</span>
+                    <span className="text-sm text-gray-500">60%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-indigo-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '60%'}}></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -254,7 +372,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8">Projects</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Project Card */}
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+            <div className="group bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative">
               <Image src="/globe.svg" alt="Virtual Coin Transaction Program" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Virtual Coin Transaction Program</h3>
@@ -265,8 +383,18 @@ export default function Home() {
                   View on GitHub
                 </a>
               </div>
+              {/* Tech Stack Overlay */}
+              <div className="absolute inset-0 bg-blue-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h4 className="text-xl font-bold mb-4">Tech Stack</h4>
+                <div className="grid grid-cols-2 gap-2 text-center">
+                  <span className="bg-white/20 px-3 py-1 rounded">Python</span>
+                  <span className="bg-white/20 px-3 py-1 rounded">API</span>
+                  <span className="bg-white/20 px-3 py-1 rounded">JSON</span>
+                  <span className="bg-white/20 px-3 py-1 rounded">HTTP</span>
+                </div>
+              </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+            <div className="group bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative">
               <Image src="/file.svg" alt="Instagram Database Program" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Instagram Database Program</h3>
@@ -277,8 +405,18 @@ export default function Home() {
                   View on GitHub
                 </a>
               </div>
+              {/* Tech Stack Overlay */}
+              <div className="absolute inset-0 bg-green-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h4 className="text-xl font-bold mb-4">Tech Stack</h4>
+                <div className="grid grid-cols-2 gap-2 text-center">
+                  <span className="bg-white/20 px-3 py-1 rounded">C</span>
+                  <span className="bg-white/20 px-3 py-1 rounded">CLI</span>
+                  <span className="bg-white/20 px-3 py-1 rounded">Data Structures</span>
+                  <span className="bg-white/20 px-3 py-1 rounded">UNIX</span>
+                </div>
+              </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+            <div className="group bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative">
               <Image src="/window.svg" alt="Mini-MIPS CPU" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Mini-MIPS CPU</h3>
@@ -288,6 +426,16 @@ export default function Home() {
                 <a href="https://github.com" className="text-blue-600 hover:underline">
                   View on GitHub
                 </a>
+              </div>
+              {/* Tech Stack Overlay */}
+              <div className="absolute inset-0 bg-purple-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h4 className="text-xl font-bold mb-4">Tech Stack</h4>
+                <div className="grid grid-cols-2 gap-2 text-center">
+                  <span className="bg-white/20 px-3 py-1 rounded">Logisim</span>
+                  <span className="bg-white/20 px-3 py-1 rounded">MIPS</span>
+                  <span className="bg-white/20 px-3 py-1 rounded">CPU Design</span>
+                  <span className="bg-white/20 px-3 py-1 rounded">Assembly</span>
+                </div>
               </div>
             </div>
           </div>
