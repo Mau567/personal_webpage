@@ -108,6 +108,58 @@ export default function Home() {
           <div className="space-y-8">
             {/* Experience Item */}
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
+              <h3 className="text-xl font-bold">Hotel Innovation Intern</h3>
+              <p className="text-blue-600 dark:text-blue-400">San Jose de Puembo – Quito, Ecuador</p>
+              <p className="text-gray-600 dark:text-gray-400">05/2025 – Present</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Led two high-impact digital transformation initiatives at this landmark hotel near Quito&apos;s international airport.
+              </p>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">1. NFC Card Design & Deployment</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Conceptualized, designed, and deployed NFC-enabled guest cards providing seamless access to WiFi, digital TV guides, WhatsApp contact, and hotel services with a single tap. Optimized hardware configuration and guest interaction flow for scalability.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">2. AI Chatbot Integration</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Spearheaded AI-powered chatbot integration for hotel website and OTA platforms (Booking.com, Expedia). Built centralized knowledge base and worked with AskSuite to create 24/7 guest support, improving information accuracy and reducing response times.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-4">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  <strong>Tools:</strong> NFC Tools, Inkscape, Illustrator, AskSuite, Google Sheets, ChatGPT API, WhatsApp integration
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                  <strong>Impact:</strong> Enhanced guest experience, reduced operational workload, created scalable tech foundation
+                </p>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
+              <h3 className="text-xl font-bold">Ecuador Interactive Tourism Map</h3>
+              <p className="text-blue-600 dark:text-blue-400">Ñan – Freelance Project (BID-funded)</p>
+              <p className="text-gray-600 dark:text-gray-400">03/2025 – Present</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Government-backed digital initiative to promote Ecuador&apos;s lesser-known touristic destinations through an intuitive interactive map experience.
+              </p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Independently developed a web-based map allowing users to explore Ecuador&apos;s diverse regions through curated highlights, images, and local recommendations. The project integrates geolocation and interactive UI features to boost engagement.
+              </p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Project is funded by the Inter-American Development Bank (BID) through Ñan and will be presented to the Ecuadorian government and President as part of a national tourism revitalization strategy, giving visibility to culturally rich yet overlooked locations.
+              </p>
+              <div className="mt-4">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  <strong>Tools:</strong> JavaScript, Leaflet.js/Mapbox GL, HTML/CSS, Figma, government tourism datasets
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                  <strong>Impact:</strong> National-level digital tool for rural tourism areas, expected integration into Ecuador&apos;s official tourism platforms
+                </p>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
               <h3 className="text-xl font-bold">Junior Programmer</h3>
               <p className="text-blue-600 dark:text-blue-400">Robalino Law – Quito, Ecuador</p>
               <p className="text-gray-600 dark:text-gray-400">07/2024 – 08/2024</p>
