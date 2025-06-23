@@ -639,7 +639,7 @@ export default function Home() {
                 </button>
                 {submitStatus === 'success' && (
                   <div className="p-3 bg-green-100 text-green-700 rounded-lg">
-                    Message sent successfully! I'll get back to you soon.
+                    Message sent successfully! I&apos;ll get back to you soon.
                   </div>
                 )}
                 {submitStatus === 'error' && (
@@ -658,7 +658,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-6">
             <h3 className="text-2xl font-bold mb-2">Need to Get in Touch?</h3>
-            <p className="text-blue-100">I'm always available for opportunities and collaborations</p>
+            <p className="text-blue-100">I&apos;m always available for opportunities and collaborations</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Quick Contact Card */}
