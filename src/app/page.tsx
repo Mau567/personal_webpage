@@ -68,11 +68,11 @@ export default function Home() {
 
     try {
       // Initialize EmailJS with your public key
-      emailjs.init("YOUR_PUBLIC_KEY"); // You'll need to replace this with your actual EmailJS public key
+      emailjs.init("583A_UDAfuwiMmy1c");
       
       const result = await emailjs.send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        "service_ewblw3w",
+        "template_h9t47g6",
         {
           from_name: formData.name,
           from_email: formData.email,
