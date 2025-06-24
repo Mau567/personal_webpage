@@ -520,21 +520,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Photos Section */}
-      <section id="photos" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 fade-in">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Photos</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <div className="w-full h-40 bg-gray-200 dark:bg-gray-600 rounded-lg"></div>
-            <div className="w-full h-40 bg-gray-200 dark:bg-gray-600 rounded-lg"></div>
-            <div className="w-full h-40 bg-gray-200 dark:bg-gray-600 rounded-lg"></div>
-            <div className="w-full h-40 bg-gray-200 dark:bg-gray-600 rounded-lg"></div>
-            <div className="w-full h-40 bg-gray-200 dark:bg-gray-600 rounded-lg"></div>
-            <div className="w-full h-40 bg-gray-200 dark:bg-gray-600 rounded-lg"></div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 fade-in">
         <div className="max-w-5xl mx-auto">
