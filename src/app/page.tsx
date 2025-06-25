@@ -568,7 +568,7 @@ export default function Home() {
                   <span className="mr-3 text-xl">🌐</span>
                   <div>
                     <p className="font-medium">Nationality</p>
-                    <p className="text-gray-600 dark:text-gray-300">French</p>
+                    <p className="text-gray-600 dark:text-gray-300">French & Ecuadorian</p>
                   </div>
                 </div>
               </div>
