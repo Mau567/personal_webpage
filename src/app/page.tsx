@@ -556,13 +556,6 @@ export default function Home() {
                   <span>Chat on WhatsApp</span>
                 </button>
                 <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
-                  <span className="mr-3 text-xl">📍</span>
-                  <div>
-                    <p className="font-medium">Location</p>
-                    <p className="text-gray-600 dark:text-gray-300">1430 City Councillors St, Montreal, Canada</p>
-                  </div>
-                </div>
-                <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
                   <span className="mr-3 text-xl">🔗</span>
                   <div>
                     <p className="font-medium">LinkedIn</p>
