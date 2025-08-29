@@ -254,34 +254,34 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">Experience</h2>
           <div className="space-y-8">
-            {/* Experience Item */}
+            {/* Freelance Projects */}
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
-              <h3 className="text-xl font-bold">Hotel Innovation Intern</h3>
-              <p className="text-blue-600 dark:text-blue-400">San Jose de Puembo – Quito, Ecuador</p>
-              <p className="text-gray-600 dark:text-gray-400">05/2025 – Present</p>
+              <h3 className="text-xl font-bold">AHOTEC Hotel Assistant - AI-Powered Hotel Discovery Platform</h3>
+              <p className="text-blue-600 dark:text-blue-400">Federación Hotelera del Ecuador (AHOTEC) – Freelance Project</p>
+              <p className="text-gray-600 dark:text-gray-400">03/2025 – Present</p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Led two high-impact digital transformation initiatives at this landmark hotel near Quito&apos;s international airport.
+                Developed a complete hotel management platform that showcases advanced web development skills. The project includes a sophisticated hotel search interface powered by an AI chatbot, comprehensive hotel registration forms, and a robust backend system.
               </p>
               <div className="space-y-3">
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">1. NFC Card Design & Deployment</h4>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Full-Stack Development & AI Integration</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    Conceptualized, designed, and deployed NFC-enabled guest cards providing seamless access to WiFi, digital TV guides, WhatsApp contact, and hotel services with a single tap. Optimized hardware configuration and guest interaction flow for scalability.
+                    Built a modern web application with Next.js, React, and TypeScript featuring responsive UI with Tailwind CSS, form handling, and real-time interactions. Implemented custom chatbot with natural language processing for intelligent hotel discovery.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">2. AI Chatbot Integration</h4>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Database Design & Backend Architecture</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    Spearheaded AI-powered chatbot integration for hotel website and OTA platforms (Booking.com, Expedia). Built centralized knowledge base and worked with AskSuite to create 24/7 guest support, improving information accuracy and reducing response times.
+                    Designed structured database schema using Prisma ORM with PostgreSQL for comprehensive hotel data management. Created RESTful API endpoints, file upload handling, and robust backend infrastructure supporting multi-language interfaces.
                   </p>
                 </div>
               </div>
               <div className="mt-4">
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  <strong>Tools:</strong> NFC Tools, Inkscape, Illustrator, AskSuite, Google Sheets, ChatGPT API, WhatsApp integration
+                  <strong>Tools:</strong> Next.js, React, TypeScript, Tailwind CSS, Prisma ORM, PostgreSQL, AI Chatbot, File Management
                 </p>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                  <strong>Impact:</strong> Enhanced guest experience, reduced operational workload, created scalable tech foundation
+                  <strong>Impact:</strong> Streamlined hotel discovery for travelers, simplified property registration for hoteliers, established scalable platform for Ecuadorian tourism
                 </p>
               </div>
             </div>
@@ -304,6 +304,37 @@ export default function Home() {
                 </p>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                   <strong>Impact:</strong> National-level digital tool for rural tourism areas, expected integration into Ecuador&apos;s official tourism platforms
+                </p>
+              </div>
+            </div>
+            {/* Experience Item */}
+            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
+              <h3 className="text-xl font-bold">Hotel Innovation Intern</h3>
+              <p className="text-blue-600 dark:text-blue-400">San Jose de Puembo – Quito, Ecuador</p>
+              <p className="text-gray-600 dark:text-gray-400">05/2025 – 07/2025</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Led two high-impact digital transformation initiatives at this landmark hotel near Quito&apos;s international airport.
+              </p>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">1. NFC Card Design & Deployment</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Conceptualized, designed, and deployed NFC-enabled guest cards providing seamless access to digital TV guides, WhatsApp contact, and hotel services with a single tap. Optimized hardware configuration and guest interaction flow for scalability.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">2. AI Chatbot Integration</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Spearheaded AI-powered chatbot integration for hotel website and OTA platforms (Booking.com, Expedia). Built centralized knowledge base and worked with AskSuite to create 24/7 guest support, improving information accuracy and reducing response times.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-4">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  <strong>Tools:</strong> NFC Tools, Inkscape, Illustrator, AskSuite, Google Sheets, ChatGPT API, WhatsApp integration
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                  <strong>Impact:</strong> Enhanced guest experience, reduced operational workload, created scalable tech foundation
                 </p>
               </div>
             </div>
@@ -602,11 +633,16 @@ export default function Home() {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">AHOTEC Hotel Search Assistant</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  Collaborated with the Federación Hotelera del Ecuador (AHOTEC) to design and implement an intelligent hotel search assistant. The chatbot helps users easily find accommodations across Ecuador by region, while also allowing hotels to register their information directly into the platform.
+                  A comprehensive web application built for the Ecuadorian Hotel Federation (Federación Hotelera del Ecuador) that combines intelligent hotel search capabilities with a streamlined hotel registration system. The platform features an AI-powered chatbot that helps users find hotels based on location and preferences, while providing hotel owners with an intuitive form to register their properties with detailed amenities, services, and location information.
                 </p>
-                <a href="#" className="text-blue-600 hover:underline">
-                  View on GitHub
-                </a>
+                <div className="flex space-x-4">
+                  <a href="#" className="text-blue-600 hover:underline">
+                    View on GitHub
+                  </a>
+                  <a href="#" className="text-green-600 hover:underline">
+                    View Website
+                  </a>
+                </div>
               </div>
               {/* Tech Stack Overlay */}
               <div className="absolute inset-0 bg-teal-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -629,9 +665,14 @@ export default function Home() {
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
                   <em>Note: This is an MVP (Minimum Viable Product)</em>
                 </p>
-                <a href="#" className="text-blue-600 hover:underline">
-                  View on GitHub
-                </a>
+                <div className="flex space-x-4">
+                  <a href="#" className="text-blue-600 hover:underline">
+                    View on GitHub
+                  </a>
+                  <a href="#" className="text-green-600 hover:underline">
+                    View Website
+                  </a>
+                </div>
               </div>
               {/* Tech Stack Overlay */}
               <div className="absolute inset-0 bg-pink-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -660,6 +701,33 @@ export default function Home() {
                   <span className="bg-white/20 px-3 py-1 rounded">Web Development</span>
                   <span className="bg-white/20 px-1 py-1 rounded text-xs">Tourism Data</span>
                   <span className="bg-white/20 px-1 py-1 rounded text-xs">Storytelling</span>
+                </div>
+              </div>
+            </div>
+            <div className="group bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative">
+              <Image src="/globe.svg" alt="Personal Portfolio Website" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">Personal Portfolio Website</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  A modern, responsive personal portfolio website built with Next.js and React. Features include smooth animations, contact forms with email integration, interactive project showcases, and a professional design that highlights my skills, experience, and projects. The website demonstrates my frontend development abilities and attention to user experience.
+                </p>
+                <div className="flex space-x-4">
+                  <a href="#" className="text-blue-600 hover:underline">
+                    View on GitHub
+                  </a>
+                  <a href="#" className="text-green-600 hover:underline">
+                    View Website
+                  </a>
+                </div>
+              </div>
+              {/* Tech Stack Overlay */}
+              <div className="absolute inset-0 bg-red-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h4 className="text-xl font-bold mb-4">Tech Stack</h4>
+                <div className="grid grid-cols-2 gap-2 text-center">
+                  <span className="bg-white/20 px-3 py-1 rounded">Next.js</span>
+                  <span className="bg-white/20 px-3 py-1 rounded">React</span>
+                  <span className="bg-white/20 px-1 py-1 rounded text-xs">TypeScript</span>
+                  <span className="bg-white/20 px-1 py-1 rounded text-xs">Tailwind CSS</span>
                 </div>
               </div>
             </div>
