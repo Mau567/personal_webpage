@@ -136,7 +136,6 @@ export default function Home() {
                 ["Education", "education"],
                 ["Skills", "skills"],
                 ["Projects", "projects"],
-                ["Photos", "photos"],
                 ["Contact", "contact"],
               ].map(([label, href]) => (
                 <a
@@ -168,7 +167,7 @@ export default function Home() {
               Hi, I&apos;m Mauricio Javier Letort
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 mb-8">Junior Programmer</p>
-            <div className="flex justify-center space-x-4">
+            <div className="flex justify-center space-x-4 mb-6">
               <a
                 href="#contact"
                 className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow transition-transform hover:bg-blue-700 hover:scale-105"
@@ -182,6 +181,22 @@ export default function Home() {
                 View Projects
               </a>
             </div>
+            <div className="flex justify-center space-x-4">
+              <a
+                href="#"
+                className="bg-green-600 text-white px-6 py-3 rounded-lg shadow transition-transform hover:bg-green-700 hover:scale-105 flex items-center"
+              >
+                <span className="mr-2">📄</span>
+                Download CV
+              </a>
+              <a
+                href="#"
+                className="bg-gray-800 text-white px-6 py-3 rounded-lg shadow transition-transform hover:bg-gray-900 hover:scale-105 flex items-center"
+              >
+                <span className="mr-2">🐙</span>
+                GitHub Profile
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -191,7 +206,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="fade-in">
-              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 counter" data-target="6">0</div>
+              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 counter" data-target="5">0</div>
               <p className="text-gray-600 dark:text-gray-400">Projects Completed</p>
             </div>
             <div className="fade-in">
@@ -199,7 +214,7 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400">Years Experience</p>
             </div>
             <div className="fade-in">
-              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2 counter" data-target="5">0</div>
+              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2 counter" data-target="6">0</div>
               <p className="text-gray-600 dark:text-gray-400">Technologies</p>
             </div>
             <div className="fade-in">
@@ -296,36 +311,121 @@ export default function Home() {
               <h3 className="text-xl font-bold">Junior Programmer</h3>
               <p className="text-blue-600 dark:text-blue-400">Robalino Law – Quito, Ecuador</p>
               <p className="text-gray-600 dark:text-gray-400">07/2024 – 08/2024</p>
-              <ul className="list-disc list-inside mt-2 text-gray-600 dark:text-gray-300">
-                <li>Worked on the BIPAT (Business Intelligence Process Automated Technology) team creating solutions for the firm&apos;s clients.</li>
-                <li>Worked in some team projects simultaneously and created scripts in Python for the clients&apos; solutions.</li>
-              </ul>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Contributed to the BIPAT (Business Intelligence Process Automated Technology) team, developing innovative solutions for corporate clients while gaining hands-on experience with enterprise-level software development.
+              </p>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Python Development & Automation</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Developed custom Python scripts and automation tools to streamline client workflows and improve data processing efficiency. Collaborated with senior developers to implement best practices and code optimization techniques.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Team Collaboration & Project Management</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Successfully managed multiple concurrent projects while maintaining high code quality standards. Participated in code reviews, team meetings, and contributed to technical documentation for client deliverables.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-4">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  <strong>Tools:</strong> Python, Git, JIRA, API Testing, Business Intelligence Tools, Team Coordination
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                  <strong>Impact:</strong> Improved client solution delivery, enhanced team productivity, gained enterprise development experience
+                </p>
+              </div>
             </div>
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
-              <h3 className="text-xl font-bold">Supplier Database</h3>
+              <h3 className="text-xl font-bold">Data Mining Searcher</h3>
               <p className="text-blue-600 dark:text-blue-400">San Jose de Puembo Hotel and Conference Center, an Ascend Hotel Collection – Quito, Ecuador</p>
               <p className="text-gray-600 dark:text-gray-400">07/2023 – 08/2023</p>
-              <ul className="list-disc list-inside mt-2 text-gray-600 dark:text-gray-300">
-                <li>Contacted and researched information regarding each vendor to build a complete database for all the hotel suppliers.</li>
-                <li>Analyzed the profitability of each client.</li>
-              </ul>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Led comprehensive vendor research and database development initiative for a major hotel chain, creating a centralized supplier management system to optimize procurement processes and cost analysis.
+              </p>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Vendor Research & Database Development</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Conducted extensive research on hotel suppliers across multiple categories including food & beverage, housekeeping, maintenance, and technology services. Built a comprehensive database with detailed vendor profiles, contact information, and service offerings.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Financial Analysis & Profitability Assessment</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Analyzed vendor pricing structures, payment terms, and service quality to assess profitability and value for each supplier relationship. Created detailed reports for management decision-making on vendor selection and contract negotiations.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-4">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  <strong>Tools:</strong> Google Sheets, Excel, CRM Systems, Vendor Management Platforms, Financial Analysis Tools
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                  <strong>Impact:</strong> Streamlined procurement processes, improved vendor selection criteria, enhanced cost control and profitability analysis
+                </p>
+              </div>
             </div>
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
               <h3 className="text-xl font-bold">Design Specialist</h3>
               <p className="text-blue-600 dark:text-blue-400">Grupo Más – Quito, Ecuador</p>
               <p className="text-gray-600 dark:text-gray-400">06/2023 – 07/2023</p>
-              <ul className="list-disc list-inside mt-2 text-gray-600 dark:text-gray-300">
-                <li>Created and planned the front-end of an app design to help in parking solutions.</li>
-                <li>Used the Justinmind software for the prototyping of the app.</li>
-              </ul>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Spearheaded the design and prototyping of an innovative parking solution mobile application, focusing on user experience optimization and intuitive interface design for urban mobility challenges.
+              </p>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Mobile App Design & Prototyping</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Designed comprehensive user interface mockups and user experience flows for a parking management application. Created wireframes, user journey maps, and interactive prototypes to demonstrate app functionality and user interactions.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">UX/UI Development & User Research</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Conducted user research to understand parking pain points and developed user-centered design solutions. Utilized Justinmind prototyping software to create high-fidelity interactive prototypes for stakeholder presentations and user testing.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-4">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  <strong>Tools:</strong> Justinmind, Figma, Adobe Creative Suite, User Research Methods, Prototyping Tools
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                  <strong>Impact:</strong> Improved parking app user experience, enhanced stakeholder communication, established design foundation for development team
+                </p>
+              </div>
             </div>
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
               <h3 className="text-xl font-bold">Volunteering Co-Founder</h3>
               <p className="text-blue-600 dark:text-blue-400">English for Puembo – Quito, Ecuador</p>
               <p className="text-gray-600 dark:text-gray-400">07/2022 – 12/2022</p>
-              <ul className="list-disc list-inside mt-2 text-gray-600 dark:text-gray-300">
-                <li>Co-founded a volunteering program with Colegio Menor students to help underprivileged children learn English.</li>
-              </ul>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Co-founded and established a community-based English education initiative, bringing together students from Colegio Menor to provide free English language instruction to underprivileged children in the Puembo area.
+              </p>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Program Development & Community Outreach</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Collaborated with Colegio Menor administration and local community leaders to establish program structure, secure resources, and recruit volunteer teachers. Developed curriculum materials and assessment methods tailored to different age groups and skill levels.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Volunteer Coordination & Student Support</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Managed a team of student volunteers, providing training on teaching methodologies and classroom management. Organized weekly classes, tracked student progress, and created a supportive learning environment that encouraged regular attendance and engagement.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-4">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  <strong>Tools:</strong> Curriculum Development, Volunteer Management, Community Outreach, Educational Assessment, Program Monitoring
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                  <strong>Impact:</strong> Provided English education to 30+ underprivileged children, developed sustainable volunteer program model, strengthened community ties
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -371,37 +471,46 @@ export default function Home() {
                 <div>
                   <div className="flex justify-between mb-1">
                     <span className="text-sm font-medium">C</span>
-                    <span className="text-sm text-gray-500">85%</span>
+                    <span className="text-sm text-gray-500">70%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-green-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '85%'}}></div>
+                    <div className="bg-green-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '70%'}}></div>
                   </div>
                 </div>
                 <div>
                   <div className="flex justify-between mb-1">
                     <span className="text-sm font-medium">Java</span>
-                    <span className="text-sm text-gray-500">75%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-orange-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '75%'}}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">JavaScript</span>
                     <span className="text-sm text-gray-500">80%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-yellow-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '80%'}}></div>
+                    <div className="bg-orange-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '80%'}}></div>
                   </div>
                 </div>
                 <div>
                   <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">HTML/CSS</span>
-                    <span className="text-sm text-gray-500">85%</span>
+                    <span className="text-sm font-medium">Bash</span>
+                    <span className="text-sm text-gray-500">50%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-purple-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '85%'}}></div>
+                    <div className="bg-yellow-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '50%'}}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">OCaml</span>
+                    <span className="text-sm text-gray-500">50%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-purple-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '50%'}}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">CLI</span>
+                    <span className="text-sm text-gray-500">80%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-indigo-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '80%'}}></div>
                   </div>
                 </div>
               </div>
@@ -432,10 +541,10 @@ export default function Home() {
                 <div>
                   <div className="flex justify-between mb-1">
                     <span className="text-sm font-medium">French (Basic)</span>
-                    <span className="text-sm text-gray-500">60%</span>
+                    <span className="text-sm text-gray-500">20%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-indigo-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '60%'}}></div>
+                    <div className="bg-indigo-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '20%'}}></div>
                   </div>
                 </div>
               </div>
@@ -457,9 +566,6 @@ export default function Home() {
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Developed a program in Python that allows users to transfer coins to each other using an API to request user information.
                 </p>
-                <a href="https://github.com" className="text-blue-600 hover:underline">
-                  View on GitHub
-                </a>
               </div>
               {/* Tech Stack Overlay */}
               <div className="absolute inset-0 bg-blue-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -473,37 +579,12 @@ export default function Home() {
               </div>
             </div>
             <div className="group bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative">
-              <Image src="/file.svg" alt="Instagram Database Program" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Instagram Database Program</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  CLI application written in C to manage an Instagram database using dynamic arrays, custom structs and UNIX Epoch timestamps.
-                </p>
-                <a href="https://github.com" className="text-blue-600 hover:underline">
-                  View on GitHub
-                </a>
-              </div>
-              {/* Tech Stack Overlay */}
-              <div className="absolute inset-0 bg-green-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h4 className="text-xl font-bold mb-4">Tech Stack</h4>
-                <div className="grid grid-cols-2 gap-2 text-center">
-                  <span className="bg-white/20 px-3 py-1 rounded">C</span>
-                  <span className="bg-white/20 px-3 py-1 rounded">CLI</span>
-                  <span className="bg-white/20 px-3 py-1 rounded">Data Structures</span>
-                  <span className="bg-white/20 px-3 py-1 rounded">UNIX</span>
-                </div>
-              </div>
-            </div>
-            <div className="group bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative">
               <Image src="/window.svg" alt="Mini-MIPS CPU" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Mini-MIPS CPU</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Designed a single-cycle MIPS CPU in Logisim implementing instructions such as load, save, add, subtract and halt.
                 </p>
-                <a href="https://github.com" className="text-blue-600 hover:underline">
-                  View on GitHub
-                </a>
               </div>
               {/* Tech Stack Overlay */}
               <div className="absolute inset-0 bg-purple-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -513,6 +594,72 @@ export default function Home() {
                   <span className="bg-white/20 px-3 py-1 rounded">MIPS</span>
                   <span className="bg-white/20 px-3 py-1 rounded">CPU Design</span>
                   <span className="bg-white/20 px-3 py-1 rounded">Assembly</span>
+                </div>
+              </div>
+            </div>
+            <div className="group bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative">
+              <Image src="/globe.svg" alt="AHOTEC Hotel Search Assistant" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">AHOTEC Hotel Search Assistant</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  Collaborated with the Federación Hotelera del Ecuador (AHOTEC) to design and implement an intelligent hotel search assistant. The chatbot helps users easily find accommodations across Ecuador by region, while also allowing hotels to register their information directly into the platform.
+                </p>
+                <a href="#" className="text-blue-600 hover:underline">
+                  View on GitHub
+                </a>
+              </div>
+              {/* Tech Stack Overlay */}
+              <div className="absolute inset-0 bg-teal-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h4 className="text-xl font-bold mb-4">Tech Stack</h4>
+                <div className="grid grid-cols-2 gap-2 text-center">
+                  <span className="bg-white/20 px-3 py-1 rounded">Chatbot</span>
+                  <span className="bg-white/20 px-3 py-1 rounded">AI</span>
+                  <span className="bg-white/20 px-3 py-1 rounded">Bilingual</span>
+                  <span className="bg-white/20 px-3 py-1 rounded">Hotel API</span>
+                </div>
+              </div>
+            </div>
+            <div className="group bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative">
+              <Image src="/globe.svg" alt="Nutria Health & Nutrition App" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">Nutria Health & Nutrition App</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  In one of my McGill classes, I developed Nutria, a mobile app focused on health and nutrition. The app helps users track their meals, receive personalized recommendations, and maintain balanced diets aligned with their goals. It integrates wellness guidance with practical tools, offering a simple yet powerful way for people to improve their daily eating habits and overall lifestyle.
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                  <em>Note: This is an MVP (Minimum Viable Product)</em>
+                </p>
+                <a href="#" className="text-blue-600 hover:underline">
+                  View on GitHub
+                </a>
+              </div>
+              {/* Tech Stack Overlay */}
+              <div className="absolute inset-0 bg-pink-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h4 className="text-xl font-bold mb-4">Tech Stack</h4>
+                <div className="grid grid-cols-2 gap-2 text-center">
+                  <span className="bg-white/20 px-3 py-1 rounded">Mobile App</span>
+                  <span className="bg-white/20 px-3 py-1 rounded">Health Tech</span>
+                  <span className="bg-white/20 px-1 py-1 rounded text-xs">Nutrition API</span>
+                  <span className="bg-white/20 px-1 py-1 rounded text-xs">User Tracking</span>
+                </div>
+              </div>
+            </div>
+            <div className="group bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative">
+              <Image src="/globe.svg" alt="Ñan Interactive Map" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">Ñan Interactive Map</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  I am creating an interactive digital map for Ñan magazine that showcases Ecuador's diverse destinations and cultural highlights. The map allows users to explore key points of interest—such as hotels, attractions, and natural landmarks—in an engaging, visual format. Its goal is to make Ecuador's tourism more accessible by combining storytelling with intuitive navigation.
+                </p>
+              </div>
+              {/* Tech Stack Overlay */}
+              <div className="absolute inset-0 bg-orange-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h4 className="text-xl font-bold mb-4">Tech Stack</h4>
+                <div className="grid grid-cols-2 gap-2 text-center">
+                  <span className="bg-white/20 px-3 py-1 rounded">Interactive Maps</span>
+                  <span className="bg-white/20 px-3 py-1 rounded">Web Development</span>
+                  <span className="bg-white/20 px-1 py-1 rounded text-xs">Tourism Data</span>
+                  <span className="bg-white/20 px-1 py-1 rounded text-xs">Storytelling</span>
                 </div>
               </div>
             </div>
@@ -561,6 +708,24 @@ export default function Home() {
                     <p className="font-medium">LinkedIn</p>
                     <a href="https://linkedin.com/in/mauricio-letort-129b30258" className="text-blue-600 hover:underline">
                       linkedin.com/in/mauricio-letort-129b30258
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                  <span className="mr-3 text-xl">📄</span>
+                  <div>
+                    <p className="font-medium">CV/Resume</p>
+                    <a href="#" className="text-blue-600 hover:underline">
+                      Download PDF
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                  <span className="mr-3 text-xl">🐙</span>
+                  <div>
+                    <p className="font-medium">GitHub</p>
+                    <a href="#" className="text-blue-600 hover:underline">
+                      View Profile
                     </a>
                   </div>
                 </div>
