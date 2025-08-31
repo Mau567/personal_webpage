@@ -97,7 +97,7 @@ export default function Home() {
 
   const openWhatsApp = () => {
     const phoneNumber = "14389794330"; // Canadian format
-    const message = "Hi Mauricio! I'd like to get in touch with you.";
+    const message = "Hi Mauricio! I&apos;d like to get in touch with you.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -690,7 +690,7 @@ export default function Home() {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Ñan Interactive Map</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  I am creating an interactive digital map for Ñan magazine that showcases Ecuador's diverse destinations and cultural highlights. The map allows users to explore key points of interest—such as hotels, attractions, and natural landmarks—in an engaging, visual format. Its goal is to make Ecuador's tourism more accessible by combining storytelling with intuitive navigation.
+                  I am creating an interactive digital map for Ñan magazine that showcases Ecuador&apos;s diverse destinations and cultural highlights. The map allows users to explore key points of interest—such as hotels, attractions, and natural landmarks—in an engaging, visual format. Its goal is to make Ecuador&apos;s tourism more accessible by combining storytelling with intuitive navigation.
                 </p>
               </div>
               {/* Tech Stack Overlay */}
