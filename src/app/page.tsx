@@ -238,12 +238,16 @@ export default function Home() {
                 I&apos;ve worked with technologies like Python, web development frameworks, and design tools, and I&apos;ve contributed to projects in both corporate and volunteer settings. I&apos;m also exploring how to use AI and automation to improve user experiences in areas like hospitality, productivity, and fitness.
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                With a multicultural background and fluency in English, Spanish, and French, I bring an international mindset and adaptability to everything I do.
+                With a multicultural background and fluency in English and Spanish, plus very basic French skills, I bring an international mindset and adaptability to everything I do.
               </p>
             </div>
             <div className="relative h-64 md:h-96">
-              {/* Add your image here */}
-              <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 rounded-lg"></div>
+              <Image 
+                src="/images/linkedin_profile_photo.jpeg" 
+                alt="Mauricio Javier Letort" 
+                fill
+                className="object-cover rounded-lg"
+              />
             </div>
           </div>
         </div>
