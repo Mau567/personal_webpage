@@ -190,7 +190,10 @@ export default function Home() {
                 Download CV
               </a>
               <a
-                href="#"
+                href="https://github.com/Mau567"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => console.log('GitHub link clicked')}
                 className="bg-gray-800 text-white px-6 py-3 rounded-lg shadow transition-transform hover:bg-gray-900 hover:scale-105 flex items-center"
               >
                 <span className="mr-2">🐙</span>
@@ -594,72 +597,71 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8">Projects</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Project Card */}
-            <div className="group bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
               <Image src="/globe.svg" alt="Virtual Coin Transaction Program" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Virtual Coin Transaction Program</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Developed a program in Python that allows users to transfer coins to each other using an API to request user information.
                 </p>
-              </div>
-              {/* Tech Stack Overlay */}
-              <div className="absolute inset-0 bg-blue-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h4 className="text-xl font-bold mb-4">Tech Stack</h4>
-                <div className="grid grid-cols-2 gap-2 text-center">
-                  <span className="bg-white/20 px-3 py-1 rounded">Python</span>
-                  <span className="bg-white/20 px-3 py-1 rounded">API</span>
-                  <span className="bg-white/20 px-3 py-1 rounded">JSON</span>
-                  <span className="bg-white/20 px-3 py-1 rounded">HTTP</span>
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">Python</span>
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">API</span>
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">JSON</span>
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">HTTP</span>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="group bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
               <Image src="/window.svg" alt="Mini-MIPS CPU" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Mini-MIPS CPU</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Designed a single-cycle MIPS CPU in Logisim implementing instructions such as load, save, add, subtract and halt.
                 </p>
-              </div>
-              {/* Tech Stack Overlay */}
-              <div className="absolute inset-0 bg-purple-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h4 className="text-xl font-bold mb-4">Tech Stack</h4>
-                <div className="grid grid-cols-2 gap-2 text-center">
-                  <span className="bg-white/20 px-3 py-1 rounded">Logisim</span>
-                  <span className="bg-white/20 px-3 py-1 rounded">MIPS</span>
-                  <span className="bg-white/20 px-3 py-1 rounded">CPU Design</span>
-                  <span className="bg-white/20 px-3 py-1 rounded">Assembly</span>
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Logisim</span>
+                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">MIPS</span>
+                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">CPU Design</span>
+                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Assembly</span>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="group bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative">
+                        <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
               <Image src="/globe.svg" alt="AHOTEC Hotel Search Assistant" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">AHOTEC Hotel Search Assistant</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   A comprehensive web application built for the Ecuadorian Hotel Federation (Federación Hotelera del Ecuador) that combines intelligent hotel search capabilities with a streamlined hotel registration system. The platform features an AI-powered chatbot that helps users find hotels based on location and preferences, while providing hotel owners with an intuitive form to register their properties with detailed amenities, services, and location information.
                 </p>
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-1 rounded text-xs">Next.js</span>
+                    <span className="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-1 rounded text-xs">React</span>
+                    <span className="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-1 rounded text-xs">TypeScript</span>
+                    <span className="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-1 rounded text-xs">Prisma</span>
+                    <span className="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-1 rounded text-xs">PostgreSQL</span>
+                    <span className="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-1 rounded text-xs">Mistral AI</span>
+                  </div>
+                </div>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-blue-600 hover:underline">
+                  <a href="https://github.com/Mau567/AHOTEC_chatbot" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                     View on GitHub
                   </a>
-                  <a href="#" className="text-green-600 hover:underline">
+                  <a href="https://ahotec-chatbot.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">
                     View Website
                   </a>
                 </div>
               </div>
-              {/* Tech Stack Overlay */}
-              <div className="absolute inset-0 bg-teal-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h4 className="text-xl font-bold mb-4">Tech Stack</h4>
-                <div className="grid grid-cols-2 gap-2 text-center">
-                  <span className="bg-white/20 px-3 py-1 rounded">Chatbot</span>
-                  <span className="bg-white/20 px-3 py-1 rounded">AI</span>
-                  <span className="bg-white/20 px-3 py-1 rounded">Bilingual</span>
-                  <span className="bg-white/20 px-3 py-1 rounded">Hotel API</span>
-                </div>
-              </div>
             </div>
-            <div className="group bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative">
+                        <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
               <Image src="/globe.svg" alt="Nutria Health & Nutrition App" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Nutria Health & Nutrition App</h3>
@@ -669,69 +671,66 @@ export default function Home() {
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
                   <em>Note: This is an MVP (Minimum Viable Product)</em>
                 </p>
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 px-2 py-1 rounded text-xs">React Native</span>
+                    <span className="bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 px-2 py-1 rounded text-xs">TypeScript</span>
+                    <span className="bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 px-2 py-1 rounded text-xs">Health API</span>
+                    <span className="bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 px-2 py-1 rounded text-xs">Nutrition Data</span>
+                  </div>
+                </div>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-blue-600 hover:underline">
+                  <a href="https://github.com/Mau567/Nutria_App" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                     View on GitHub
                   </a>
-                  <a href="#" className="text-green-600 hover:underline">
+                  <a href="https://nutria-app-eta.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">
                     View Website
                   </a>
                 </div>
               </div>
-              {/* Tech Stack Overlay */}
-              <div className="absolute inset-0 bg-pink-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h4 className="text-xl font-bold mb-4">Tech Stack</h4>
-                <div className="grid grid-cols-2 gap-2 text-center">
-                  <span className="bg-white/20 px-3 py-1 rounded">Mobile App</span>
-                  <span className="bg-white/20 px-3 py-1 rounded">Health Tech</span>
-                  <span className="bg-white/20 px-1 py-1 rounded text-xs">Nutrition API</span>
-                  <span className="bg-white/20 px-1 py-1 rounded text-xs">User Tracking</span>
-                </div>
-              </div>
             </div>
-            <div className="group bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
               <Image src="/globe.svg" alt="Ñan Interactive Map" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Ñan Interactive Map</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   I am creating an interactive digital map for Ñan magazine that showcases Ecuador&apos;s diverse destinations and cultural highlights. The map allows users to explore key points of interest—such as hotels, attractions, and natural landmarks—in an engaging, visual format. Its goal is to make Ecuador&apos;s tourism more accessible by combining storytelling with intuitive navigation.
                 </p>
-              </div>
-              {/* Tech Stack Overlay */}
-              <div className="absolute inset-0 bg-orange-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h4 className="text-xl font-bold mb-4">Tech Stack</h4>
-                <div className="grid grid-cols-2 gap-2 text-center">
-                  <span className="bg-white/20 px-3 py-1 rounded">Interactive Maps</span>
-                  <span className="bg-white/20 px-3 py-1 rounded">Web Development</span>
-                  <span className="bg-white/20 px-1 py-1 rounded text-xs">Tourism Data</span>
-                  <span className="bg-white/20 px-1 py-1 rounded text-xs">Storytelling</span>
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-xs">JavaScript</span>
+                    <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-xs">Leaflet.js</span>
+                    <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-xs">HTML/CSS</span>
+                    <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-xs">Tourism Data</span>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="group bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in relative">
+                        <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
               <Image src="/globe.svg" alt="Personal Portfolio Website" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Personal Portfolio Website</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   A modern, responsive personal portfolio website built with Next.js and React. Features include smooth animations, contact forms with email integration, interactive project showcases, and a professional design that highlights my skills, experience, and projects. The website demonstrates my frontend development abilities and attention to user experience.
                 </p>
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded text-xs">Next.js</span>
+                    <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded text-xs">React</span>
+                    <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded text-xs">TypeScript</span>
+                    <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded text-xs">Tailwind CSS</span>
+                  </div>
+                </div>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-blue-600 hover:underline">
+                  <a href="https://github.com/Mau567/personal_webpage" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                     View on GitHub
                   </a>
-                  <a href="#" className="text-green-600 hover:underline">
+                  <a href="https://mauriciopersonalwebpage.vercel.app" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">
                     View Website
                   </a>
-                </div>
-              </div>
-              {/* Tech Stack Overlay */}
-              <div className="absolute inset-0 bg-red-600/90 text-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h4 className="text-xl font-bold mb-4">Tech Stack</h4>
-                <div className="grid grid-cols-2 gap-2 text-center">
-                  <span className="bg-white/20 px-3 py-1 rounded">Next.js</span>
-                  <span className="bg-white/20 px-3 py-1 rounded">React</span>
-                  <span className="bg-white/20 px-1 py-1 rounded text-xs">TypeScript</span>
-                  <span className="bg-white/20 px-1 py-1 rounded text-xs">Tailwind CSS</span>
                 </div>
               </div>
             </div>
@@ -796,7 +795,7 @@ export default function Home() {
                   <span className="mr-3 text-xl">🐙</span>
                   <div>
                     <p className="font-medium">GitHub</p>
-                    <a href="#" className="text-blue-600 hover:underline">
+                    <a href="https://github.com/Mau567" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                       View Profile
                     </a>
                   </div>
