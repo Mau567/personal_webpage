@@ -598,42 +598,6 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Project Card */}
             <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
-              <Image src="/globe.svg" alt="Virtual Coin Transaction Program" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Virtual Coin Transaction Program</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  Developed a program in Python that allows users to transfer coins to each other using an API to request user information.
-                </p>
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">Python</span>
-                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">API</span>
-                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">JSON</span>
-                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">HTTP</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
-              <Image src="/window.svg" alt="Mini-MIPS CPU" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Mini-MIPS CPU</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  Designed a single-cycle MIPS CPU in Logisim implementing instructions such as load, save, add, subtract and halt.
-                </p>
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Logisim</span>
-                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">MIPS</span>
-                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">CPU Design</span>
-                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Assembly</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-                        <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
               <Image src="/globe.svg" alt="AHOTEC Hotel Search Assistant" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">AHOTEC Hotel Search Assistant</h3>
@@ -661,7 +625,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-                        <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
               <Image src="/globe.svg" alt="Nutria Health & Nutrition App" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Nutria Health & Nutrition App</h3>
@@ -708,7 +672,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-                        <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
               <Image src="/globe.svg" alt="Personal Portfolio Website" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Personal Portfolio Website</h3>
@@ -731,6 +695,42 @@ export default function Home() {
                   <a href="https://mauriciopersonalwebpage.vercel.app" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">
                     View Website
                   </a>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+              <Image src="/globe.svg" alt="Virtual Coin Transaction Program" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">Virtual Coin Transaction Program</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  Developed a program in Python that allows users to transfer coins to each other using an API to request user information.
+                </p>
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">Python</span>
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">API</span>
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">JSON</span>
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">HTTP</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+              <Image src="/window.svg" alt="Mini-MIPS CPU" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">Mini-MIPS CPU</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  Designed a single-cycle MIPS CPU in Logisim implementing instructions such as load, save, add, subtract and halt.
+                </p>
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Logisim</span>
+                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">MIPS</span>
+                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">CPU Design</span>
+                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Assembly</span>
+                  </div>
                 </div>
               </div>
             </div>
