@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Mauricio Javier Letort | Personal Website",
   description:
     "Personal website showcasing my professional experience, skills, and projects",
+  icons: {
+    icon: "/favicon-m.svg",
+  },
 };
 
 export default function RootLayout({
