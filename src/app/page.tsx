@@ -166,7 +166,7 @@ export default function Home() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-100 via-teal-100 to-blue-200">
               Hi, I&apos;m Mauricio Javier Letort
             </h1>
-            <p className="text-xl sm:text-2xl text-white/90 mb-8">Junior Programmer</p>
+            <p className="text-xl sm:text-2xl text-white/90 mb-8">Hotel Chatbot Developer &amp; Computer Science Student</p>
             <div className="flex justify-center space-x-4 mb-6">
               <a
                 href="#contact"
@@ -210,7 +210,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="fade-in">
-              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 counter" data-target="5">0</div>
+              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 counter" data-target="8">0</div>
               <p className="text-gray-600 dark:text-gray-400">Projects Completed</p>
             </div>
             <div className="fade-in">
@@ -218,7 +218,7 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400">Years Experience</p>
             </div>
             <div className="fade-in">
-              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2 counter" data-target="6">0</div>
+              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2 counter" data-target="12">0</div>
               <p className="text-gray-600 dark:text-gray-400">Technologies</p>
             </div>
             <div className="fade-in">
@@ -236,13 +236,13 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                I&apos;m a Computer Science student at McGill University, focusing on Artificial Intelligence and software development. I enjoy working on projects that combine code, design, and real-world impact — from building legal automation tools at Robalino Law to improving hotel operations with databases and AI chatbots.
+                I&apos;m a Computer Science student at McGill University specializing in Artificial Intelligence and entrepreneurship. My passion lives at the intersection of hospitality, automation, and design—building AI-powered products that make travel experiences seamless for both guests and operators.
               </p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                I&apos;ve worked with technologies like Python, web development frameworks, and design tools, and I&apos;ve contributed to projects in both corporate and volunteer settings. I&apos;m also exploring how to use AI and automation to improve user experiences in areas like hospitality, productivity, and fitness.
+                Recently, I launched a large-scale hotel management platform for the Ecuadorian Hotel Federation, integrating chatbots, analytics, and property registration for more than 50 hotels. I also collaborate on government-backed tourism initiatives, craft mobile experiences, and prototype wellness and productivity tools.
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                With a multicultural background and fluency in English and Spanish, plus very basic French skills, I bring an international mindset and adaptability to everything I do.
+                With multicultural roots from Ecuador and France, fluency in English and Spanish, and growing French proficiency, I bring an adaptable, international perspective to every project I join.
               </p>
             </div>
             <div className="relative h-64 md:h-96">
@@ -264,32 +264,38 @@ export default function Home() {
           <div className="space-y-8">
             {/* Freelance Projects */}
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
-              <h3 className="text-xl font-bold">AHOTEC Hotel Assistant - AI-Powered Hotel Discovery Platform</h3>
-              <p className="text-blue-600 dark:text-blue-400">Federación Hotelera del Ecuador (AHOTEC) – Freelance Project</p>
-              <p className="text-gray-600 dark:text-gray-400">03/2025 – Present</p>
+              <h3 className="text-xl font-bold">Hotel Chatbot Developer – AHOTEC Hotel Assistant Platform</h3>
+              <p className="text-blue-600 dark:text-blue-400">Federación Hotelera del Ecuador (AHOTEC) – Freelance Project | Online</p>
+              <p className="text-gray-600 dark:text-gray-400">07/2025 – Present</p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Developed a complete hotel management platform that showcases advanced web development skills. The project includes a sophisticated hotel search interface powered by an AI chatbot, comprehensive hotel registration forms, and a robust backend system.
+                Leading the end-to-end development of a large-scale hotel management ecosystem supporting 50+ Ecuadorian hotels. The platform blends AI-driven guest discovery with streamlined registration workflows for property managers.
               </p>
               <div className="space-y-3">
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Full-Stack Development & AI Integration</h4>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Full-Stack Development &amp; AI Integration</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    Built a modern web application with Next.js, React, and TypeScript featuring responsive UI with Tailwind CSS, form handling, and real-time interactions. Implemented custom chatbot with natural language processing for intelligent hotel discovery.
+                    Built a modern web application with Next.js, React, and TypeScript using Tailwind CSS for responsive UI and Prisma ORM with PostgreSQL for resilient data models. Integrated AskSuite and custom chatbot flows that automate hotel discovery and guest engagement in real time.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Database Design & Backend Architecture</h4>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Database Design &amp; Backend Architecture</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    Designed structured database schema using Prisma ORM with PostgreSQL for comprehensive hotel data management. Created RESTful API endpoints, file upload handling, and robust backend infrastructure supporting multi-language interfaces.
+                    Designed structured schemas with Prisma ORM and PostgreSQL, exposing RESTful APIs and secure file management pipelines for property assets. Implemented analytics dashboards and automation that generate marketing content, onboarding collateral, and performance reports.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Operations Automation &amp; Impact</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Delivered real-time property analytics, multilingual chatbot responses, and automated onboarding that reduce manual workload for hotel teams. Positioned AHOTEC with a scalable digital platform for national tourism growth.
                   </p>
                 </div>
               </div>
               <div className="mt-4">
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  <strong>Tools:</strong> Next.js, React, TypeScript, Tailwind CSS, Prisma ORM, PostgreSQL, AI Chatbot, File Management
+                  <strong>Tools:</strong> Next.js, React, TypeScript, Tailwind CSS, Prisma ORM, PostgreSQL, AskSuite, Generative AI, File Management
                 </p>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                  <strong>Impact:</strong> Streamlined hotel discovery for travelers, simplified property registration for hoteliers, established scalable platform for Ecuadorian tourism
+                  <strong>Impact:</strong> Streamlined hotel discovery for travelers, simplified property registration for hoteliers, and established a scalable automation hub for Ecuadorian tourism
                 </p>
               </div>
             </div>
@@ -319,7 +325,7 @@ export default function Home() {
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
               <h3 className="text-xl font-bold">Hotel Innovation Intern</h3>
               <p className="text-blue-600 dark:text-blue-400">San Jose de Puembo – Quito, Ecuador</p>
-              <p className="text-gray-600 dark:text-gray-400">05/2025 – 07/2025</p>
+              <p className="text-gray-600 dark:text-gray-400">01/2025 – 05/2025</p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Led two high-impact digital transformation initiatives at this landmark hotel near Quito&apos;s international airport.
               </p>
@@ -333,7 +339,13 @@ export default function Home() {
                 <div>
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200">2. AI Chatbot Integration</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    Spearheaded AI-powered chatbot integration for hotel website and OTA platforms (Booking.com, Expedia). Built centralized knowledge base and worked with AskSuite to create 24/7 guest support, improving information accuracy and reducing response times.
+                    Spearheaded AI-powered chatbot integration for the hotel website and OTA platforms (Booking.com, Expedia). Built centralized knowledge bases, automated follow-ups, and analytics that improved response accuracy and reduced guest wait times.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">3. Data &amp; Operations Enablement</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Consolidated marketing collateral, WhatsApp automations, and guest usage analytics that now serve as a blueprint for future tech rollouts across the property.
                   </p>
                 </div>
               </div>
@@ -409,7 +421,7 @@ export default function Home() {
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
               <h3 className="text-xl font-bold">Design Specialist</h3>
               <p className="text-blue-600 dark:text-blue-400">Grupo Más – Quito, Ecuador</p>
-              <p className="text-gray-600 dark:text-gray-400">06/2023 – 07/2023</p>
+              <p className="text-gray-600 dark:text-gray-400">05/2023 – 06/2023</p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Spearheaded the design and prototyping of an innovative parking solution mobile application, focusing on user experience optimization and intuitive interface design for urban mobility challenges.
               </p>
@@ -439,7 +451,7 @@ export default function Home() {
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
               <h3 className="text-xl font-bold">Volunteering Co-Founder</h3>
               <p className="text-blue-600 dark:text-blue-400">English for Puembo – Quito, Ecuador</p>
-              <p className="text-gray-600 dark:text-gray-400">07/2022 – 12/2022</p>
+              <p className="text-gray-600 dark:text-gray-400">08/2022 – 12/2022</p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Co-founded and established a community-based English education initiative, bringing together students from Colegio Menor to provide free English language instruction to underprivileged children in the Puembo area.
               </p>
@@ -496,11 +508,11 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Programming Skills */}
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
-              <h3 className="font-bold mb-6 text-lg">Programming Languages</h3>
+              <h3 className="font-bold mb-6 text-lg">Programming &amp; Data Languages</h3>
               <div className="space-y-4">
                 <div>
                   <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Python</span>
+                    <span className="text-sm font-medium">TypeScript</span>
                     <span className="text-sm text-gray-500">90%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
@@ -509,11 +521,29 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">C</span>
-                    <span className="text-sm text-gray-500">70%</span>
+                    <span className="text-sm font-medium">JavaScript</span>
+                    <span className="text-sm text-gray-500">85%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-green-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '70%'}}></div>
+                    <div className="bg-green-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '85%'}}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">Python</span>
+                    <span className="text-sm text-gray-500">90%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-orange-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '90%'}}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">SQL</span>
+                    <span className="text-sm text-gray-500">85%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-yellow-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '85%'}}></div>
                   </div>
                 </div>
                 <div>
@@ -522,16 +552,25 @@ export default function Home() {
                     <span className="text-sm text-gray-500">80%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-orange-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '80%'}}></div>
+                    <div className="bg-purple-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '80%'}}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">C</span>
+                    <span className="text-sm text-gray-500">75%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-indigo-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '75%'}}></div>
                   </div>
                 </div>
                 <div>
                   <div className="flex justify-between mb-1">
                     <span className="text-sm font-medium">Bash</span>
-                    <span className="text-sm text-gray-500">50%</span>
+                    <span className="text-sm text-gray-500">60%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-yellow-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '50%'}}></div>
+                    <div className="bg-sky-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '60%'}}></div>
                   </div>
                 </div>
                 <div>
@@ -540,12 +579,12 @@ export default function Home() {
                     <span className="text-sm text-gray-500">50%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-purple-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '50%'}}></div>
+                    <div className="bg-amber-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '50%'}}></div>
                   </div>
                 </div>
                 <div>
                   <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">CLI</span>
+                    <span className="text-sm font-medium">Command Line Tools (CLI)</span>
                     <span className="text-sm text-gray-500">80%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
@@ -579,13 +618,38 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">French (Basic)</span>
+                    <span className="text-sm font-medium">French (Elementary Proficiency)</span>
                     <span className="text-sm text-gray-500">20%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div className="bg-indigo-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '20%'}}></div>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
+              <h3 className="font-bold mb-6 text-lg">Frameworks, Databases &amp; Design</h3>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Next.js",
+                  "React",
+                  "Tailwind CSS",
+                  "Prisma",
+                  "PostgreSQL",
+                  "SQL",
+                  "Git",
+                  "EmailJS",
+                  "Figma",
+                  "Adobe Creative Suite"
+                ].map((skill) => (
+                  <span
+                    key={skill}
+                    className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm"
+                  >
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
