@@ -183,7 +183,8 @@ export default function Home() {
             </div>
             <div className="flex justify-center space-x-4">
               <a
-                href="#"
+                href="/cv.pdf"
+                download
                 className="bg-green-600 text-white px-6 py-3 rounded-lg shadow transition-transform hover:bg-green-700 hover:scale-105 flex items-center"
               >
                 <span className="mr-2">📄</span>
@@ -768,7 +769,7 @@ export default function Home() {
                   <span className="mr-3 text-xl">📄</span>
                   <div>
                     <p className="font-medium">CV/Resume</p>
-                    <a href="#" className="text-blue-600 hover:underline">
+                    <a href="/cv.pdf" download className="text-blue-600 hover:underline">
                       Download PDF
                     </a>
                   </div>
