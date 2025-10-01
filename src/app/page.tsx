@@ -103,7 +103,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen">
+    <main id="top" className="min-h-screen">
       {/* Floating Contact Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <div className="relative group">
@@ -128,7 +128,7 @@ export default function Home() {
       <nav className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800 shadow-md transition-colors">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
-            <div className="text-xl font-bold">Mauricio Javier Letort</div>
+            <a href="#top" className="text-xl font-bold">Mauricio Javier Letort</a>
             <div className="hidden md:flex space-x-8">
               {[
                 ["About", "about"],
@@ -166,7 +166,7 @@ export default function Home() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-100 via-teal-100 to-blue-200">
               Hi, I&apos;m Mauricio Javier Letort
             </h1>
-            <p className="text-xl sm:text-2xl text-white/90 mb-8">Hotel Chatbot Developer &amp; Computer Science Student</p>
+            <p className="text-xl sm:text-2xl text-white/90 mb-8">Computer Science Student</p>
             <div className="flex justify-center space-x-4 mb-6">
               <a
                 href="#contact"
@@ -210,7 +210,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="fade-in">
-              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 counter" data-target="8">0</div>
+              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 counter" data-target="5">0</div>
               <p className="text-gray-600 dark:text-gray-400">Projects Completed</p>
             </div>
             <div className="fade-in">
@@ -236,13 +236,10 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                I&apos;m a Computer Science student at McGill University specializing in Artificial Intelligence and entrepreneurship. My passion lives at the intersection of hospitality, automation, and design—building AI-powered products that make travel experiences seamless for both guests and operators.
-              </p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Recently, I launched a large-scale hotel management platform for the Ecuadorian Hotel Federation, integrating chatbots, analytics, and property registration for more than 50 hotels. I also collaborate on government-backed tourism initiatives, craft mobile experiences, and prototype wellness and productivity tools.
+                I am a Computer Science student passionate about AI and Software Development. With experience ranging from developing innovative tools at Robalino Law to optimizing hotel operations through databases and AI chatbots at AHOTEC and San Jose de Puembo, I thrive on creating solutions that improve efficiency and enhance user experiences.
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                With multicultural roots from Ecuador and France, fluency in English and Spanish, and growing French proficiency, I bring an adaptable, international perspective to every project I join.
+                With a multicultural background, fluency in English and Spanish, and elementary proficiency in French, I bring an international perspective and adaptability to all my endeavors. I am always eager to collaborate on new challenges that leverage technology for meaningful outcomes.
               </p>
             </div>
             <div className="relative h-64 md:h-96">
@@ -301,7 +298,7 @@ export default function Home() {
             </div>
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
               <h3 className="text-xl font-bold">Ecuador Interactive Tourism Map</h3>
-              <p className="text-blue-600 dark:text-blue-400">Ñan – Freelance Project (BID-funded)</p>
+              <p className="text-blue-600 dark:text-blue-400">Ñan – Freelance Project (IDB-funded)</p>
               <p className="text-gray-600 dark:text-gray-400">03/2025 – Present</p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Government-backed digital initiative to promote Ecuador&apos;s lesser-known touristic destinations through an intuitive interactive map experience.
@@ -310,7 +307,7 @@ export default function Home() {
                 Independently developed a web-based map allowing users to explore Ecuador&apos;s diverse regions through curated highlights, images, and local recommendations. The project integrates geolocation and interactive UI features to boost engagement.
               </p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Project is funded by the Inter-American Development Bank (BID) through Ñan and will be presented to the Ecuadorian government and President as part of a national tourism revitalization strategy, giving visibility to culturally rich yet overlooked locations.
+                Project is funded by the Inter-American Development Bank (IDB) through Ñan and will be presented to the Ecuadorian government and President as part of a national tourism revitalization strategy, giving visibility to culturally rich yet overlooked locations.
               </p>
               <div className="mt-4">
                 <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -629,25 +626,42 @@ export default function Home() {
             </div>
 
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
-              <h3 className="font-bold mb-6 text-lg">Frameworks, Databases &amp; Design</h3>
+              <h3 className="font-bold mb-6 text-lg">Frameworks &amp; Design</h3>
               <div className="flex flex-wrap gap-2">
                 {[
                   "Next.js",
                   "React",
-                  "Tailwind CSS",
                   "Prisma",
-                  "PostgreSQL",
-                  "SQL",
-                  "Git",
-                  "EmailJS",
-                  "Figma",
-                  "Adobe Creative Suite"
+                  "Tailwind CSS",
+                  "PostgreSQL"
                 ].map((skill) => (
                   <span
                     key={skill}
                     className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm"
                   >
                     {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
+              <h3 className="font-bold mb-6 text-lg">Technologies &amp; Tools</h3>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "TypeScript",
+                  "Node.js",
+                  "Vercel",
+                  "Git & GitHub",
+                  "API Integration",
+                  "AI Chatbots",
+                  "EmailJS",
+                  "Cursor"
+                ].map((tool) => (
+                  <span
+                    key={tool}
+                    className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm"
+                  >
+                    {tool}
                   </span>
                 ))}
               </div>
@@ -726,14 +740,10 @@ export default function Home() {
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   I am creating an interactive digital map for Ñan magazine that showcases Ecuador&apos;s diverse destinations and cultural highlights. The map allows users to explore key points of interest—such as hotels, attractions, and natural landmarks—in an engaging, visual format. Its goal is to make Ecuador&apos;s tourism more accessible by combining storytelling with intuitive navigation.
                 </p>
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-xs">JavaScript</span>
-                    <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-xs">Leaflet.js</span>
-                    <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-xs">HTML/CSS</span>
-                    <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-xs">Tourism Data</span>
-                  </div>
+                <div className="flex space-x-4">
+                  <a href="https://www.google.com/maps/d/viewer?mid=1VYOkfvdiMfGwaKRNGpo1WSmr8Kpv11Q&ll=-1.013817206379277%2C-79.38940824999999&z=8" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">
+                    View Map
+                  </a>
                 </div>
               </div>
             </div>
@@ -824,9 +834,16 @@ export default function Home() {
                   <span className="mr-3 text-xl">🔗</span>
                   <div>
                     <p className="font-medium">LinkedIn</p>
-                    <a href="https://linkedin.com/in/mauricio-letort-129b30258" className="text-blue-600 hover:underline">
-                      linkedin.com/in/mauricio-letort-129b30258
+                    <a href="https://www.linkedin.com/in/mauricio-javier-letort-129b30258/" className="text-blue-600 hover:underline">
+                      linkedin.com/in/mauricio-javier-letort-129b30258
                     </a>
+                  </div>
+                </div>
+                <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                  <span className="mr-3 text-xl">📍</span>
+                  <div>
+                    <p className="font-medium">Location</p>
+                    <p className="text-gray-600 dark:text-gray-300">Montreal, Canada (open to remote collaboration)</p>
                   </div>
                 </div>
                 <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
@@ -921,7 +938,7 @@ export default function Home() {
             <h3 className="text-2xl font-bold mb-2">Need to Get in Touch?</h3>
             <p className="text-blue-100">I&apos;m always available for opportunities and collaborations</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {/* Quick Contact Card */}
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
               <div className="text-3xl mb-3">📧</div>
@@ -956,6 +973,13 @@ export default function Home() {
               >
                 (438) 979 4330
               </a>
+            </div>
+            
+            {/* Location Card */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+              <div className="text-3xl mb-3">📍</div>
+              <h4 className="font-semibold mb-2">Location</h4>
+              <p className="text-blue-100">Montreal, Canada (open to remote collaboration)</p>
             </div>
           </div>
           
