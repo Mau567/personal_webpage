@@ -183,12 +183,13 @@ export default function Home() {
             </div>
             <div className="flex justify-center space-x-4">
               <a
-                href="/cv.pdf"
-                download
+                href="https://flowcv.com/resume/fd36ulsq7t"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-green-600 text-white px-6 py-3 rounded-lg shadow transition-transform hover:bg-green-700 hover:scale-105 flex items-center"
               >
                 <span className="mr-2">📄</span>
-                Download CV
+                View CV
               </a>
               <a
                 href="https://github.com/Mau567"
@@ -218,7 +219,7 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400">Years Experience</p>
             </div>
             <div className="fade-in">
-              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2 counter" data-target="12">0</div>
+              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2 counter" data-target="18">0</div>
               <p className="text-gray-600 dark:text-gray-400">Technologies</p>
             </div>
             <div className="fade-in">
@@ -298,20 +299,20 @@ export default function Home() {
             </div>
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
               <h3 className="text-xl font-bold">Ecuador Interactive Tourism Map</h3>
-              <p className="text-blue-600 dark:text-blue-400">Ñan – Freelance Project (IDB-funded)</p>
+              <p className="text-blue-600 dark:text-blue-400">Ñan Magazine – Freelance Project (IDB-funded)</p>
               <p className="text-gray-600 dark:text-gray-400">03/2025 – Present</p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Government-backed digital initiative to promote Ecuador&apos;s lesser-known touristic destinations through an intuitive interactive map experience.
               </p>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  The project involved extensive research to identify and catalog Ecuador&apos;s diverse regions, curating highlights, images, and local recommendations. Each location was carefully researched to provide accurate and engaging information for potential visitors.
+                </p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Independently developed a web-based map allowing users to explore Ecuador&apos;s diverse regions through curated highlights, images, and local recommendations. The project integrates geolocation and interactive UI features to boost engagement.
-              </p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Project is funded by the Inter-American Development Bank (IDB) through Ñan and will be presented to the Ecuadorian government and President as part of a national tourism revitalization strategy, giving visibility to culturally rich yet overlooked locations.
+                Project is funded by the Inter-American Development Bank (IDB) through Ñan Magazine and will be presented to the Ecuadorian government and President as part of a national tourism revitalization strategy, giving visibility to culturally rich yet overlooked locations.
               </p>
               <div className="mt-4">
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  <strong>Tools:</strong> JavaScript, Leaflet.js/Mapbox GL, HTML/CSS, Figma, government tourism datasets
+                  <strong>Tools:</strong> Google My Maps, Research & Data Collection, Government Tourism Datasets
                 </p>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                   <strong>Impact:</strong> National-level digital tool for rural tourism areas, expected integration into Ecuador&apos;s official tourism platforms
@@ -322,7 +323,7 @@ export default function Home() {
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
               <h3 className="text-xl font-bold">Hotel Innovation Intern</h3>
               <p className="text-blue-600 dark:text-blue-400">San Jose de Puembo – Quito, Ecuador</p>
-              <p className="text-gray-600 dark:text-gray-400">01/2025 – 05/2025</p>
+              <p className="text-gray-600 dark:text-gray-400">05/2025 – 08/2025</p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Led two high-impact digital transformation initiatives at this landmark hotel near Quito&apos;s international airport.
               </p>
@@ -386,7 +387,7 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
-              <h3 className="text-xl font-bold">Data Mining Searcher</h3>
+              <h3 className="text-xl font-bold">Supplier Database Specialist</h3>
               <p className="text-blue-600 dark:text-blue-400">San Jose de Puembo Hotel and Conference Center, an Ascend Hotel Collection – Quito, Ecuador</p>
               <p className="text-gray-600 dark:text-gray-400">07/2023 – 08/2023</p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -418,7 +419,7 @@ export default function Home() {
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
               <h3 className="text-xl font-bold">Design Specialist</h3>
               <p className="text-blue-600 dark:text-blue-400">Grupo Más – Quito, Ecuador</p>
-              <p className="text-gray-600 dark:text-gray-400">05/2023 – 06/2023</p>
+              <p className="text-gray-600 dark:text-gray-400">06/2023 – 07/2023</p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Spearheaded the design and prototyping of an innovative parking solution mobile application, focusing on user experience optimization and intuitive interface design for urban mobility challenges.
               </p>
@@ -487,7 +488,7 @@ export default function Home() {
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow fade-in">
               <h3 className="text-xl font-bold">McGill University</h3>
               <p className="text-blue-600 dark:text-blue-400">B.Sc. Computer Science – Artificial Intelligence, Minor in Entrepreneurship</p>
-              <p className="text-gray-600 dark:text-gray-400">09/2022 – 05/2027 | Montreal, Canada</p>
+              <p className="text-gray-600 dark:text-gray-400">09/2022 – 12/2026 | Montreal, Canada</p>
             </div>
             <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow fade-in">
               <h3 className="text-xl font-bold">Colegio Menor San Francisco de Quito</h3>
@@ -738,7 +739,7 @@ export default function Home() {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Ñan Interactive Map</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  I am creating an interactive digital map for Ñan magazine that showcases Ecuador&apos;s diverse destinations and cultural highlights. The map allows users to explore key points of interest—such as hotels, attractions, and natural landmarks—in an engaging, visual format. Its goal is to make Ecuador&apos;s tourism more accessible by combining storytelling with intuitive navigation.
+                  Created an interactive digital map for Ñan Magazine showcasing Ecuador&apos;s diverse destinations and cultural highlights using Google My Maps. Through extensive research, I gathered comprehensive information about key points of interest including hotels, attractions, and natural landmarks. The map provides an engaging, visual format to make Ecuador&apos;s tourism more accessible and highlight lesser-known destinations.
                 </p>
                 <div className="flex space-x-4">
                   <a href="https://www.google.com/maps/d/viewer?mid=1VYOkfvdiMfGwaKRNGpo1WSmr8Kpv11Q&ll=-1.013817206379277%2C-79.38940824999999&z=8" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">
@@ -850,8 +851,8 @@ export default function Home() {
                   <span className="mr-3 text-xl">📄</span>
                   <div>
                     <p className="font-medium">CV/Resume</p>
-                    <a href="/cv.pdf" download className="text-blue-600 hover:underline">
-                      Download PDF
+                    <a href="https://flowcv.com/resume/fd36ulsq7t" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                      View CV
                     </a>
                   </div>
                 </div>
