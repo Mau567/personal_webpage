@@ -176,7 +176,7 @@ export default function Home() {
               </a>
               <a
                 href="#projects"
-                className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg shadow transition-transform hover:bg-blue-50 hover:scale-105"
+                className="border-2 border-white text-white px-6 py-3 rounded-lg shadow transition-transform hover:bg-white/10 hover:scale-105"
               >
                 View Projects
               </a>
@@ -223,7 +223,7 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400">Technologies</p>
             </div>
             <div className="fade-in">
-              <div className="text-3xl md:text-4xl font-bold text-orange-600 mb-2 counter" data-target="3">0</div>
+              <div className="text-3xl md:text-4xl font-bold text-orange-600 mb-2 counter" data-target="9">0</div>
               <p className="text-gray-600 dark:text-gray-400">Languages</p>
             </div>
           </div>
@@ -574,10 +574,10 @@ export default function Home() {
                 <div>
                   <div className="flex justify-between mb-1">
                     <span className="text-sm font-medium">OCaml</span>
-                    <span className="text-sm text-gray-500">50%</span>
+                    <span className="text-sm text-gray-500">70%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-amber-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '50%'}}></div>
+                    <div className="bg-amber-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '70%'}}></div>
                   </div>
                 </div>
                 <div>
