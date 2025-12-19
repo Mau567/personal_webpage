@@ -211,7 +211,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="fade-in">
-              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 counter" data-target="5">0</div>
+              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 counter" data-target="6">0</div>
               <p className="text-gray-600 dark:text-gray-400">Projects Completed</p>
             </div>
             <div className="fade-in">
@@ -789,6 +789,35 @@ export default function Home() {
                     <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">CPU Design</span>
                     <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Assembly</span>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
+              <Image src="/globe.svg" alt="KaraokeJam - AI-Powered Karaoke" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">KaraokeJam - AI-Powered Karaoke</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  Engineered a full-stack karaoke application with real-time pitch detection, achieving less than 100 ms WebSocket latency. Integrated Demucs, Whisper, and Librosa YIN for vocal separation, lyric alignment, and melody analysis. Architected an asynchronous audio pipeline using FastAPI and React, leveraging the Web Audio API for microphone capture with base64 float32 streaming and a semitone-based scoring algorithm. Implemented an end-to-end audio system capable of handling MP3/WAV conversion, utilizing Supabase PostgreSQL with Row Level Security (RLS), and object storage. The system manages background tasks to process songs from upload to a playable karaoke experience in under 3 minutes.
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                  <em>Group project of 2 people for CodeJam coding competition, completed in 1 weekend for this hacking competition.</em>
+                </p>
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">FastAPI</span>
+                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">React</span>
+                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">Web Audio API</span>
+                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">Whisper</span>
+                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">Demucs</span>
+                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">Librosa</span>
+                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">Supabase</span>
+                  </div>
+                </div>
+                <div className="flex space-x-4">
+                  <a href="https://github.com/AlanBrotherton/KaraokeJam" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    View on GitHub
+                  </a>
                 </div>
               </div>
             </div>
