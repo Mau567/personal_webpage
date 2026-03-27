@@ -97,7 +97,7 @@ export default function Home() {
 
   const openWhatsApp = () => {
     const phoneNumber = "14389794330"; // Canadian format
-    const message = "Hi Mauricio! I&apos;d like to get in touch with you.";
+    const message = "Hi Mauricio! I'd like to get in touch with you.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
