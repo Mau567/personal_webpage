@@ -18,16 +18,15 @@ export default function Home() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-            
-            // Animate counters
+
             if (entry.target.querySelector('.counter')) {
               const counters = entry.target.querySelectorAll('.counter');
               counters.forEach((counter) => {
                 const target = parseInt(counter.getAttribute('data-target') || '0');
-                const duration = 2000; // 2 seconds
-                const increment = target / (duration / 16); // 60fps
+                const duration = 2000;
+                const increment = target / (duration / 16);
                 let current = 0;
-                
+
                 const updateCounter = () => {
                   current += increment;
                   if (current < target) {
@@ -37,7 +36,7 @@ export default function Home() {
                     counter.textContent = target.toString();
                   }
                 };
-                
+
                 updateCounter();
               });
             }
@@ -67,9 +66,8 @@ export default function Home() {
     setSubmitStatus('idle');
 
     try {
-      // Initialize EmailJS with your public key
       emailjs.init("583A_UDAfuwiMmy1c");
-      
+
       const result = await emailjs.send(
         "service_ewblw3w",
         "template_h9t47g6",
@@ -96,7 +94,7 @@ export default function Home() {
   };
 
   const openWhatsApp = () => {
-    const phoneNumber = "14389794330"; // Canadian format
+    const phoneNumber = "14389794330";
     const message = "Hi Mauricio! I'd like to get in touch with you.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -107,7 +105,6 @@ export default function Home() {
       {/* Floating Contact Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <div className="relative group">
-          {/* Main Floating Button */}
           <button
             onClick={openWhatsApp}
             className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
@@ -115,8 +112,6 @@ export default function Home() {
           >
             <span className="text-2xl">💬</span>
           </button>
-          
-          {/* Tooltip */}
           <div className="absolute bottom-full right-0 mb-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
             Chat on WhatsApp
             <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
@@ -126,9 +121,14 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800 shadow-md transition-colors">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
-            <a href="#top" className="text-xl font-bold">Mauricio Javier Letort</a>
+            <a href="#top" className="flex items-center gap-2">
+              <span className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white text-xs font-bold shrink-0">
+                MJL
+              </span>
+              <span className="text-xl font-bold">Mauricio Javier Letort</span>
+            </a>
             <div className="hidden md:flex space-x-8">
               {[
                 ["About", "about"],
@@ -141,7 +141,7 @@ export default function Home() {
                 <a
                   key={href}
                   href={`#${href}`}
-                  className="relative px-2 py-1 after:absolute after:left-0 after:bottom-0 after:h-0.5 after:bg-blue-600 after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100"
+                  className="relative px-2 py-1 after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:bg-indigo-500 after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100"
                 >
                   {label}
                 </a>
@@ -152,88 +152,139 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-700 via-teal-600 to-blue-500 text-white animate-gradient relative overflow-hidden">
-        {/* Parallax Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full blur-sm animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 bg-white/5 rounded-full blur-sm animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white/15 rounded-full blur-sm animate-pulse" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-1/2 right-1/3 w-8 h-8 bg-white/20 rounded-full blur-sm animate-pulse" style={{animationDelay: '0.5s'}}></div>
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white relative overflow-hidden">
+        {/* Decorative background orbs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-16 left-8 w-72 h-72 bg-indigo-600/20 rounded-full blur-3xl animate-float" />
+          <div className="absolute top-1/3 right-12 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-float-slow" />
+          <div className="absolute bottom-10 left-1/3 w-56 h-56 bg-violet-600/15 rounded-full blur-2xl animate-float-fast" />
         </div>
-        
-        <div className="max-w-5xl mx-auto relative z-10">
-          <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-100 via-teal-100 to-blue-200">
-              Hi, I&apos;m Mauricio Javier Letort
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="flex flex-col items-center text-center gap-6">
+
+            {/* Profile photo with gradient ring */}
+            <div className="relative">
+              <div className="w-32 h-32 rounded-full p-[3px] bg-gradient-to-br from-indigo-500 to-cyan-400">
+                <div className="w-full h-full rounded-full overflow-hidden">
+                  <Image
+                    src="/images/linkedin_profile_photo.jpeg"
+                    alt="Mauricio Javier Letort"
+                    width={128}
+                    height={128}
+                    className="object-cover w-full h-full"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Role badge */}
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-indigo-500/20 text-cyan-300 border border-indigo-500/30 tracking-wide">
+              Computer Science Student · McGill University
+            </span>
+
+            {/* Main heading */}
+            <h1 className="text-5xl sm:text-7xl font-black leading-tight text-white">
+              Hi, I&apos;m Mauricio<br className="hidden sm:block" />
+              <span className="gradient-text"> Javier Letort</span>
             </h1>
-            <p className="text-xl sm:text-2xl text-white/90 mb-8">Computer Science Student</p>
-            <div className="flex justify-center space-x-4 mb-6">
+
+            {/* Sub-tagline */}
+            <p className="text-lg sm:text-xl text-slate-300 max-w-xl">
+              Building AI-powered products · Full-stack developer · Problem solver
+            </p>
+
+            {/* CTA row 1 */}
+            <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="#contact"
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow transition-transform hover:bg-blue-700 hover:scale-105"
+                className="bg-indigo-600 hover:bg-indigo-500 text-white px-7 py-3 rounded-xl font-semibold shadow-lg shadow-indigo-500/30 transition-all duration-300 hover:scale-105"
               >
                 Contact Me
               </a>
               <a
                 href="#projects"
-                className="border-2 border-white text-white px-6 py-3 rounded-lg shadow transition-transform hover:bg-white/10 hover:scale-105"
+                className="border-2 border-white/30 hover:border-white/60 text-white px-7 py-3 rounded-xl font-semibold backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/10"
               >
                 View Projects
               </a>
             </div>
-            <div className="flex justify-center space-x-4">
+
+            {/* CTA row 2 */}
+            <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://flowcv.com/resume/fd36ulsq7t"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-600 text-white px-6 py-3 rounded-lg shadow transition-transform hover:bg-green-700 hover:scale-105 flex items-center"
+                className="bg-emerald-600 hover:bg-emerald-500 text-white px-7 py-3 rounded-xl font-semibold shadow-lg transition-all duration-300 hover:scale-105 flex items-center gap-2"
               >
-                <span className="mr-2">📄</span>
-                View CV
+                <span>📄</span> View CV
               </a>
               <a
                 href="https://github.com/Mau567"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => console.log('GitHub link clicked')}
-                className="bg-gray-800 text-white px-6 py-3 rounded-lg shadow transition-transform hover:bg-gray-900 hover:scale-105 flex items-center"
+                className="bg-slate-800 hover:bg-slate-700 text-white px-7 py-3 rounded-xl font-semibold shadow-lg transition-all duration-300 hover:scale-105 flex items-center gap-2 border border-slate-600"
               >
-                <span className="mr-2">🐙</span>
-                GitHub Profile
+                <span>🐙</span> GitHub Profile
               </a>
             </div>
+
+            {/* Social links row */}
+            <div className="flex gap-5 pt-2">
+              <a href="https://www.linkedin.com/in/mauricio-javier-letort-129b30258/" target="_blank" rel="noopener noreferrer"
+                className="text-slate-400 hover:text-cyan-300 transition-colors text-sm font-medium">
+                LinkedIn
+              </a>
+              <span className="text-slate-600">·</span>
+              <a href="https://github.com/Mau567" target="_blank" rel="noopener noreferrer"
+                className="text-slate-400 hover:text-cyan-300 transition-colors text-sm font-medium">
+                GitHub
+              </a>
+              <span className="text-slate-600">·</span>
+              <a href="mailto:mjletort@gmail.com"
+                className="text-slate-400 hover:text-cyan-300 transition-colors text-sm font-medium">
+                Email
+              </a>
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* Statistics Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="fade-in">
-              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 counter" data-target="6">0</div>
-              <p className="text-gray-600 dark:text-gray-400">Projects Completed</p>
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="fade-in bg-gradient-to-br from-indigo-500 to-violet-600 text-white rounded-2xl p-6 shadow-lg">
+              <div className="text-3xl md:text-4xl font-black mb-2 counter" data-target="6">0</div>
+              <p className="text-indigo-100 text-sm font-medium">Projects Completed</p>
             </div>
-            <div className="fade-in">
-              <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2 counter" data-target="3">0</div>
-              <p className="text-gray-600 dark:text-gray-400">Years Experience</p>
+            <div className="fade-in bg-gradient-to-br from-indigo-500 to-violet-600 text-white rounded-2xl p-6 shadow-lg">
+              <div className="text-3xl md:text-4xl font-black mb-2 counter" data-target="3">0</div>
+              <p className="text-indigo-100 text-sm font-medium">Years Experience</p>
             </div>
-            <div className="fade-in">
-              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2 counter" data-target="18">0</div>
-              <p className="text-gray-600 dark:text-gray-400">Technologies</p>
+            <div className="fade-in bg-gradient-to-br from-indigo-500 to-violet-600 text-white rounded-2xl p-6 shadow-lg">
+              <div className="text-3xl md:text-4xl font-black mb-2 counter" data-target="18">0</div>
+              <p className="text-indigo-100 text-sm font-medium">Technologies</p>
             </div>
-            <div className="fade-in">
-              <div className="text-3xl md:text-4xl font-bold text-orange-600 mb-2 counter" data-target="9">0</div>
-              <p className="text-gray-600 dark:text-gray-400">Languages</p>
+            <div className="fade-in bg-gradient-to-br from-indigo-500 to-violet-600 text-white rounded-2xl p-6 shadow-lg">
+              <div className="text-3xl md:text-4xl font-black mb-2 counter" data-target="9">0</div>
+              <p className="text-indigo-100 text-sm font-medium">Languages</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 fade-in">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">About Me</h2>
+      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 fade-in">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-extrabold mb-10 text-slate-900 dark:text-white">
+            About Me
+            <span className="section-accent-bar" />
+          </h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -243,12 +294,12 @@ export default function Home() {
                 With a multicultural background, fluency in English and Spanish, and elementary proficiency in French, I bring an international perspective and adaptability to all my endeavors. I am always eager to collaborate on new challenges that leverage technology for meaningful outcomes.
               </p>
             </div>
-            <div className="relative h-64 md:h-96">
-              <Image 
-                src="/images/linkedin_profile_photo.jpeg" 
-                alt="Mauricio Javier Letort" 
+            <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden ring-4 ring-indigo-100 dark:ring-indigo-900">
+              <Image
+                src="/images/linkedin_profile_photo.jpeg"
+                alt="Mauricio Javier Letort"
                 fill
-                className="object-cover rounded-lg"
+                className="object-cover rounded-2xl"
               />
             </div>
           </div>
@@ -256,33 +307,35 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-16 px-4 sm:px-6 lg:px-8 fade-in">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Experience</h2>
+      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900 fade-in">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-extrabold mb-10 text-slate-900 dark:text-white">
+            Experience
+            <span className="section-accent-bar" />
+          </h2>
           <div className="space-y-8">
-            {/* Freelance Projects */}
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border-l-4 border-indigo-500 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-in">
               <h3 className="text-xl font-bold">Hotel Chatbot Developer – AHOTEC Hotel Assistant Platform</h3>
-              <p className="text-blue-600 dark:text-blue-400">Federación Hotelera del Ecuador (AHOTEC) – Freelance Project | Online</p>
-              <p className="text-gray-600 dark:text-gray-400">07/2025 – Present</p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-indigo-600 dark:text-indigo-400">Federación Hotelera del Ecuador (AHOTEC) – Freelance Project | Online</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">07/2025 – Present</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 mt-2">
                 Leading the end-to-end development of a large-scale hotel management ecosystem supporting 50+ Ecuadorian hotels. The platform blends AI-driven guest discovery with streamlined registration workflows for property managers.
               </p>
               <div className="space-y-3">
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Full-Stack Development &amp; AI Integration</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-1">Full-Stack Development &amp; AI Integration</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
                     Built a modern web application with Next.js, React, and TypeScript using Tailwind CSS for responsive UI and Prisma ORM with PostgreSQL for resilient data models. Integrated AskSuite and custom chatbot flows that automate hotel discovery and guest engagement in real time.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Database Design &amp; Backend Architecture</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-1">Database Design &amp; Backend Architecture</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
                     Designed structured schemas with Prisma ORM and PostgreSQL, exposing RESTful APIs and secure file management pipelines for property assets. Implemented analytics dashboards and automation that generate marketing content, onboarding collateral, and performance reports.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Operations Automation &amp; Impact</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-1">Operations Automation &amp; Impact</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
                     Delivered real-time property analytics, multilingual chatbot responses, and automated onboarding that reduce manual workload for hotel teams. Positioned AHOTEC with a scalable digital platform for national tourism growth.
                   </p>
@@ -297,16 +350,17 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
+
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border-l-4 border-indigo-500 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-in">
               <h3 className="text-xl font-bold">Ecuador Interactive Tourism Map</h3>
-              <p className="text-blue-600 dark:text-blue-400">Ñan Magazine – Freelance Project (IDB-funded)</p>
-              <p className="text-gray-600 dark:text-gray-400">03/2025 – Present</p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-indigo-600 dark:text-indigo-400">Ñan Magazine – Freelance Project (IDB-funded)</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">03/2025 – Present</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 mt-2">
                 Government-backed digital initiative to promote Ecuador&apos;s lesser-known touristic destinations through an intuitive interactive map experience.
               </p>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  The project involved extensive research to identify and catalog Ecuador&apos;s diverse regions, curating highlights, images, and local recommendations. Each location was carefully researched to provide accurate and engaging information for potential visitors.
-                </p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                The project involved extensive research to identify and catalog Ecuador&apos;s diverse regions, curating highlights, images, and local recommendations. Each location was carefully researched to provide accurate and engaging information for potential visitors.
+              </p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Project is funded by the Inter-American Development Bank (IDB) through Ñan Magazine and will be presented to the Ecuadorian government and President as part of a national tourism revitalization strategy, giving visibility to culturally rich yet overlooked locations.
               </p>
@@ -319,29 +373,29 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            {/* Experience Item */}
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
+
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border-l-4 border-indigo-500 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-in">
               <h3 className="text-xl font-bold">Hotel Innovation Intern</h3>
-              <p className="text-blue-600 dark:text-blue-400">San Jose de Puembo – Quito, Ecuador</p>
-              <p className="text-gray-600 dark:text-gray-400">05/2025 – 08/2025</p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-indigo-600 dark:text-indigo-400">San Jose de Puembo – Quito, Ecuador</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">05/2025 – 08/2025</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 mt-2">
                 Led two high-impact digital transformation initiatives at this landmark hotel near Quito&apos;s international airport.
               </p>
               <div className="space-y-3">
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">1. NFC Card Design & Deployment</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-1">1. NFC Card Design & Deployment</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
                     Conceptualized, designed, and deployed NFC-enabled guest cards providing seamless access to digital TV guides, WhatsApp contact, and hotel services with a single tap. Optimized hardware configuration and guest interaction flow for scalability.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">2. AI Chatbot Integration</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-1">2. AI Chatbot Integration</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
                     Spearheaded AI-powered chatbot integration for the hotel website and OTA platforms (Booking.com, Expedia). Built centralized knowledge bases, automated follow-ups, and analytics that improved response accuracy and reduced guest wait times.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">3. Data &amp; Operations Enablement</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-1">3. Data &amp; Operations Enablement</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
                     Consolidated marketing collateral, WhatsApp automations, and guest usage analytics that now serve as a blueprint for future tech rollouts across the property.
                   </p>
@@ -356,22 +410,23 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
+
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border-l-4 border-indigo-500 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-in">
               <h3 className="text-xl font-bold">Junior Programmer</h3>
-              <p className="text-blue-600 dark:text-blue-400">Robalino Law – Quito, Ecuador</p>
-              <p className="text-gray-600 dark:text-gray-400">07/2024 – 08/2024</p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-indigo-600 dark:text-indigo-400">Robalino Law – Quito, Ecuador</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">07/2024 – 08/2024</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 mt-2">
                 Contributed to the BIPAT (Business Intelligence Process Automated Technology) team, developing innovative solutions for corporate clients while gaining hands-on experience with enterprise-level software development.
               </p>
               <div className="space-y-3">
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Python Development & Automation</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-1">Python Development & Automation</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
                     Developed custom Python scripts and automation tools to streamline client workflows and improve data processing efficiency. Collaborated with senior developers to implement best practices and code optimization techniques.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Team Collaboration & Project Management</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-1">Team Collaboration & Project Management</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
                     Successfully managed multiple concurrent projects while maintaining high code quality standards. Participated in code reviews, team meetings, and contributed to technical documentation for client deliverables.
                   </p>
@@ -386,22 +441,23 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
+
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border-l-4 border-indigo-500 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-in">
               <h3 className="text-xl font-bold">Supplier Database Specialist</h3>
-              <p className="text-blue-600 dark:text-blue-400">San Jose de Puembo Hotel and Conference Center, an Ascend Hotel Collection – Quito, Ecuador</p>
-              <p className="text-gray-600 dark:text-gray-400">07/2023 – 08/2023</p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-indigo-600 dark:text-indigo-400">San Jose de Puembo Hotel and Conference Center, an Ascend Hotel Collection – Quito, Ecuador</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">07/2023 – 08/2023</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 mt-2">
                 Led comprehensive vendor research and database development initiative for a major hotel chain, creating a centralized supplier management system to optimize procurement processes and cost analysis.
               </p>
               <div className="space-y-3">
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Vendor Research & Database Development</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-1">Vendor Research & Database Development</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
                     Conducted extensive research on hotel suppliers across multiple categories including food & beverage, housekeeping, maintenance, and technology services. Built a comprehensive database with detailed vendor profiles, contact information, and service offerings.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Financial Analysis & Profitability Assessment</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-1">Financial Analysis & Profitability Assessment</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
                     Analyzed vendor pricing structures, payment terms, and service quality to assess profitability and value for each supplier relationship. Created detailed reports for management decision-making on vendor selection and contract negotiations.
                   </p>
@@ -416,22 +472,23 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
+
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border-l-4 border-indigo-500 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-in">
               <h3 className="text-xl font-bold">Design Specialist</h3>
-              <p className="text-blue-600 dark:text-blue-400">Grupo Más – Quito, Ecuador</p>
-              <p className="text-gray-600 dark:text-gray-400">06/2023 – 07/2023</p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-indigo-600 dark:text-indigo-400">Grupo Más – Quito, Ecuador</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">06/2023 – 07/2023</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 mt-2">
                 Spearheaded the design and prototyping of an innovative parking solution mobile application, focusing on user experience optimization and intuitive interface design for urban mobility challenges.
               </p>
               <div className="space-y-3">
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Mobile App Design & Prototyping</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-1">Mobile App Design & Prototyping</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
                     Designed comprehensive user interface mockups and user experience flows for a parking management application. Created wireframes, user journey maps, and interactive prototypes to demonstrate app functionality and user interactions.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">UX/UI Development & User Research</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-1">UX/UI Development & User Research</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
                     Conducted user research to understand parking pain points and developed user-centered design solutions. Utilized Justinmind prototyping software to create high-fidelity interactive prototypes for stakeholder presentations and user testing.
                   </p>
@@ -446,22 +503,23 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition fade-in">
+
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border-l-4 border-indigo-500 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-in">
               <h3 className="text-xl font-bold">Volunteering Co-Founder</h3>
-              <p className="text-blue-600 dark:text-blue-400">English for Puembo – Quito, Ecuador</p>
-              <p className="text-gray-600 dark:text-gray-400">08/2022 – 12/2022</p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-indigo-600 dark:text-indigo-400">English for Puembo – Quito, Ecuador</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">08/2022 – 12/2022</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 mt-2">
                 Co-founded and established a community-based English education initiative, bringing together students from Colegio Menor to provide free English language instruction to underprivileged children in the Puembo area.
               </p>
               <div className="space-y-3">
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Program Development & Community Outreach</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-1">Program Development & Community Outreach</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
                     Collaborated with Colegio Menor administration and local community leaders to establish program structure, secure resources, and recruit volunteer teachers. Developed curriculum materials and assessment methods tailored to different age groups and skill levels.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200">Volunteer Coordination & Student Support</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-1">Volunteer Coordination & Student Support</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
                     Managed a team of student volunteers, providing training on teaching methodologies and classroom management. Organized weekly classes, tracked student progress, and created a supportive learning environment that encouraged regular attendance and engagement.
                   </p>
@@ -481,186 +539,122 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 fade-in">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Education</h2>
+      <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 fade-in">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-extrabold mb-10 text-slate-900 dark:text-white">
+            Education
+            <span className="section-accent-bar" />
+          </h2>
           <div className="space-y-8">
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow fade-in">
-              <h3 className="text-xl font-bold">McGill University</h3>
-              <p className="text-blue-600 dark:text-blue-400">B.Sc. Computer Science – Artificial Intelligence, Minor in Entrepreneurship</p>
-              <p className="text-gray-600 dark:text-gray-400">09/2022 – 12/2026 | Montreal, Canada</p>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border-l-4 border-red-500 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-in">
+              <div className="flex items-start gap-4">
+                <span className="text-3xl mt-1">🎓</span>
+                <div>
+                  <h3 className="text-xl font-bold">McGill University</h3>
+                  <p className="text-indigo-600 dark:text-indigo-400">B.Sc. Computer Science – Artificial Intelligence, Minor in Entrepreneurship</p>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">09/2022 – 12/2026 | Montreal, Canada</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow fade-in">
-              <h3 className="text-xl font-bold">Colegio Menor San Francisco de Quito</h3>
-              <p className="text-blue-600 dark:text-blue-400">Magna Cum Laude – 93.34 GPA</p>
-              <p className="text-gray-600 dark:text-gray-400">06/2022 | Quito, Ecuador</p>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border-l-4 border-yellow-500 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-in">
+              <div className="flex items-start gap-4">
+                <span className="text-3xl mt-1">🏫</span>
+                <div>
+                  <h3 className="text-xl font-bold">Colegio Menor San Francisco de Quito</h3>
+                  <p className="text-indigo-600 dark:text-indigo-400">Magna Cum Laude – 93.34 GPA</p>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">06/2022 | Quito, Ecuador</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 fade-in">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Skills</h2>
+      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900 fade-in">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-extrabold mb-10 text-slate-900 dark:text-white">
+            Skills
+            <span className="section-accent-bar" />
+          </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Programming Skills */}
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm">
               <h3 className="font-bold mb-6 text-lg">Programming &amp; Data Languages</h3>
               <div className="space-y-4">
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">TypeScript</span>
-                    <span className="text-sm text-gray-500">90%</span>
+                {[
+                  { name: "TypeScript", pct: 90 },
+                  { name: "JavaScript", pct: 85 },
+                  { name: "Python", pct: 90 },
+                  { name: "SQL", pct: 85 },
+                  { name: "Java", pct: 80 },
+                  { name: "C", pct: 75 },
+                  { name: "Bash", pct: 60 },
+                  { name: "OCaml", pct: 70 },
+                  { name: "Command Line Tools (CLI)", pct: 80 },
+                ].map(({ name, pct }) => (
+                  <div key={name}>
+                    <div className="flex justify-between mb-1">
+                      <span className="text-sm font-medium">{name}</span>
+                      <span className="text-sm text-gray-500">{pct}%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                      <div
+                        className="bg-gradient-to-r from-indigo-500 to-cyan-400 h-2 rounded-full transition-all duration-1000 ease-out"
+                        style={{ width: `${pct}%` }}
+                      />
+                    </div>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-blue-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '90%'}}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">JavaScript</span>
-                    <span className="text-sm text-gray-500">85%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-green-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '85%'}}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Python</span>
-                    <span className="text-sm text-gray-500">90%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-orange-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '90%'}}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">SQL</span>
-                    <span className="text-sm text-gray-500">85%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-yellow-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '85%'}}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Java</span>
-                    <span className="text-sm text-gray-500">80%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-purple-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '80%'}}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">C</span>
-                    <span className="text-sm text-gray-500">75%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-indigo-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '75%'}}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Bash</span>
-                    <span className="text-sm text-gray-500">60%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-sky-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '60%'}}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">OCaml</span>
-                    <span className="text-sm text-gray-500">70%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-amber-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '70%'}}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Command Line Tools (CLI)</span>
-                    <span className="text-sm text-gray-500">80%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-indigo-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '80%'}}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Languages */}
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
-              <h3 className="font-bold mb-6 text-lg">Languages</h3>
-              <div className="space-y-4">
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Spanish (Native)</span>
-                    <span className="text-sm text-gray-500">100%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-red-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '100%'}}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">English (Fluent)</span>
-                    <span className="text-sm text-gray-500">95%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-blue-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '95%'}}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">French (Elementary Proficiency)</span>
-                    <span className="text-sm text-gray-500">20%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-indigo-600 h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '20%'}}></div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
+            {/* Languages */}
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm">
+              <h3 className="font-bold mb-6 text-lg">Languages</h3>
+              <div className="space-y-4">
+                {[
+                  { name: "Spanish (Native)", pct: 100 },
+                  { name: "English (Fluent)", pct: 95 },
+                  { name: "French (Elementary Proficiency)", pct: 20 },
+                ].map(({ name, pct }) => (
+                  <div key={name}>
+                    <div className="flex justify-between mb-1">
+                      <span className="text-sm font-medium">{name}</span>
+                      <span className="text-sm text-gray-500">{pct}%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                      <div
+                        className="bg-gradient-to-r from-indigo-500 to-cyan-400 h-2 rounded-full transition-all duration-1000 ease-out"
+                        style={{ width: `${pct}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm">
               <h3 className="font-bold mb-6 text-lg">Frameworks &amp; Design</h3>
               <div className="flex flex-wrap gap-2">
-                {[
-                  "Next.js",
-                  "React",
-                  "Prisma",
-                  "Tailwind CSS",
-                  "PostgreSQL"
-                ].map((skill) => (
+                {["Next.js", "React", "Prisma", "Tailwind CSS", "PostgreSQL"].map((skill) => (
                   <span
                     key={skill}
-                    className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm"
+                    className="bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-700 px-3 py-1 rounded-full text-sm"
                   >
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
+
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm">
               <h3 className="font-bold mb-6 text-lg">Technologies &amp; Tools</h3>
               <div className="flex flex-wrap gap-2">
-                {[
-                  "TypeScript",
-                  "Node.js",
-                  "Vercel",
-                  "Git & GitHub",
-                  "API Integration",
-                  "AI Chatbots",
-                  "EmailJS",
-                  "Cursor"
-                ].map((tool) => (
+                {["TypeScript", "Node.js", "Vercel", "Git & GitHub", "API Integration", "AI Chatbots", "EmailJS", "Cursor"].map((tool) => (
                   <span
                     key={tool}
-                    className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm"
+                    className="bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-700 px-3 py-1 rounded-full text-sm"
                   >
                     {tool}
                   </span>
@@ -672,13 +666,17 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 px-4 sm:px-6 lg:px-8 fade-in">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Projects</h2>
+      <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 fade-in">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-extrabold mb-10 text-slate-900 dark:text-white">
+            Projects
+            <span className="section-accent-bar" />
+          </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Project Card */}
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
-              <Image src="/globe.svg" alt="AHOTEC Hotel Search Assistant" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-in">
+              <div className="h-32 bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center">
+                <span className="text-5xl">🏨</span>
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">AHOTEC Hotel Search Assistant</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -687,26 +685,26 @@ export default function Home() {
                 <div className="mb-4">
                   <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
-                    <span className="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-1 rounded text-xs">Next.js</span>
-                    <span className="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-1 rounded text-xs">React</span>
-                    <span className="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-1 rounded text-xs">TypeScript</span>
-                    <span className="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-1 rounded text-xs">Prisma</span>
-                    <span className="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-1 rounded text-xs">PostgreSQL</span>
-                    <span className="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-1 rounded text-xs">Mistral AI</span>
+                    {["Next.js", "React", "TypeScript", "Prisma", "PostgreSQL", "Mistral AI"].map((t) => (
+                      <span key={t} className="bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-700 px-2 py-1 rounded text-xs">{t}</span>
+                    ))}
                   </div>
                 </div>
                 <div className="flex space-x-4">
-                  <a href="https://github.com/Mau567/AHOTEC_chatbot" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  <a href="https://github.com/Mau567/AHOTEC_chatbot" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200 text-sm font-medium">
                     View on GitHub
                   </a>
-                  <a href="https://ahotec-chatbot.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">
+                  <a href="https://ahotec-chatbot.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:text-cyan-800 dark:text-cyan-400 dark:hover:text-cyan-200 text-sm font-medium">
                     View Website
                   </a>
                 </div>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
-              <Image src="/globe.svg" alt="Nutria Health & Nutrition App" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-in">
+              <div className="h-32 bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center">
+                <span className="text-5xl">🥗</span>
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Nutria Health & Nutrition App</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -718,38 +716,43 @@ export default function Home() {
                 <div className="mb-4">
                   <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
-                    <span className="bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 px-2 py-1 rounded text-xs">React Native</span>
-                    <span className="bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 px-2 py-1 rounded text-xs">TypeScript</span>
-                    <span className="bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 px-2 py-1 rounded text-xs">Health API</span>
-                    <span className="bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 px-2 py-1 rounded text-xs">Nutrition Data</span>
+                    {["React Native", "TypeScript", "Health API", "Nutrition Data"].map((t) => (
+                      <span key={t} className="bg-pink-100 dark:bg-pink-900/40 text-pink-700 dark:text-pink-300 border border-pink-200 dark:border-pink-700 px-2 py-1 rounded text-xs">{t}</span>
+                    ))}
                   </div>
                 </div>
                 <div className="flex space-x-4">
-                  <a href="https://github.com/Mau567/Nutria_App" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  <a href="https://github.com/Mau567/Nutria_App" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200 text-sm font-medium">
                     View on GitHub
                   </a>
-                  <a href="https://nutria-app-eta.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">
+                  <a href="https://nutria-app-eta.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:text-cyan-800 dark:text-cyan-400 dark:hover:text-cyan-200 text-sm font-medium">
                     View Website
                   </a>
                 </div>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
-              <Image src="/globe.svg" alt="Ñan Interactive Map" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-in">
+              <div className="h-32 bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center">
+                <span className="text-5xl">🗺️</span>
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Ñan Interactive Map</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Created an interactive digital map for Ñan Magazine showcasing Ecuador&apos;s diverse destinations and cultural highlights using Google My Maps. Through extensive research, I gathered comprehensive information about key points of interest including hotels, attractions, and natural landmarks. The map provides an engaging, visual format to make Ecuador&apos;s tourism more accessible and highlight lesser-known destinations.
                 </p>
                 <div className="flex space-x-4">
-                  <a href="https://www.google.com/maps/d/viewer?mid=1VYOkfvdiMfGwaKRNGpo1WSmr8Kpv11Q&ll=-1.013817206379277%2C-79.38940824999999&z=8" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">
+                  <a href="https://www.google.com/maps/d/viewer?mid=1VYOkfvdiMfGwaKRNGpo1WSmr8Kpv11Q&ll=-1.013817206379277%2C-79.38940824999999&z=8" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:text-cyan-800 dark:text-cyan-400 dark:hover:text-cyan-200 text-sm font-medium">
                     View Map
                   </a>
                 </div>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
-              <Image src="/globe.svg" alt="Personal Portfolio Website" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-in">
+              <div className="h-32 bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center">
+                <span className="text-5xl">💻</span>
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Personal Portfolio Website</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -758,24 +761,26 @@ export default function Home() {
                 <div className="mb-4">
                   <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
-                    <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded text-xs">Next.js</span>
-                    <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded text-xs">React</span>
-                    <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded text-xs">TypeScript</span>
-                    <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded text-xs">Tailwind CSS</span>
+                    {["Next.js", "React", "TypeScript", "Tailwind CSS"].map((t) => (
+                      <span key={t} className="bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-700 px-2 py-1 rounded text-xs">{t}</span>
+                    ))}
                   </div>
                 </div>
                 <div className="flex space-x-4">
-                  <a href="https://github.com/Mau567/personal_webpage" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  <a href="https://github.com/Mau567/personal_webpage" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200 text-sm font-medium">
                     View on GitHub
                   </a>
-                  <a href="https://mauriciopersonalwebpage.vercel.app" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">
+                  <a href="https://mauriciopersonalwebpage.vercel.app" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:text-cyan-800 dark:text-cyan-400 dark:hover:text-cyan-200 text-sm font-medium">
                     View Website
                   </a>
                 </div>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
-              <Image src="/window.svg" alt="Mini-MIPS CPU" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-in">
+              <div className="h-32 bg-gradient-to-br from-violet-600 to-purple-700 flex items-center justify-center">
+                <span className="text-5xl">⚡</span>
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Mini-MIPS CPU</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -784,16 +789,18 @@ export default function Home() {
                 <div className="mb-4">
                   <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
-                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Logisim</span>
-                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">MIPS</span>
-                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">CPU Design</span>
-                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Assembly</span>
+                    {["Logisim", "MIPS", "CPU Design", "Assembly"].map((t) => (
+                      <span key={t} className="bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-700 px-2 py-1 rounded text-xs">{t}</span>
+                    ))}
                   </div>
                 </div>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden fade-in">
-              <Image src="/globe.svg" alt="KaraokeJam - AI-Powered Karaoke" width={400} height={192} className="w-full h-48 object-contain bg-gray-100" />
+
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300 fade-in">
+              <div className="h-32 bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center">
+                <span className="text-5xl">🎤</span>
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">KaraokeJam - AI-Powered Karaoke</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -805,17 +812,13 @@ export default function Home() {
                 <div className="mb-4">
                   <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
-                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">FastAPI</span>
-                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">React</span>
-                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">Web Audio API</span>
-                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">Whisper</span>
-                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">Demucs</span>
-                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">Librosa</span>
-                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">Supabase</span>
+                    {["FastAPI", "React", "Web Audio API", "Whisper", "Demucs", "Librosa", "Supabase"].map((t) => (
+                      <span key={t} className="bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-700 px-2 py-1 rounded text-xs">{t}</span>
+                    ))}
                   </div>
                 </div>
                 <div className="flex space-x-4">
-                  <a href="https://github.com/AlanBrotherton/KaraokeJam" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  <a href="https://github.com/AlanBrotherton/KaraokeJam" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200 text-sm font-medium">
                     View on GitHub
                   </a>
                 </div>
@@ -826,75 +829,78 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 fade-in">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Contact Me</h2>
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900 fade-in">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-extrabold mb-10 text-slate-900 dark:text-white">
+            Contact Me
+            <span className="section-accent-bar" />
+          </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
                 I&apos;m always open to new opportunities and collaborations. Feel free to reach out!
               </p>
               <div className="space-y-4">
-                <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                <div className="flex items-center p-3 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
                   <span className="mr-3 text-xl">📧</span>
                   <div>
                     <p className="font-medium">Email</p>
-                    <a href="mailto:mjletort@gmail.com" className="text-blue-600 hover:underline">
+                    <a href="mailto:mjletort@gmail.com" className="text-indigo-600 dark:text-indigo-400 hover:underline">
                       mjletort@gmail.com
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                <div className="flex items-center p-3 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
                   <span className="mr-3 text-xl">📱</span>
                   <div>
                     <p className="font-medium">Phone</p>
-                    <a href="tel:+14389794330" className="text-blue-600 hover:underline">
+                    <a href="tel:+14389794330" className="text-indigo-600 dark:text-indigo-400 hover:underline">
                       (438) 979 4330
                     </a>
                   </div>
                 </div>
                 <button
                   onClick={openWhatsApp}
-                  className="w-full flex items-center justify-center p-3 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow-sm transition-colors"
+                  className="w-full flex items-center justify-center p-3 bg-green-500 hover:bg-green-600 text-white rounded-xl shadow-sm transition-colors"
                 >
                   <span className="mr-2 text-xl">💬</span>
                   <span>Chat on WhatsApp</span>
                 </button>
-                <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                <div className="flex items-center p-3 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
                   <span className="mr-3 text-xl">🔗</span>
                   <div>
                     <p className="font-medium">LinkedIn</p>
-                    <a href="https://www.linkedin.com/in/mauricio-javier-letort-129b30258/" className="text-blue-600 hover:underline">
+                    <a href="https://www.linkedin.com/in/mauricio-javier-letort-129b30258/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
                       linkedin.com/in/mauricio-javier-letort-129b30258
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                <div className="flex items-center p-3 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
                   <span className="mr-3 text-xl">📍</span>
                   <div>
                     <p className="font-medium">Location</p>
                     <p className="text-gray-600 dark:text-gray-300">Montreal, Canada (open to remote collaboration)</p>
                   </div>
                 </div>
-                <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                <div className="flex items-center p-3 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
                   <span className="mr-3 text-xl">📄</span>
                   <div>
                     <p className="font-medium">CV/Resume</p>
-                    <a href="https://flowcv.com/resume/fd36ulsq7t" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    <a href="https://flowcv.com/resume/fd36ulsq7t" target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-400 hover:underline">
                       View CV
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                <div className="flex items-center p-3 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
                   <span className="mr-3 text-xl">🐙</span>
                   <div>
                     <p className="font-medium">GitHub</p>
-                    <a href="https://github.com/Mau567" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    <a href="https://github.com/Mau567" target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-400 hover:underline">
                       View Profile
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+                <div className="flex items-center p-3 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
                   <span className="mr-3 text-xl">🌐</span>
                   <div>
                     <p className="font-medium">Nationality</p>
@@ -903,55 +909,55 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm">
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium mb-1">Name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                    className="w-full px-3 py-2 border rounded-xl dark:bg-gray-900 dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Email</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                    className="w-full px-3 py-2 border rounded-xl dark:bg-gray-900 dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Message</label>
-                  <textarea 
+                  <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
                     required
                     rows={4}
-                    className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  ></textarea>
+                    className="w-full px-3 py-2 border rounded-xl dark:bg-gray-900 dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  />
                 </div>
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-indigo-600 text-white px-6 py-3 rounded-xl hover:bg-indigo-500 transition font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
                 {submitStatus === 'success' && (
-                  <div className="p-3 bg-green-100 text-green-700 rounded-lg">
+                  <div className="p-3 bg-green-100 text-green-700 rounded-xl">
                     Message sent successfully! I&apos;ll get back to you soon.
                   </div>
                 )}
                 {submitStatus === 'error' && (
-                  <div className="p-3 bg-red-100 text-red-700 rounded-lg">
+                  <div className="p-3 bg-red-100 text-red-700 rounded-xl">
                     Failed to send message. Please try again or contact me directly.
                   </div>
                 )}
@@ -961,70 +967,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Persistent Contact Section - Always Available */}
-      <section className="py-8 px-4 sm:px-6 lg:px-8 bg-blue-600 text-white">
-        <div className="max-w-5xl mx-auto">
+      {/* Persistent Contact Section */}
+      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-indigo-700 via-indigo-600 to-indigo-700 text-white">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-6">
             <h3 className="text-2xl font-bold mb-2">Need to Get in Touch?</h3>
-            <p className="text-blue-100">I&apos;m always available for opportunities and collaborations</p>
+            <p className="text-indigo-200">I&apos;m always available for opportunities and collaborations</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {/* Quick Contact Card */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
               <div className="text-3xl mb-3">📧</div>
               <h4 className="font-semibold mb-2">Email</h4>
-              <a 
-                href="mailto:mjletort@gmail.com" 
-                className="text-blue-100 hover:text-white transition-colors"
-              >
+              <a href="mailto:mjletort@gmail.com" className="text-indigo-200 hover:text-white transition-colors">
                 mjletort@gmail.com
               </a>
             </div>
-            
-            {/* WhatsApp Card */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
               <div className="text-3xl mb-3">💬</div>
               <h4 className="font-semibold mb-2">WhatsApp</h4>
-              <button 
-                onClick={openWhatsApp}
-                className="text-blue-100 hover:text-white transition-colors"
-              >
+              <button onClick={openWhatsApp} className="text-indigo-200 hover:text-white transition-colors">
                 (438) 979 4330
               </button>
             </div>
-            
-            {/* Phone Card */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
               <div className="text-3xl mb-3">📱</div>
               <h4 className="font-semibold mb-2">Phone</h4>
-              <a 
-                href="tel:+14389794330" 
-                className="text-blue-100 hover:text-white transition-colors"
-              >
+              <a href="tel:+14389794330" className="text-indigo-200 hover:text-white transition-colors">
                 (438) 979 4330
               </a>
             </div>
-            
-            {/* Location Card */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
               <div className="text-3xl mb-3">📍</div>
               <h4 className="font-semibold mb-2">Location</h4>
-              <p className="text-blue-100">Montreal, Canada (open to remote collaboration)</p>
+              <p className="text-indigo-200">Montreal, Canada (open to remote collaboration)</p>
             </div>
           </div>
-          
-          {/* Quick Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <button
               onClick={openWhatsApp}
-              className="flex items-center justify-center px-6 py-3 bg-green-500 hover:bg-green-600 rounded-lg transition-colors"
+              className="flex items-center justify-center px-6 py-3 bg-green-500 hover:bg-green-600 rounded-xl transition-colors font-semibold"
             >
               <span className="mr-2">💬</span>
               Start WhatsApp Chat
             </button>
             <a
               href="#contact"
-              className="flex items-center justify-center px-6 py-3 bg-white text-blue-600 hover:bg-gray-100 rounded-lg transition-colors"
+              className="flex items-center justify-center px-6 py-3 bg-white text-indigo-700 hover:bg-indigo-50 rounded-xl transition-colors font-semibold"
             >
               <span className="mr-2">✉️</span>
               Send Detailed Message
@@ -1035,7 +1023,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-200 dark:border-gray-800">
-        <div className="max-w-5xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center">
           <p className="text-gray-600 dark:text-gray-400">
             © {new Date().getFullYear()} Mauricio Javier Letort. All rights reserved.
           </p>
