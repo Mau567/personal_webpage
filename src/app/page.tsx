@@ -129,7 +129,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-6 bg-black relative overflow-hidden">
         {/* Very subtle background gradient */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#1a1a2e_0%,_#000_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#1a1a1a_0%,_#000_60%)]" />
 
         <div className="max-w-4xl mx-auto relative z-10 text-center pt-14">
           {/* Profile photo */}
@@ -147,7 +147,7 @@ export default function Home() {
           </div>
 
           {/* Eyebrow */}
-          <p className="text-sm font-medium text-[#2997ff] mb-4 tracking-wide">
+          <p className="text-sm font-medium text-white/40 mb-4 tracking-wide">
             Computer Science · McGill University · Montréal
           </p>
 
@@ -166,7 +166,7 @@ export default function Home() {
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             <a
               href="#contact"
-              className="px-6 py-3 bg-[#0071e3] hover:bg-[#0077ed] text-white text-sm font-medium rounded-full transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+              className="px-6 py-3 bg-white text-[#1d1d1f] hover:bg-white/90 text-sm font-medium rounded-full transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
             >
               Get in touch
             </a>
@@ -366,7 +366,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-[#1d1d1f] dark:text-white">McGill University</h3>
-                  <p className="text-[#0071e3] dark:text-[#2997ff] text-sm mt-0.5">B.Sc. Computer Science – Artificial Intelligence &amp; Entrepreneurship</p>
+                  <p className="text-[#6e6e73] dark:text-[#a1a1a6] text-sm mt-0.5">B.Sc. Computer Science – Artificial Intelligence &amp; Entrepreneurship</p>
                   <p className="text-[#6e6e73] dark:text-[#a1a1a6] text-sm mt-1">09/2022 – 12/2026 · Montréal, Canada</p>
                 </div>
               </div>
@@ -378,7 +378,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-[#1d1d1f] dark:text-white">Colegio Menor San Francisco de Quito</h3>
-                  <p className="text-[#0071e3] dark:text-[#2997ff] text-sm mt-0.5">Magna Cum Laude – 93.34 GPA</p>
+                  <p className="text-[#6e6e73] dark:text-[#a1a1a6] text-sm mt-0.5">Magna Cum Laude – 93.34 GPA</p>
                   <p className="text-[#6e6e73] dark:text-[#a1a1a6] text-sm mt-1">06/2022 · Quito, Ecuador</p>
                 </div>
               </div>
@@ -415,7 +415,7 @@ export default function Home() {
                     </div>
                     <div className="w-full bg-black/[0.06] dark:bg-white/[0.08] rounded-full h-1.5">
                       <div
-                        className="h-1.5 rounded-full bg-[#0071e3] dark:bg-[#2997ff] transition-all duration-1000 ease-out"
+                        className="h-1.5 rounded-full bg-[#1d1d1f] dark:bg-[#f5f5f7] transition-all duration-1000 ease-out"
                         style={{ width: `${pct}%` }}
                       />
                     </div>
@@ -440,7 +440,7 @@ export default function Home() {
                       </div>
                       <div className="w-full bg-black/[0.06] dark:bg-white/[0.08] rounded-full h-1.5">
                         <div
-                          className="h-1.5 rounded-full bg-[#0071e3] dark:bg-[#2997ff] transition-all duration-1000 ease-out"
+                          className="h-1.5 rounded-full bg-[#1d1d1f] dark:bg-[#f5f5f7] transition-all duration-1000 ease-out"
                           style={{ width: `${pct}%` }}
                         />
                       </div>
@@ -484,12 +484,12 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-5">
 
             <ProjectCard
-              gradient="from-teal-400 to-cyan-500"
+              gradient="from-amber-500 to-amber-700"
               emoji="🏨"
               title="AHOTEC Hotel Search Assistant"
               description="A comprehensive web application built for the Ecuadorian Hotel Federation combining intelligent hotel search with an AI-powered chatbot that helps users find hotels based on location and preferences."
               tags={["Next.js", "React", "TypeScript", "Prisma", "PostgreSQL", "Mistral AI"]}
-              tagColor="teal"
+              tagColor="amber"
               links={[
                 { label: "GitHub", href: "https://github.com/Mau567/AHOTEC_chatbot" },
                 { label: "Live site", href: "https://ahotec-chatbot.vercel.app/" },
@@ -523,12 +523,12 @@ export default function Home() {
             />
 
             <ProjectCard
-              gradient="from-indigo-400 to-violet-500"
+              gradient="from-zinc-600 to-zinc-800"
               emoji="💻"
               title="Personal Portfolio Website"
               description="This website — a modern, responsive portfolio built with Next.js and React, featuring smooth animations, contact form integration, and interactive project showcases."
               tags={["Next.js", "React", "TypeScript", "Tailwind CSS"]}
-              tagColor="indigo"
+              tagColor="zinc"
               links={[
                 { label: "GitHub", href: "https://github.com/Mau567/personal_webpage" },
                 { label: "Live site", href: "https://mauriciopersonalwebpage.vercel.app" },
@@ -536,23 +536,23 @@ export default function Home() {
             />
 
             <ProjectCard
-              gradient="from-violet-500 to-purple-600"
+              gradient="from-stone-500 to-stone-700"
               emoji="⚡"
               title="Mini-MIPS CPU"
               description="Designed a single-cycle MIPS CPU in Logisim implementing instructions such as load, save, add, subtract and halt — a hardware architecture project from scratch."
               tags={["Logisim", "MIPS", "CPU Design", "Assembly"]}
-              tagColor="violet"
+              tagColor="stone"
               links={[]}
             />
 
             <ProjectCard
-              gradient="from-purple-500 to-indigo-600"
+              gradient="from-orange-500 to-amber-600"
               emoji="🎤"
               title="KaraokeJam"
               description="Full-stack karaoke app with real-time pitch detection under 100ms WebSocket latency. Integrates Demucs, Whisper, and Librosa for vocal separation and lyric alignment. Won at CodeJam hackathon, built in one weekend."
               note="CodeJam winner"
               tags={["FastAPI", "React", "Web Audio API", "Whisper", "Demucs", "Supabase"]}
-              tagColor="purple"
+              tagColor="orange"
               links={[
                 { label: "GitHub", href: "https://github.com/AlanBrotherton/KaraokeJam" },
               ]}
@@ -586,7 +586,7 @@ export default function Home() {
                     <p className="text-xs text-[#6e6e73] dark:text-[#a1a1a6] mb-0.5">{label}</p>
                     {href ? (
                       <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer"
-                        className="text-sm text-[#0071e3] dark:text-[#2997ff] hover:underline truncate block">{value}</a>
+                        className="text-sm text-[#1d1d1f] dark:text-[#f5f5f7] hover:underline truncate block">{value}</a>
                     ) : (
                       <p className="text-sm text-[#1d1d1f] dark:text-[#f5f5f7] truncate">{value}</p>
                     )}
@@ -612,7 +612,7 @@ export default function Home() {
                     onChange={handleInputChange}
                     required
                     placeholder="Your name"
-                    className="w-full px-4 py-3 bg-[#f5f5f7] dark:bg-black/40 rounded-xl text-sm text-[#1d1d1f] dark:text-white placeholder:text-[#6e6e73] border border-transparent focus:border-[#0071e3] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-[#f5f5f7] dark:bg-black/40 rounded-xl text-sm text-[#1d1d1f] dark:text-white placeholder:text-[#6e6e73] border border-transparent focus:border-[#1d1d1f] dark:focus:border-white focus:outline-none transition-colors"
                   />
                 </div>
                 <div>
@@ -624,7 +624,7 @@ export default function Home() {
                     onChange={handleInputChange}
                     required
                     placeholder="your@email.com"
-                    className="w-full px-4 py-3 bg-[#f5f5f7] dark:bg-black/40 rounded-xl text-sm text-[#1d1d1f] dark:text-white placeholder:text-[#6e6e73] border border-transparent focus:border-[#0071e3] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-[#f5f5f7] dark:bg-black/40 rounded-xl text-sm text-[#1d1d1f] dark:text-white placeholder:text-[#6e6e73] border border-transparent focus:border-[#1d1d1f] dark:focus:border-white focus:outline-none transition-colors"
                   />
                 </div>
                 <div>
@@ -636,13 +636,13 @@ export default function Home() {
                     required
                     rows={5}
                     placeholder="What's on your mind?"
-                    className="w-full px-4 py-3 bg-[#f5f5f7] dark:bg-black/40 rounded-xl text-sm text-[#1d1d1f] dark:text-white placeholder:text-[#6e6e73] border border-transparent focus:border-[#0071e3] focus:outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-[#f5f5f7] dark:bg-black/40 rounded-xl text-sm text-[#1d1d1f] dark:text-white placeholder:text-[#6e6e73] border border-transparent focus:border-[#1d1d1f] dark:focus:border-white focus:outline-none transition-colors resize-none"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-sm font-medium rounded-xl transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="w-full py-3.5 bg-[#1d1d1f] dark:bg-white hover:opacity-90 text-white dark:text-[#1d1d1f] text-sm font-medium rounded-xl transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Sending…' : 'Send message'}
                 </button>
@@ -720,7 +720,7 @@ function ExperienceCard({
       >
         <div className="min-w-0">
           <h3 className="font-semibold text-[#1d1d1f] dark:text-white leading-snug">{title}</h3>
-          <p className="text-sm text-[#0071e3] dark:text-[#2997ff] mt-0.5">{company}</p>
+          <p className="text-sm text-[#6e6e73] dark:text-[#a1a1a6] mt-0.5">{company}</p>
           <p className="text-xs text-[#6e6e73] dark:text-[#a1a1a6] mt-0.5">{date}</p>
         </div>
         <span className={`text-[#6e6e73] text-lg shrink-0 mt-0.5 transition-transform duration-200 ${open ? 'rotate-45' : ''}`}>+</span>
@@ -750,12 +750,12 @@ function ExperienceCard({
 }
 
 const tagColors: Record<string, string> = {
-  teal:    "bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300",
+  amber:   "bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-400",
   pink:    "bg-pink-50 dark:bg-pink-900/20 text-pink-700 dark:text-pink-300",
   emerald: "bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300",
-  indigo:  "bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300",
-  violet:  "bg-violet-50 dark:bg-violet-900/20 text-violet-700 dark:text-violet-300",
-  purple:  "bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300",
+  zinc:    "bg-zinc-100 dark:bg-zinc-800/50 text-zinc-700 dark:text-zinc-300",
+  stone:   "bg-stone-100 dark:bg-stone-800/50 text-stone-700 dark:text-stone-300",
+  orange:  "bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-400",
 };
 
 function ProjectCard({
@@ -792,14 +792,14 @@ function ProjectCard({
         <p className="text-sm text-[#6e6e73] dark:text-[#a1a1a6] leading-relaxed mb-3">{description}</p>
         <div className="flex flex-wrap gap-1.5 mb-4">
           {tags.map((t) => (
-            <span key={t} className={`text-xs px-2.5 py-1 rounded-full ${tagColors[tagColor] ?? tagColors.indigo}`}>{t}</span>
+            <span key={t} className={`text-xs px-2.5 py-1 rounded-full ${tagColors[tagColor] ?? tagColors.zinc}`}>{t}</span>
           ))}
         </div>
         {links.length > 0 && (
           <div className="flex gap-4">
             {links.map(({ label, href }) => (
               <a key={label} href={href} target="_blank" rel="noopener noreferrer"
-                className="text-sm text-[#0071e3] dark:text-[#2997ff] hover:underline font-medium">
+                className="text-sm text-[#1d1d1f] dark:text-[#f5f5f7] hover:underline font-medium opacity-70 hover:opacity-100 transition-opacity">
                 {label} →
               </a>
             ))}
