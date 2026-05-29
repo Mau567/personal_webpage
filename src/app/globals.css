@@ -2,34 +2,41 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-/* Custom CSS variables for theming */
-:root {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --foreground: #1d1d1f;
+  --secondary: #6e6e73;
+  --apple-gray: #f5f5f7;
+  --apple-blue: #0071e3;
+  --apple-blue-hover: #0077ed;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000000;
+    --foreground: #f5f5f7;
+    --secondary: #a1a1a6;
+    --apple-gray: #111111;
+    --apple-blue: #2997ff;
+    --apple-blue-hover: #3aa3ff;
   }
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Inter", "Roboto", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
 }
 
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .fade-in.visible {
@@ -37,43 +44,20 @@ body {
   transform: translateY(0);
 }
 
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Apple-style eyebrow label */
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--apple-blue);
 }
 
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient-shift 8s ease infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-18px); }
-}
-.animate-float      { animation: float 6s ease-in-out infinite; }
-.animate-float-slow { animation: float 9s ease-in-out infinite; }
-.animate-float-fast { animation: float 4s ease-in-out infinite; }
-
-.gradient-text {
-  background: linear-gradient(135deg, #6366f1, #06b6d4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.section-accent-bar {
-  display: block;
-  width: 3.5rem;
-  height: 0.25rem;
-  margin-top: 0.75rem;
-  border-radius: 9999px;
-  background: linear-gradient(to right, #6366f1, #06b6d4);
+/* Apple-style section heading */
+.section-heading {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: var(--foreground);
 }
