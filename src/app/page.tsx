@@ -549,8 +549,8 @@ export default function Home() {
               gradient="from-orange-500 to-amber-600"
               emoji="🎤"
               title="KaraokeJam"
-              description="Full-stack karaoke app with real-time pitch detection under 100ms WebSocket latency. Integrates Demucs, Whisper, and Librosa for vocal separation and lyric alignment. Won at CodeJam hackathon, built in one weekend."
-              note="CodeJam winner"
+              description="Full-stack karaoke app with real-time pitch detection under 100ms WebSocket latency. Integrates Demucs, Whisper, and Librosa for vocal separation and lyric alignment. Built in one weekend at the CodeJam hackathon."
+              note="Participated in CodeJam"
               tags={["FastAPI", "React", "Web Audio API", "Whisper", "Demucs", "Supabase"]}
               tagColor="orange"
               links={[
