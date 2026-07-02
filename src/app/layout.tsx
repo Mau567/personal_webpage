@@ -1,5 +1,18 @@
 import type { Metadata } from "next";
+import { Archivo, Newsreader } from "next/font/google";
 import "./globals.css";
+
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  axes: ["opsz"],
+  variable: "--font-newsreader",
+});
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-archivo",
+});
 
 export const metadata: Metadata = {
   title: "Mauricio Javier Letort | Personal Website",
@@ -17,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-sans">
+      <body className={`${archivo.variable} ${newsreader.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

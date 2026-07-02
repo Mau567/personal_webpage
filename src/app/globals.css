@@ -1,57 +1,33 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #1d1d1f;
-  --secondary: #6e6e73;
-  --apple-gray: #f5f5f7;
-}
+@theme inline {
+  --color-bg: #faf7f2;
+  --color-ink: #211d18;
+  --color-muted: #6e675d;
+  --color-line: rgba(33, 29, 24, 0.14);
+  --color-card: #f2ede4;
+  --color-accent: #ae532d;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #f5f5f7;
-    --secondary: #a1a1a6;
-    --apple-gray: #111111;
+  --font-sans: var(--font-archivo), sans-serif;
+  --font-serif: var(--font-newsreader), serif;
+
+  --animate-fade-up: fade-up 0.7s ease both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-size: 17px;
   line-height: 1.6;
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.eyebrow {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--secondary);
-}
-
-.section-heading {
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
-  color: var(--foreground);
 }
