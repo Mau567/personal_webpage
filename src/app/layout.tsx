@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Newsreader } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const newsreader = Newsreader({
@@ -32,6 +33,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${archivo.variable} ${newsreader.variable} font-sans antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
