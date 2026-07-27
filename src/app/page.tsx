@@ -26,118 +26,84 @@ type Experience = {
 
 const experience: Experience[] = [
   {
-    role: "Hotel Chatbot Developer",
-    org: "Federación Hotelera del Ecuador (AHOTEC) — Freelance · Online",
-    dates: "07/2025 – Present",
-    description:
-      "Leading the end-to-end development of a large-scale hotel management ecosystem supporting 50+ Ecuadorian hotels. The platform blends AI-driven guest discovery with streamlined registration workflows for property managers.",
-    bullets: [
-      {
-        heading: "Full-Stack Development & AI Integration",
-        body: "Built a modern web application with Next.js, React, and TypeScript using Tailwind CSS for responsive UI and Prisma ORM with PostgreSQL for resilient data models. Integrated AskSuite and custom chatbot flows that automate hotel discovery and guest engagement in real time.",
-      },
-      {
-        heading: "Database Design & Backend Architecture",
-        body: "Designed structured schemas with Prisma ORM and PostgreSQL, exposing RESTful APIs and secure file management pipelines for property assets. Implemented analytics dashboards and automation that generate marketing content, onboarding collateral, and performance reports.",
-      },
-      {
-        heading: "Operations Automation & Impact",
-        body: "Delivered real-time property analytics, multilingual chatbot responses, and automated onboarding that reduce manual workload for hotel teams. Positioned AHOTEC with a scalable digital platform for national tourism growth.",
-      },
-    ],
-    tools: "Next.js, React, TypeScript, Tailwind CSS, Prisma ORM, PostgreSQL, AskSuite, Generative AI",
-    impact:
-      "Streamlined hotel discovery for travelers, simplified property registration for hoteliers, and established a scalable automation hub for Ecuadorian tourism",
-  },
-  {
-    role: "Ecuador Interactive Tourism Map",
-    org: "Ñan Magazine — Freelance project, IDB-funded",
-    dates: "03/2025 – Present",
-    description:
-      "Government-backed digital initiative to promote Ecuador's lesser-known touristic destinations through an intuitive interactive map experience. Project is funded by the Inter-American Development Bank (IDB) and will be presented to the Ecuadorian government as part of a national tourism revitalization strategy.",
-    tools: "Google My Maps, Research & Data Collection, Government Tourism Datasets",
-    impact:
-      "National-level digital tool for rural tourism areas, expected integration into Ecuador's official tourism platforms",
-  },
-  {
-    role: "Hotel Innovation Intern",
-    org: "San Jose de Puembo — Quito, Ecuador",
+    role: "Information Technology Solutions Intern",
+    org: "San Jose de Puembo, Ascend Hotel Collection Member — Quito, Ecuador",
     dates: "05/2025 – 08/2025",
     description:
-      "Led two high-impact digital transformation initiatives at this landmark hotel near Quito's international airport.",
+      "Led digital transformation initiatives at this landmark hotel near Quito's international airport, spanning AI-powered guest support and NFC-enabled in-room services.",
     bullets: [
       {
-        heading: "NFC Card Design & Deployment",
-        body: "Conceptualized, designed, and deployed NFC-enabled guest cards providing seamless access to digital TV guides, WhatsApp contact, and hotel services with a single tap.",
+        heading: "AI Chatbot & Reservation Assistant",
+        body: "Integrated and deployed the Asksuite chatbot and AI reservation assistant to provide 24/7 guest support, serving 2,500+ guest interactions across the web, Facebook, and Instagram.",
       },
       {
-        heading: "AI Chatbot Integration",
-        body: "Spearheaded AI-powered chatbot integration for the hotel website and OTA platforms (Booking.com, Expedia). Built centralized knowledge bases, automated follow-ups, and analytics.",
+        heading: "Engagement & Sales Conversion",
+        body: "Boosted client engagement by generating 643+ monthly automated quotations and processing 25,000+ guest messages across channels at 90% accuracy, converting 20% of chatbot interactions into sales opportunities.",
       },
       {
-        heading: "Data & Operations Enablement",
-        body: "Consolidated marketing collateral, WhatsApp automations, and guest usage analytics that now serve as a blueprint for future tech rollouts.",
+        heading: "NFC Guest Cards",
+        body: "Deployed NFC-enabled guest cards in 78 rooms, providing instant one-tap access to hotel services and increasing client satisfaction by 50%.",
       },
     ],
-    tools: "NFC Tools, Inkscape, Illustrator, AskSuite, Google Sheets, ChatGPT API, WhatsApp integration",
-    impact: "Enhanced guest experience, reduced operational workload, created scalable tech foundation",
+    tools: "Asksuite, NFC Tools, Meta Business Suite, Illustrator, Inkscape, Google Sheets",
+    impact:
+      "2,500+ guest interactions served, 25,000+ messages processed at 90% accuracy, 20% of chatbot conversations converted to sales, 78 rooms NFC-enabled",
   },
   {
-    role: "Junior Programmer",
+    role: "Research Analyst",
+    org: "Ñan Magazine & Inter-American Development Bank — Freelance · Ecuador",
+    dates: "04/2025 – 12/2025",
+    description:
+      "Government-backed initiative to promote Ecuador's lesser-known destinations through an interactive digital map, funded by the Inter-American Development Bank.",
+    bullets: [
+      {
+        heading: "Destination Research & Curation",
+        body: "Researched and curated 200+ Ecuadorian tourist destinations for a government-backed interactive digital map, funded by the Inter-American Development Bank (IDB).",
+      },
+      {
+        heading: "Ministry of Tourism Presentation",
+        body: "Presented to the Ecuadorian Ministry of Tourism as part of a tourism promotion initiative aimed at increasing the number of foreign tourists in Ecuador by 500,000 per year over the next five years.",
+      },
+    ],
+    tools: "Google My Maps, Research & Data Collection, Government Tourism Datasets",
+    impact:
+      "200+ destinations mapped for a national strategy targeting 500,000 additional foreign tourists per year",
+  },
+  {
+    role: "Junior Programmer Intern",
     org: "Robalino Law — Quito, Ecuador",
     dates: "07/2024 – 08/2024",
     description:
-      "Contributed to the BIPAT (Business Intelligence Process Automated Technology) team, developing innovative solutions for corporate clients while gaining hands-on experience with enterprise-level software development.",
+      "Built data extraction tooling and audited the firm's time-billing platform, turning API research into concrete database and workflow recommendations for firm leadership.",
     bullets: [
       {
-        heading: "Python Development & Automation",
-        body: "Developed custom Python scripts and automation tools to streamline client workflows and improve data processing efficiency.",
+        heading: "Python ETL & REST API Integration",
+        body: "Built Python-based ETL scripts to authenticate with and extract data from Lemontech's TimeBilling REST API (clients, matters, invoices, users), identifying underutilized fields, features, and data structures to inform database optimization recommendations.",
       },
       {
-        heading: "Team Collaboration & Project Management",
-        body: "Managed multiple concurrent projects while maintaining high code quality standards. Participated in code reviews and contributed to technical documentation.",
+        heading: "Platform Audit & Recommendations",
+        body: "Audited the firm's TimeBilling platform usage, identifying underutilized features and workflows, and presented findings and recommendations to firm leadership to improve efficiency and capture additional billable value.",
       },
     ],
-    tools: "Python, Git, JIRA, API Testing, Business Intelligence Tools",
-    impact: "Improved client solution delivery, enhanced team productivity, gained enterprise development experience",
+    tools: "Python, REST APIs, Lemontech TimeBilling, SQL, Git",
+    impact:
+      "Surfaced underused platform features and data structures, giving leadership a concrete path to improved efficiency and additional billable value",
   },
   {
-    role: "Supplier Database Specialist",
-    org: "San Jose de Puembo Hotel and Conference Center — Quito, Ecuador",
-    dates: "07/2023 – 08/2023",
-    description:
-      "Led comprehensive vendor research and database development initiative for a major hotel chain, creating a centralized supplier management system to optimize procurement processes and cost analysis.",
-    bullets: [
-      {
-        heading: "Vendor Research & Database Development",
-        body: "Conducted extensive research on hotel suppliers across multiple categories. Built a comprehensive database with detailed vendor profiles, contact information, and service offerings.",
-      },
-      {
-        heading: "Financial Analysis & Profitability Assessment",
-        body: "Analyzed vendor pricing structures and service quality to assess profitability. Created detailed reports for management decision-making on vendor selection.",
-      },
-    ],
-    tools: "Google Sheets, Excel, CRM Systems, Vendor Management Platforms",
-    impact: "Streamlined procurement processes, improved vendor selection criteria, enhanced cost control",
-  },
-  {
-    role: "Design Specialist",
+    role: "UI/UX Design Intern",
     org: "Grupo Más — Quito, Ecuador",
     dates: "06/2023 – 07/2023",
     description:
-      "Spearheaded the design and prototyping of an innovative parking solution mobile application, focusing on user experience optimization for urban mobility challenges.",
+      "Owned the front-end design for a parking solutions mobile app, taking it from concept through to a fully clickable prototype.",
     bullets: [
       {
-        heading: "Mobile App Design & Prototyping",
-        body: "Designed comprehensive UI mockups and user experience flows for a parking management application. Created wireframes, user journey maps, and interactive prototypes.",
-      },
-      {
-        heading: "UX/UI Development & User Research",
-        body: "Conducted user research to understand parking pain points. Utilized Justinmind prototyping software for high-fidelity interactive prototypes.",
+        heading: "Front-End UI & Prototyping",
+        body: "Designed and prototyped the full front-end UI for a parking solutions app using Justinmind, covering all user flows and screen layouts from concept to clickable prototype.",
       },
     ],
     tools: "Justinmind, Figma, Adobe Creative Suite",
-    impact: "Improved parking app UX, enhanced stakeholder communication, established design foundation",
+    impact:
+      "Complete clickable prototype covering every user flow, giving stakeholders a concrete design foundation to build on",
   },
   {
     role: "Volunteering Co-Founder",
@@ -163,28 +129,53 @@ const experience: Experience[] = [
 const education = [
   {
     school: "McGill University",
-    degree: "B.Sc. Computer Science — Artificial Intelligence & Entrepreneurship",
+    degree: "B.Sc. Computer Science and Artificial Intelligence — Minor in Entrepreneurship",
     dates: "09/2022 – 12/2026 · Montréal, Canada",
   },
   {
     school: "Colegio Menor San Francisco de Quito",
-    degree: "Magna Cum Laude — 93.34 GPA",
+    degree: "High School Diploma, Magna Cum Laude — GPA 93.34/100",
     dates: "06/2022 · Quito, Ecuador",
   },
 ];
 
 const skillGroups = [
   {
-    group: "Languages",
-    items: ["TypeScript", "JavaScript", "Python", "SQL", "Java", "C", "OCaml", "Bash"],
+    group: "Programming & software",
+    items: [
+      "Python",
+      "TypeScript",
+      "JavaScript",
+      "SQL",
+      "Java",
+      "C",
+      "OCaml",
+      "Bash",
+      "Assembly",
+      "Git",
+      "Linux",
+      "Node.js",
+      "REST APIs",
+      "WebSockets",
+    ],
   },
   {
-    group: "Frameworks",
-    items: ["Next.js", "React", "React Native", "Prisma", "Tailwind CSS", "PostgreSQL", "FastAPI"],
+    group: "AI & machine learning",
+    items: ["Whisper", "Demucs", "Librosa", "PyTorch", "Scikit-Learn", "NumPy", "Pandas", "RAG"],
   },
   {
-    group: "Tools & platforms",
-    items: ["Node.js", "Vercel", "Git & GitHub", "API Integration", "AI Chatbots", "EmailJS", "Cursor"],
+    group: "Web & backend",
+    items: [
+      "Next.js",
+      "React",
+      "FastAPI",
+      "Prisma ORM",
+      "PostgreSQL",
+      "Supabase",
+      "NextAuth.js",
+      "Tailwind CSS",
+      "Vercel",
+    ],
   },
   {
     group: "Spoken languages",
@@ -192,12 +183,29 @@ const skillGroups = [
   },
 ];
 
-const projects = [
+type Project = {
+  title: string;
+  date: string;
+  description: string;
+  tech: string;
+  links: { label: string; href: string }[];
+};
+
+const projects: Project[] = [
+  {
+    title: "KaraokeJam",
+    date: "11/2025",
+    description:
+      "Built at McGill's CodeJam hackathon: a 3-model real-time AI audio pipeline (Demucs vocal separation + Librosa YIN pitch analysis + Whisper lyric alignment) achieving <100ms end-to-end WebSocket latency with a two-person team in 48 hours. Web Audio API mic capture with base64 float32 streaming, a tone-based scoring engine, and Supabase Postgres with RLS and object storage for session state and background audio jobs.",
+    tech: "FastAPI · React · Whisper · Demucs · Librosa · Web Audio API · Supabase",
+    links: [{ label: "GitHub", href: "https://github.com/AlanBrotherton/KaraokeJam" }],
+  },
   {
     title: "AHOTEC Hotel Search Assistant",
+    date: "07/2025 – Present · Freelance",
     description:
-      "Web app for the Ecuadorian Hotel Federation combining intelligent hotel search with an AI-powered chatbot that helps users find hotels by location and preference.",
-    tech: "Next.js · React · TypeScript · Prisma · PostgreSQL · Mistral AI",
+      "Production full-stack hotel-search chatbot serving 50+ hotels across Ecuador's hospitality sector — Next.js 14, TypeScript (95.9% type coverage), Prisma ORM and PostgreSQL behind 4 RESTful API endpoints. Integrates a Mistral AI LLM with dynamic database context injection, NextAuth.js role-based access control, and an admin dashboard for hotel registration, approval, and payment status management.",
+    tech: "Next.js 14 · TypeScript · Prisma ORM · PostgreSQL · Mistral AI · NextAuth.js",
     links: [
       { label: "GitHub", href: "https://github.com/Mau567/AHOTEC_chatbot" },
       { label: "Live site", href: "https://ahotec-chatbot.vercel.app/" },
@@ -205,25 +213,18 @@ const projects = [
   },
   {
     title: "Nutria Health & Nutrition App",
+    date: "01/2025 – 04/2025",
     description:
-      "Mobile app that helps users track meals, receive personalized recommendations, and maintain balanced diets. Built as part of a McGill course.",
-    tech: "React Native · TypeScript · Health API",
+      "Mobile app MVP built for an entrepreneurship class and later presented in a pitch. Delivers personalized meal tracking and nutrition recommendations, integrating AI APIs for tailored dietary guidance.",
+    tech: "React Native · TypeScript (94.4%) · Health API",
     links: [
       { label: "GitHub", href: "https://github.com/Mau567/Nutria_App" },
       { label: "Live site", href: "https://nutria-app-eta.vercel.app/" },
     ],
   },
   {
-    title: "Ñan Interactive Map",
-    description:
-      "Interactive digital map for Ñan Magazine showcasing Ecuador's destinations. IDB-funded initiative to be presented to the Ecuadorian government as part of a national tourism strategy.",
-    tech: "Google My Maps · Research · GIS",
-    links: [
-      { label: "View map", href: "https://www.google.com/maps/d/viewer?mid=1VYOkfvdiMfGwaKRNGpo1WSmr8Kpv11Q" },
-    ],
-  },
-  {
     title: "Personal Portfolio Website",
+    date: "2025",
     description:
       "A modern, responsive portfolio built with Next.js and React, featuring smooth animations, contact form integration, and interactive project showcases.",
     tech: "Next.js · React · TypeScript · Tailwind CSS",
@@ -234,28 +235,22 @@ const projects = [
   },
   {
     title: "Mini-MIPS CPU",
+    date: "2024",
     description:
       "Single-cycle MIPS CPU designed in Logisim implementing load, save, add, subtract, and halt — a hardware architecture project from scratch.",
     tech: "Logisim · MIPS · CPU Design · Assembly",
     links: [],
   },
-  {
-    title: "KaraokeJam",
-    description:
-      "Full-stack karaoke app with real-time pitch detection under 100ms WebSocket latency, integrating Demucs, Whisper, and Librosa. Built in one weekend at CodeJam.",
-    tech: "FastAPI · React · Web Audio API · Whisper · Demucs · Supabase",
-    links: [
-      { label: "GitHub", href: "https://github.com/AlanBrotherton/KaraokeJam" },
-    ],
-  },
 ];
+
+const CV_URL = "/Mauricio_Letort_CV.pdf";
 
 const contactLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/mauricio-javier-letort-129b30258/", external: true },
   { label: "GitHub", href: "https://github.com/Mau567", external: true },
   { label: "WhatsApp", href: "https://wa.me/14389794330", external: true },
   { label: "(438) 979 4330", href: "tel:+14389794330", external: false },
-  { label: "CV / Résumé", href: "https://flowcv.com/resume/fd36ulsq7t", external: true },
+  { label: "CV / Résumé", href: CV_URL, external: true },
 ];
 
 export default function Home() {
@@ -317,7 +312,7 @@ export default function Home() {
       {/* Hero */}
       <section className="animate-fade-up pt-[110px] pb-[120px]">
         <p className="mb-7 text-[13px] font-semibold uppercase tracking-[0.14em] text-accent">
-          Computer Science — McGill University · Montréal
+          Computer Science &amp; Artificial Intelligence — McGill University · Montréal
         </p>
         <h1 className="max-w-[16ch] font-serif text-[clamp(48px,8vw,92px)] font-light leading-[1.05] tracking-[-0.015em] text-pretty">
           I build AI-powered products and full-stack applications that make a difference.
@@ -333,7 +328,7 @@ export default function Home() {
             View my work
           </a>
           <a
-            href="https://flowcv.com/resume/fd36ulsq7t"
+            href={CV_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="pb-[3px] text-muted transition-colors hover:text-accent"
@@ -366,20 +361,21 @@ export default function Home() {
             About
           </h2>
           <p className="font-serif text-[26px] font-light leading-[1.45] text-pretty">
-            I&apos;m a Computer Science student passionate about AI and software development — from
-            building innovative tools at Robalino Law to optimizing hotel operations with databases
-            and AI chatbots at AHOTEC and San Jose de Puembo.
+            I&apos;m a Computer Science and Artificial Intelligence student passionate about
+            shipping real products — from Python ETL tooling at Robalino Law, to AI guest-support
+            chatbots at San Jose de Puembo, to a production hotel-search platform serving 50+
+            Ecuadorian hotels.
           </p>
           <p className="mt-6 max-w-[56ch] text-muted text-pretty">
-            With a multicultural background, fluency in English and Spanish, and elementary French,
-            I bring an international perspective and adaptability to everything I do. I&apos;m
-            always eager to collaborate on new challenges that leverage technology for meaningful
-            outcomes.
+            French and Ecuadorian, based in Montréal. With a multicultural background, fluency in
+            English and Spanish, and elementary French, I bring an international perspective and
+            adaptability to everything I do. I&apos;m always eager to collaborate on new challenges
+            that leverage technology for meaningful outcomes.
           </p>
           <div className="mt-10 flex gap-12 border-t border-line pt-6">
             <div>
               <div className="text-[13px] font-semibold uppercase tracking-[0.1em] text-accent">Now</div>
-              <div className="mt-1.5 text-[15px] text-muted">Hotel Chatbot Developer, AHOTEC</div>
+              <div className="mt-1.5 text-[15px] text-muted">Freelance full-stack developer</div>
             </div>
             <div>
               <div className="text-[13px] font-semibold uppercase tracking-[0.1em] text-accent">Based in</div>
@@ -450,9 +446,12 @@ export default function Home() {
           Things I&apos;ve built
         </h2>
         <div className="grid gap-6 md:grid-cols-2">
-          {projects.map(({ title, description, tech, links }) => (
+          {projects.map(({ title, date, description, tech, links }) => (
             <div key={title} className="flex flex-col gap-3.5 rounded-[3px] bg-card p-8">
-              <div className="font-serif text-[26px]">{title}</div>
+              <div>
+                <div className="font-serif text-[26px]">{title}</div>
+                <div className="mt-1 text-sm text-muted">{date}</div>
+              </div>
               <p className="text-[15px] text-muted text-pretty">{description}</p>
               <p className="text-[13px] uppercase tracking-[0.06em] text-muted">{tech}</p>
               {links.length > 0 && (
