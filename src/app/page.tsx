@@ -129,12 +129,12 @@ const experience: Experience[] = [
 const education = [
   {
     school: "McGill University",
-    degree: "B.Sc. Computer Science and Artificial Intelligence — Minor in Entrepreneurship",
+    degree: "B.Sc. Computer Science and Artificial Intelligence,  Minor in Entrepreneurship",
     dates: "09/2022 – 12/2026 · Montréal, Canada",
   },
   {
     school: "Colegio Menor San Francisco de Quito",
-    degree: "High School Diploma, Magna Cum Laude — GPA 93.34/100",
+    degree: "High School Diploma, Magna Cum Laude, GPA 93.34/100",
     dates: "06/2022 · Quito, Ecuador",
   },
 ];
@@ -204,7 +204,7 @@ const projects: Project[] = [
     title: "AHOTEC Hotel Search Assistant",
     date: "07/2025 – Present · Freelance",
     description:
-      "Production full-stack hotel-search chatbot serving 50+ hotels across Ecuador's hospitality sector — Next.js 14, TypeScript (95.9% type coverage), Prisma ORM and PostgreSQL behind 4 RESTful API endpoints. Integrates a Mistral AI LLM with dynamic database context injection, NextAuth.js role-based access control, and an admin dashboard for hotel registration, approval, and payment status management.",
+      "Production full-stack hotel-search chatbot serving 50+ hotels across Ecuador's hospitality sector, Next.js 14, TypeScript (95.9% type coverage), Prisma ORM and PostgreSQL behind 4 RESTful API endpoints. Integrates a Mistral AI LLM with dynamic database context injection, NextAuth.js role-based access control, and an admin dashboard for hotel registration, approval, and payment status management.",
     tech: "Next.js 14 · TypeScript · Prisma ORM · PostgreSQL · Mistral AI · NextAuth.js",
     links: [
       { label: "GitHub", href: "https://github.com/Mau567/AHOTEC_chatbot" },
@@ -237,7 +237,7 @@ const projects: Project[] = [
     title: "Mini-MIPS CPU",
     date: "2024",
     description:
-      "Single-cycle MIPS CPU designed in Logisim implementing load, save, add, subtract, and halt — a hardware architecture project from scratch.",
+      "Single-cycle MIPS CPU designed in Logisim implementing load, save, add, subtract, and halt, a hardware architecture project from scratch.",
     tech: "Logisim · MIPS · CPU Design · Assembly",
     links: [],
   },
