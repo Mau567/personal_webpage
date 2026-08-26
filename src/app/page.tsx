@@ -179,7 +179,7 @@ const skillGroups = [
   },
   {
     group: "Spoken languages",
-    items: ["Spanish — native", "English — fluent", "French — elementary"],
+    items: ["Spanish (native)", "English (fluent)", "French (elementary)"],
   },
 ];
 
