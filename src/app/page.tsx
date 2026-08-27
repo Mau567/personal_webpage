@@ -26,8 +26,8 @@ type Experience = {
 
 const experience: Experience[] = [
   {
-    role: "Information Technology Solutions Intern",
-    org: "San Jose de Puembo, Ascend Hotel Collection Member — Quito, Ecuador",
+    role: "IT Solutions Intern",
+    org: "San Jose de Puembo, Ascend Hotel Collection Member · Quito, Ecuador",
     dates: "05/2025 – 08/2025",
     description:
       "Led digital transformation initiatives at this landmark hotel near Quito's international airport, spanning AI-powered guest support and NFC-enabled in-room services.",
@@ -51,7 +51,7 @@ const experience: Experience[] = [
   },
   {
     role: "Research Analyst",
-    org: "Ñan Magazine & Inter-American Development Bank — Freelance · Ecuador",
+    org: "Ñan Magazine & Inter-American Development Bank · Freelance · Ecuador",
     dates: "04/2025 – 12/2025",
     description:
       "Government-backed initiative to promote Ecuador's lesser-known destinations through an interactive digital map, funded by the Inter-American Development Bank.",
@@ -71,7 +71,7 @@ const experience: Experience[] = [
   },
   {
     role: "Junior Programmer Intern",
-    org: "Robalino Law — Quito, Ecuador",
+    org: "Robalino Law · Quito, Ecuador",
     dates: "07/2024 – 08/2024",
     description:
       "Built data extraction tooling and audited the firm's time-billing platform, turning API research into concrete database and workflow recommendations for firm leadership.",
@@ -91,7 +91,7 @@ const experience: Experience[] = [
   },
   {
     role: "UI/UX Design Intern",
-    org: "Grupo Más — Quito, Ecuador",
+    org: "Grupo Más · Quito, Ecuador",
     dates: "06/2023 – 07/2023",
     description:
       "Owned the front-end design for a parking solutions mobile app, taking it from concept through to a fully clickable prototype.",
@@ -107,7 +107,7 @@ const experience: Experience[] = [
   },
   {
     role: "Volunteering Co-Founder",
-    org: "English for Puembo — Quito, Ecuador",
+    org: "English for Puembo · Quito, Ecuador",
     dates: "08/2022 – 12/2022",
     description:
       "Co-founded and established a community-based English education initiative, bringing together students from Colegio Menor to provide free English language instruction to underprivileged children in the Puembo area.",
@@ -207,13 +207,16 @@ const projects: Project[] = [
     description:
       "Built at McGill's CodeJam hackathon: a 3-model real-time AI audio pipeline (Demucs vocal separation + Librosa YIN pitch analysis + Whisper lyric alignment) achieving <100ms end-to-end WebSocket latency with a two-person team in 48 hours. Web Audio API mic capture with base64 float32 streaming, a tone-based scoring engine, and Supabase Postgres with RLS and object storage for session state and background audio jobs.",
     tech: "FastAPI · React · Whisper · Demucs · Librosa · Web Audio API · Supabase",
-    links: [{ label: "GitHub", href: "https://github.com/AlanBrotherton/KaraokeJam" }],
+    links: [
+      { label: "GitHub", href: "https://github.com/AlanBrotherton/KaraokeJam" },
+      { label: "Devpost", href: "https://devpost.com/software/karaokejam" },
+    ],
   },
   {
-    title: "AHOTEC Hotel Search Assistant",
+    title: "Hotel Search Platform & AI Concierge",
     date: "07/2025 – Present · Freelance",
     description:
-      "Production full-stack hotel-search chatbot serving 50+ hotels across Ecuador's hospitality sector, Next.js 14, TypeScript (95.9% type coverage), Prisma ORM and PostgreSQL behind 4 RESTful API endpoints. Integrates a Mistral AI LLM with dynamic database context injection, NextAuth.js role-based access control, and an admin dashboard for hotel registration, approval, and payment status management.",
+      "Production full-stack hotel search chatbot serving 50+ hotels across Ecuador's hospitality sector, Next.js 14, TypeScript (95.9% type coverage), Prisma ORM and PostgreSQL behind 4 RESTful API endpoints. Integrates a Mistral AI LLM with dynamic database context injection, NextAuth.js role-based access control, and an admin dashboard for hotel registration, approval, and payment status management.",
     tech: "Next.js 14 · TypeScript · Prisma ORM · PostgreSQL · Mistral AI · NextAuth.js",
     links: [
       { label: "GitHub", href: "https://github.com/Mau567/AHOTEC_chatbot" },
@@ -376,7 +379,7 @@ export default function Home() {
             Ecuadorian hotels.
           </p>
           <p className="mt-6 max-w-[56ch] text-muted text-pretty">
-            French and Ecuadorian, based in Montréal. With a multicultural background, fluency in
+            French Ecuadorian, based in Montréal. With a multicultural background, fluency in
             English and Spanish, and elementary French, I bring an international perspective and
             adaptability to everything I do. I&apos;m always eager to collaborate on new challenges
             that leverage technology for meaningful outcomes.
@@ -384,7 +387,7 @@ export default function Home() {
           <div className="mt-10 flex gap-12 border-t border-line pt-6">
             <div>
               <div className="text-[13px] font-semibold uppercase tracking-[0.1em] text-accent">Now</div>
-              <div className="mt-1.5 text-[15px] text-muted">Freelance full-stack developer</div>
+              <div className="mt-1.5 text-[15px] text-muted">Software developer</div>
             </div>
             <div>
               <div className="text-[13px] font-semibold uppercase tracking-[0.1em] text-accent">Based in</div>
