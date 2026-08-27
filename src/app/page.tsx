@@ -157,7 +157,7 @@ const skillGroups = [
     ],
   },
   {
-    group: "Front end",
+    group: "Frontend",
     items: [
       "React",
       "Next.js",
@@ -169,7 +169,7 @@ const skillGroups = [
     ],
   },
   {
-    group: "Back end",
+    group: "Backend",
     items: [
       "Node.js",
       "FastAPI",
