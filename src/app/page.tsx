@@ -216,7 +216,7 @@ const projects: Project[] = [
     title: "Hotel Search Platform & AI Concierge",
     date: "07/2025 – Present · Freelance",
     description:
-      "Production full-stack hotel search chatbot serving 50+ hotels across Ecuador's hospitality sector, Next.js 14, TypeScript (95.9% type coverage), Prisma ORM and PostgreSQL behind 4 RESTful API endpoints. Integrates a Mistral AI LLM with dynamic database context injection, NextAuth.js role-based access control, and an admin dashboard for hotel registration, approval, and payment status management.",
+      "Production full-stack hotel search chatbot serving 50+ hotels across Ecuador's hospitality sector, Next.js 14, TypeScript, Prisma ORM and PostgreSQL behind 4 RESTful API endpoints. Integrates a Mistral AI LLM with dynamic database context injection, NextAuth.js role-based access control, and an admin dashboard for hotel registration, approval, and payment status management.",
     tech: "Next.js 14 · TypeScript · Prisma ORM · PostgreSQL · Mistral AI · NextAuth.js",
     links: [
       { label: "GitHub", href: "https://github.com/Mau567/AHOTEC_chatbot" },
@@ -228,7 +228,7 @@ const projects: Project[] = [
     date: "01/2025 – 04/2025",
     description:
       "Mobile app MVP built for an entrepreneurship class and later presented in a pitch. Delivers personalized meal tracking and nutrition recommendations, integrating AI APIs for tailored dietary guidance.",
-    tech: "React Native · TypeScript (94.4%) · Health API",
+    tech: "React Native · TypeScript · Health API",
     links: [
       { label: "GitHub", href: "https://github.com/Mau567/Nutria_App" },
       { label: "Live site", href: "https://nutria-app-eta.vercel.app/" },
