@@ -1,33 +1,356 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-bg: #faf7f2;
-  --color-ink: #211d18;
-  --color-muted: #6e675d;
-  --color-line: rgba(33, 29, 24, 0.14);
-  --color-card: #f2ede4;
-  --color-accent: #ae532d;
+  --color-bg: #f0eee6;
+  --color-ink: #1f1e1d;
+  --color-muted: #5e5d59;
+  --color-line: #d1cfc5;
+  --color-hover: #5e5d59;
+  --color-input-bg: #faf9f5;
 
-  --font-sans: var(--font-archivo), sans-serif;
-  --font-serif: var(--font-newsreader), serif;
+  --font-serif: var(--font-newsreader), "Times New Roman", serif;
+  --font-sans: var(--font-newsreader), "Times New Roman", serif;
+}
 
-  --animate-fade-up: fade-up 0.7s ease both;
-
-  @keyframes fade-up {
-    from {
-      opacity: 0;
-      transform: translateY(18px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--color-bg);
   color: var(--color-ink);
-  font-size: 17px;
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: 1.25rem;
+  font-weight: 400;
   line-height: 1.6;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: rgba(0, 100, 255, 0.26);
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: var(--color-hover);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 20;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  padding: 0.4rem 0.75rem;
+  text-decoration: underline;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+.column {
+  width: 95%;
+  max-width: 38.75rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .column {
+    width: 100%;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+.site-header {
+  position: relative;
+  z-index: 10;
+  background: var(--color-bg);
+  padding-top: 1.15rem;
+  padding-bottom: 0.85rem;
+}
+
+@media (min-width: 768px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+}
+
+.site-name {
+  margin: 0;
+  font-size: 1.44em;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.site-name:hover {
+  color: var(--color-ink);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.site-nav a {
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  color: var(--color-ink);
+}
+
+h1 {
+  margin: 0.6em 0 0.1em;
+  font-size: clamp(2.15rem, 7vw, 3.1em);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+h2 {
+  margin: 2.4em 0 0.5em;
+  font-size: 1.6em;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h2 + h3,
+h2 + div > h3:first-child {
+  margin-top: 0.35em;
+}
+
+h3 {
+  margin: 1.6em 0 0.4em;
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 0.35em 0 0;
+  font-size: 1.1em;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.byline {
+  margin: 2em 0 1em;
+  color: var(--color-muted);
+  font-size: 0.9em;
+}
+
+.prose-gap > p {
+  margin: 0 0 1em;
+}
+
+.prose-gap > p:last-child {
+  margin-bottom: 0;
+}
+
+ul.essay-list,
+ol.essay-list {
+  margin: 0 0 1.25em;
+  padding-left: 1.5em;
+}
+
+ul.essay-list {
+  padding-left: 1.25em;
+}
+
+.essay-list li {
+  margin-bottom: 0.7em;
+}
+
+.essay-list li:last-child {
+  margin-bottom: 0;
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+.plain-link {
+  text-decoration: none;
+}
+
+.plain-link:hover {
+  text-decoration: underline;
+}
+
+.entry {
+  padding: 1.25em 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.entry:last-child {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.entry h3 {
+  margin-top: 0;
+}
+
+.expand-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.role-title {
+  font-weight: 600;
+}
+
+.expand-meta {
+  display: block;
+  margin-top: 0.25em;
+}
+
+.expand-btn:hover .role-title {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.form-field {
+  margin-bottom: 1.15em;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.35em;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0.55em 0.65em;
+  border: 1px solid var(--color-line);
+  border-radius: 0;
+  background: var(--color-input-bg);
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  appearance: none;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--color-muted);
+}
+
+.form-field input:hover,
+.form-field textarea:hover,
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--color-ink);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+.send-btn {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
+.send-btn:hover {
+  color: var(--color-hover);
+}
+
+.send-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.site-footer {
+  margin-top: 4em;
+  padding: 2em 0 2.5em;
+  border-top: 1px solid var(--color-line);
+  color: var(--color-muted);
+  font-size: 0.9em;
+}
+
+.site-footer a {
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+section[id] {
+  scroll-margin-top: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  section[id] {
+    scroll-margin-top: 7.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-name {
+    font-size: 1.2em;
+  }
 }
