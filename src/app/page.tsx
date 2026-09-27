@@ -322,7 +322,10 @@ export default function Home() {
       <main id="main">
         <div className="column">
           <section aria-label="Introduction">
-            <h1>I build AI-powered products and full-stack applications that make a difference.</h1>
+            <h1>
+              I build <span className="nowrap">AI-powered</span> products and
+              full-stack applications that make a difference.
+            </h1>
             <p className="subtitle">
               Computer Science &amp; Artificial Intelligence — McGill University · Montréal
             </p>
@@ -349,7 +352,7 @@ export default function Home() {
               width={340}
               height={420}
               priority
-              className="mb-6 h-auto w-full max-w-[340px] object-cover"
+              className="mb-6 w-full max-w-[340px]"
             />
             <div className="prose-gap">
               <p>

@@ -82,12 +82,18 @@ a:hover {
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 10;
   background: var(--color-bg);
   padding-top: 1.15rem;
   padding-bottom: 0.85rem;
+}
+
+@media (min-width: 768px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+  }
 }
 
 .header-inner {
@@ -139,6 +145,10 @@ h1 {
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: 0;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 h2 {
@@ -330,5 +340,17 @@ ul.essay-list {
 }
 
 section[id] {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  section[id] {
+    scroll-margin-top: 7.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-name {
+    font-size: 1.2em;
+  }
 }
