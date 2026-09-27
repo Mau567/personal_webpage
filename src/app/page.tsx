@@ -301,348 +301,271 @@ export default function Home() {
   };
 
   return (
-    <main className="mx-auto min-h-screen max-w-[1060px] px-8">
+    <>
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
 
-      {/* Header */}
-      <header className="flex flex-col gap-4 border-b border-line py-9 md:flex-row md:items-baseline md:justify-between md:gap-6">
-        <div className="whitespace-nowrap font-serif text-[22px] font-medium tracking-[0.01em]">
-          Mauricio Javier Letort
+      <header className="site-header">
+        <div className="column header-inner">
+          <p className="site-name">Mauricio Javier Letort</p>
+          <nav className="site-nav" aria-label="Primary">
+            {navLinks.map(([label, href]) => (
+              <a key={href} href={`#${href}`}>
+                {label}
+              </a>
+            ))}
+          </nav>
         </div>
-        <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium uppercase tracking-[0.04em]">
-          {navLinks.map(([label, href]) => (
-            <a
-              key={href}
-              href={`#${href}`}
-              className="text-muted transition-colors hover:text-accent"
-            >
-              {label}
-            </a>
-          ))}
-        </nav>
       </header>
 
-      {/* Hero */}
-      <section className="animate-fade-up pt-[110px] pb-[120px]">
-        <p className="mb-7 text-[13px] font-semibold uppercase tracking-[0.14em] text-accent">
-          Computer Science &amp; Artificial Intelligence — McGill University · Montréal
-        </p>
-        <h1 className="max-w-[16ch] font-serif text-[clamp(48px,8vw,92px)] font-light leading-[1.05] tracking-[-0.015em] text-pretty">
-          I build AI-powered products and full-stack applications that make a difference.
-        </h1>
-        <div className="mt-12 flex flex-wrap gap-8 text-sm font-medium uppercase tracking-[0.04em]">
-          <a
-            href="#contact"
-            className="border-b-2 border-accent pb-[3px] text-ink transition-colors hover:text-accent"
-          >
-            Get in touch
-          </a>
-          <a href="#projects" className="pb-[3px] text-muted transition-colors hover:text-accent">
-            View my work
-          </a>
-          <a
-            href={CV_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="pb-[3px] text-muted transition-colors hover:text-accent"
-          >
-            View CV
-          </a>
-          <a
-            href="https://github.com/Mau567"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="pb-[3px] text-muted transition-colors hover:text-accent"
-          >
-            GitHub
-          </a>
-        </div>
-      </section>
+      <main id="main">
+        <div className="column">
+          <section aria-label="Introduction">
+            <h1>I build AI-powered products and full-stack applications that make a difference.</h1>
+            <p className="subtitle">
+              Computer Science &amp; Artificial Intelligence — McGill University · Montréal
+            </p>
+            <p className="byline">
+              <a href="#contact">Get in touch</a>
+              {" · "}
+              <a href="#projects">View my work</a>
+              {" · "}
+              <a href={CV_URL} target="_blank" rel="noopener noreferrer">
+                View CV
+              </a>
+              {" · "}
+              <a href="https://github.com/Mau567" target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+            </p>
+          </section>
 
-      {/* About */}
-      <section id="about" className="grid gap-16 pb-[120px] md:grid-cols-[340px_1fr] md:items-start">
-        <Image
-          src="/images/linkedin_profile_photo.jpeg"
-          alt="Mauricio Javier Letort"
-          width={340}
-          height={420}
-          priority
-          className="h-[420px] w-full max-w-[340px] rounded-[3px] object-cover"
-        />
-        <div>
-          <h2 className="mb-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-muted">
-            About
-          </h2>
-          <p className="font-serif text-[26px] font-light leading-[1.45] text-pretty">
-            I&apos;m a Computer Science and Artificial Intelligence student passionate about
-            shipping real products — from Python ETL tooling at Robalino Law, to AI guest-support
-            chatbots at San Jose de Puembo, to a production hotel-search platform serving 50+
-            Ecuadorian hotels.
-          </p>
-          <p className="mt-6 max-w-[56ch] text-muted text-pretty">
-            French Ecuadorian, based in Montréal. With a multicultural background, fluency in
-            English and Spanish, and elementary French, I bring an international perspective and
-            adaptability to everything I do. I&apos;m always eager to collaborate on new challenges
-            that leverage technology for meaningful outcomes.
-          </p>
-          <div className="mt-10 flex gap-12 border-t border-line pt-6">
+          <section id="about">
+            <h2>About</h2>
+            <Image
+              src="/images/linkedin_profile_photo.jpeg"
+              alt="Mauricio Javier Letort"
+              width={340}
+              height={420}
+              priority
+              className="mb-6 h-auto w-full max-w-[340px] object-cover"
+            />
+            <div className="prose-gap">
+              <p>
+                I&apos;m a Computer Science and Artificial Intelligence student passionate about
+                shipping real products — from Python ETL tooling at Robalino Law, to AI guest-support
+                chatbots at San Jose de Puembo, to a production hotel-search platform serving 50+
+                Ecuadorian hotels.
+              </p>
+              <p>
+                French Ecuadorian, based in Montréal. With a multicultural background, fluency in
+                English and Spanish, and elementary French, I bring an international perspective and
+                adaptability to everything I do. I&apos;m always eager to collaborate on new challenges
+                that leverage technology for meaningful outcomes.
+              </p>
+              <p className="muted">
+                <strong>Now</strong> — Software developer
+                <br />
+                <strong>Based in</strong> — Montréal · open to remote
+              </p>
+            </div>
+          </section>
+
+          <section id="experience">
+            <h2>Where I&apos;ve worked</h2>
             <div>
-              <div className="text-[13px] font-semibold uppercase tracking-[0.1em] text-accent">Now</div>
-              <div className="mt-1.5 text-[15px] text-muted">Software developer</div>
+              {experience.map((entry, i) => (
+                <ExperienceRow key={entry.role} entry={entry} index={i} />
+              ))}
             </div>
-            <div>
-              <div className="text-[13px] font-semibold uppercase tracking-[0.1em] text-accent">Based in</div>
-              <div className="mt-1.5 text-[15px] text-muted">Montréal · open to remote</div>
-            </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      {/* Experience */}
-      <section id="experience" className="pb-[110px]">
-        <h2 className="mb-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-muted">
-          Where I&apos;ve worked
-        </h2>
-        <div className="flex flex-col">
-          {experience.map((entry, i) => (
-            <ExperienceRow key={entry.role} entry={entry} index={i} />
-          ))}
-        </div>
-      </section>
+          <section id="education">
+            <h2>Academic background</h2>
+            {education.map(({ school, degree, dates }) => (
+              <div key={school} className="entry">
+                <h3>{school}</h3>
+                <p>{degree}</p>
+                <p className="muted">{dates}</p>
+              </div>
+            ))}
+          </section>
 
-      {/* Education */}
-      <section id="education" className="pb-[110px]">
-        <h2 className="mb-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-muted">
-          Academic background
-        </h2>
-        <div className="grid gap-6 md:grid-cols-2">
-          {education.map(({ school, degree, dates }) => (
-            <div key={school} className="rounded-[3px] bg-card p-8">
-              <div className="font-serif text-[26px]">{school}</div>
-              <p className="mt-2.5 text-[15px] text-muted text-pretty">{degree}</p>
-              <p className="mt-[18px] text-sm text-muted">{dates}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+          <section id="skills">
+            <h2>What I work with</h2>
+            {skillGroups.map(({ group, items }) => (
+              <div key={group}>
+                <h3>{group}</h3>
+                <p>{items.join(", ")}</p>
+              </div>
+            ))}
+          </section>
 
-      {/* Skills */}
-      <section id="skills" className="pb-[110px]">
-        <h2 className="mb-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-muted">
-          What I work with
-        </h2>
-        <div className="flex flex-col">
-          {skillGroups.map(({ group, items }) => (
-            <div
-              key={group}
-              className="grid grid-cols-1 gap-x-6 gap-y-3 border-t border-line py-6 last:border-b md:grid-cols-[220px_1fr] md:items-baseline"
-            >
-              <span className="font-serif text-[22px]">{group}</span>
-              <div className="flex flex-wrap gap-2.5">
-                {items.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-line px-3.5 py-1.5 text-sm text-muted"
+          <section id="projects">
+            <h2>Things I&apos;ve built</h2>
+            {projects.map(({ title, date, description, tech, links }) => (
+              <article key={title} className="entry">
+                <h3>{title}</h3>
+                <p className="muted">{date}</p>
+                <p>{description}</p>
+                <p className="muted">{tech}</p>
+                {links.length > 0 && (
+                  <p>
+                    {links.map(({ label, href }, i) => (
+                      <span key={label}>
+                        {i > 0 ? " · " : null}
+                        <a href={href} target="_blank" rel="noopener noreferrer">
+                          {label} →
+                        </a>
+                      </span>
+                    ))}
+                  </p>
+                )}
+              </article>
+            ))}
+          </section>
+
+          <section id="contact">
+            <h2>Let&apos;s talk</h2>
+            <p>
+              <a href="mailto:mjletort@gmail.com">mjletort@gmail.com</a>
+            </p>
+            <p>
+              Open to opportunities, collaborations, and interesting conversations. Montréal, Canada ·
+              open to remote.
+            </p>
+            <p>
+              {contactLinks.map(({ label, href, external }, i) => (
+                <span key={label}>
+                  {i > 0 ? " · " : null}
+                  <a
+                    href={href}
+                    target={external ? "_blank" : undefined}
+                    rel={external ? "noopener noreferrer" : undefined}
                   >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+                    {label}
+                  </a>
+                </span>
+              ))}
+            </p>
 
-      {/* Projects */}
-      <section id="projects" className="pb-[110px]">
-        <h2 className="mb-6 text-[13px] font-semibold uppercase tracking-[0.14em] text-muted">
-          Things I&apos;ve built
-        </h2>
-        <div className="grid gap-6 md:grid-cols-2">
-          {projects.map(({ title, date, description, tech, links }) => (
-            <div key={title} className="flex flex-col gap-3.5 rounded-[3px] bg-card p-8">
-              <div>
-                <div className="font-serif text-[26px]">{title}</div>
-                <div className="mt-1 text-sm text-muted">{date}</div>
+            <form onSubmit={handleSubmit} className="mt-8">
+              <div className="form-field">
+                <label htmlFor="name">Name</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  placeholder="Your name"
+                  autoComplete="name"
+                />
               </div>
-              <p className="text-[15px] text-muted text-pretty">{description}</p>
-              <p className="text-[13px] uppercase tracking-[0.06em] text-muted">{tech}</p>
-              {links.length > 0 && (
-                <div className="mt-auto flex gap-6 pt-2 text-sm font-medium">
-                  {links.map(({ label, href }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-accent hover:underline"
-                    >
-                      {label} →
-                    </a>
-                  ))}
-                </div>
+              <div className="form-field">
+                <label htmlFor="email">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  placeholder="your@email.com"
+                  autoComplete="email"
+                />
+              </div>
+              <div className="form-field">
+                <label htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                  rows={5}
+                  placeholder="What's on your mind?"
+                />
+              </div>
+              <button type="submit" disabled={isSubmitting} className="send-btn">
+                {isSubmitting ? "Sending…" : "Send message"}
+              </button>
+              {submitStatus === "success" && (
+                <p className="muted mt-4">
+                  Message sent — I&apos;ll get back to you soon.
+                </p>
               )}
-            </div>
-          ))}
+              {submitStatus === "error" && (
+                <p className="mt-4">
+                  Something went wrong. Please try again or reach out directly.
+                </p>
+              )}
+            </form>
+          </section>
+
         </div>
-      </section>
+      </main>
 
-      {/* Contact */}
-      <section id="contact" className="border-t border-line pt-[100px] pb-[90px] text-center">
-        <p className="mb-5 text-[13px] font-semibold uppercase tracking-[0.14em] text-muted">
-          Let&apos;s talk
+      <footer className="column site-footer">
+        <p>
+          © {new Date().getFullYear()} Mauricio Javier Letort
+          {" · "}
+          Montréal, Canada
         </p>
-        <a
-          href="mailto:mjletort@gmail.com"
-          className="border-b-2 border-accent font-serif text-[clamp(32px,5vw,56px)] font-light text-ink transition-colors hover:text-accent"
-        >
-          mjletort@gmail.com
-        </a>
-        <p className="mx-auto mt-7 max-w-[44ch] text-base text-muted text-pretty">
-          Open to opportunities, collaborations, and interesting conversations. Montréal, Canada ·
-          open to remote.
-        </p>
-        <div className="mt-12 flex flex-wrap justify-center gap-8 text-sm font-medium uppercase tracking-[0.04em]">
-          {contactLinks.map(({ label, href, external }) => (
-            <a
-              key={label}
-              href={href}
-              target={external ? "_blank" : undefined}
-              rel={external ? "noopener noreferrer" : undefined}
-              className="text-muted transition-colors hover:text-accent"
-            >
-              {label}
-            </a>
-          ))}
-        </div>
-
-        <form
-          onSubmit={handleSubmit}
-          className="mx-auto mt-16 max-w-[560px] space-y-5 rounded-[3px] bg-card p-8 text-left"
-        >
-          <div>
-            <label className="mb-2 block text-[13px] font-semibold uppercase tracking-[0.1em] text-muted">
-              Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              required
-              placeholder="Your name"
-              className="w-full rounded-[3px] border border-line bg-bg px-4 py-3 text-[15px] text-ink transition-colors placeholder:text-muted focus:border-accent focus:outline-none"
-            />
-          </div>
-          <div>
-            <label className="mb-2 block text-[13px] font-semibold uppercase tracking-[0.1em] text-muted">
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-              placeholder="your@email.com"
-              className="w-full rounded-[3px] border border-line bg-bg px-4 py-3 text-[15px] text-ink transition-colors placeholder:text-muted focus:border-accent focus:outline-none"
-            />
-          </div>
-          <div>
-            <label className="mb-2 block text-[13px] font-semibold uppercase tracking-[0.1em] text-muted">
-              Message
-            </label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleInputChange}
-              required
-              rows={5}
-              placeholder="What's on your mind?"
-              className="w-full resize-none rounded-[3px] border border-line bg-bg px-4 py-3 text-[15px] text-ink transition-colors placeholder:text-muted focus:border-accent focus:outline-none"
-            />
-          </div>
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="border-b-2 border-accent pb-[3px] text-sm font-medium uppercase tracking-[0.04em] text-ink transition-colors hover:text-accent disabled:cursor-not-allowed disabled:opacity-40"
-          >
-            {isSubmitting ? 'Sending…' : 'Send message'}
-          </button>
-          {submitStatus === 'success' && (
-            <p className="text-[15px] text-muted">
-              Message sent — I&apos;ll get back to you soon.
-            </p>
-          )}
-          {submitStatus === 'error' && (
-            <p className="text-[15px] text-accent">
-              Something went wrong. Please try again or reach out directly.
-            </p>
-          )}
-        </form>
-      </section>
-
-      {/* Footer */}
-      <footer className="flex justify-between border-t border-line pt-6 pb-9 text-[13px] text-muted">
-        <span>© {new Date().getFullYear()} Mauricio Javier Letort</span>
-        <span>Montréal, Canada</span>
       </footer>
-
-    </main>
+    </>
   );
 }
 
 function ExperienceRow({ entry, index }: { entry: Experience; index: number }) {
   const [open, setOpen] = useState(false);
   const { role, org, dates, description, bullets, tools, impact } = entry;
+  const detailsId = `experience-${index}-details`;
 
   return (
-    <div className="border-t border-line last:border-b">
+    <div className="entry">
       <button
+        type="button"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
-        className="grid w-full cursor-pointer grid-cols-1 items-baseline gap-x-6 py-[26px] text-left transition-all duration-200 hover:pl-2.5 md:grid-cols-[56px_1fr_auto]"
+        aria-controls={detailsId}
+        className="expand-btn"
       >
-        <span className="hidden text-sm text-muted md:block">
-          {String(index + 1).padStart(2, "0")}
+        <span className="role-title">
+          {String(index + 1).padStart(2, "0")}. {role}
         </span>
-        <span>
-          <span className="font-serif text-[26px]">{role}</span>
-          <span className="mt-1 block text-[15px] text-muted">{org}</span>
-        </span>
-        <span className="mt-2 flex items-baseline gap-4 text-sm text-muted md:mt-0 md:whitespace-nowrap">
+        <span className="muted expand-meta">
+          {org}
+          <br />
           {dates}
-          <span
-            className={`inline-block transition-transform duration-200 ${open ? "rotate-45" : ""}`}
-            aria-hidden
-          >
-            +
-          </span>
+          {" "}
+          <span aria-hidden>{open ? "–" : "+"}</span>
         </span>
       </button>
 
       {open && (
-        <div className="max-w-[68ch] pb-[26px] md:pl-20">
-          <p className="text-[15px] text-muted text-pretty">{description}</p>
+        <div id={detailsId} className="mt-4">
+          <p>{description}</p>
           {bullets && bullets.length > 0 && (
-            <div className="mt-5 flex flex-col gap-4">
+            <ul className="essay-list">
               {bullets.map(({ heading, body }) => (
-                <div key={heading}>
-                  <p className="text-[15px] font-medium">{heading}</p>
-                  <p className="mt-1 text-[15px] text-muted text-pretty">{body}</p>
-                </div>
+                <li key={heading}>
+                  <strong>{heading}. </strong>
+                  {body}
+                </li>
               ))}
-            </div>
+            </ul>
           )}
-          <div className="mt-6 flex flex-col gap-4 border-t border-line pt-5 md:flex-row md:gap-12">
-            <div className="md:flex-1">
-              <div className="text-[13px] font-semibold uppercase tracking-[0.1em] text-accent">Tools</div>
-              <div className="mt-1.5 text-[15px] text-muted">{tools}</div>
-            </div>
-            <div className="md:flex-1">
-              <div className="text-[13px] font-semibold uppercase tracking-[0.1em] text-accent">Impact</div>
-              <div className="mt-1.5 text-[15px] text-muted">{impact}</div>
-            </div>
-          </div>
+          <p>
+            <strong>Tools. </strong>
+            {tools}
+          </p>
+          <p>
+            <strong>Impact. </strong>
+            {impact}
+          </p>
         </div>
       )}
     </div>

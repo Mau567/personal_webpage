@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, Newsreader } from "next/font/google";
+import { Newsreader } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -8,11 +8,6 @@ const newsreader = Newsreader({
   style: ["normal", "italic"],
   axes: ["opsz"],
   variable: "--font-newsreader",
-});
-
-const archivo = Archivo({
-  subsets: ["latin"],
-  variable: "--font-archivo",
 });
 
 export const metadata: Metadata = {
@@ -30,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${archivo.variable} ${newsreader.variable} font-sans antialiased`}>
+    <html lang="en" className={`${newsreader.variable}`}>
+      <body className="font-serif antialiased">
         {children}
         <Analytics />
       </body>
